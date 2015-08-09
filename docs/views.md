@@ -1,31 +1,31 @@
 # View Wireframes
 
-## Album Show
-![album-show]
+## New Session
+![new-session]
 
 ## Feed Show (landing page)
 ![feed-show]
 
-## Map Preview
-![map-preview]
+## User Albums Index
+![user-albums-index]
 
-## Map View
-![map-view]
+## Album Show
+![album-show]
 
 ## New Album
 ![new-album]
 
-## New Picture
-![new-picture]
-
-## New Session
-![new-session]
-
 ## Picture Show
 ![picture-show]
 
-## User Albums Index
-![user-albums-index]
+## New Picture
+![new-picture]
+
+## Map View
+![map-view]
+
+## Map Preview
+![map-preview]
 
 
 [album-show]: ./wireframes/album_show.jpg
