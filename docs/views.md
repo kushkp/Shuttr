@@ -1,26 +1,39 @@
 # View Wireframes
 
-## New Session
-![new-session]
+## Album Show
+![album-show]
 
 ## Feed Show (landing page)
 ![feed-show]
 
-## Blog Show
-![blog-show]
+## Map Preview
+![map-preview]
 
-## Post Show
-![post-show]
+## Map View
+![map-view]
 
-## Post Form
-![post-form]
+## New Album
+![new-album]
 
-## Search Results
-![search-results]
+## New Picture
+![new-picture]
 
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+## New Session
+![new-session]
+
+## Picture Show
+![picture-show]
+
+## User Albums Index
+![user-albums-index]
+
+
+[album-show]: ./wireframes/album_show.jpg
+[feed-show]: ./wireframes/feed_show.jpg
+[map-preview]: ./wireframes/map_preview.jpg
+[map-view]: ./wireframes/map_view.jpg
+[new-album]: ./wireframes/new_album.jpg
+[new-picture]: ./wireframes/new_picture.jpg
+[new-session]: ./wireframes/new_session.jpg
+[picture-show]: ./wireframes/picture_show.jpg
+[user-albums-index]: ./wireframes/user_albums_index.jpg
