@@ -1,4 +1,4 @@
-# Phase 2: Viewing Albums and Pictures
+# Phase 2: Viewing Album and Picture Indexes (~2 days)
 
 ## Rails
 ### Models
@@ -6,9 +6,12 @@
 ### Controllers
 Api::AlbumsController (create, destroy, index, show)
 Api::PicturesController (create, destroy, show)
+PicturesController (create, new, destroy)
 
 ### Views
 * albums/show.json.jbuilder
+* albums/index.json.jbuilder
+* pictures.index.json.jbuilder
 
 ## Backbone
 ### Models
@@ -21,9 +24,8 @@ Api::PicturesController (create, destroy, show)
 
 ### Views
 * AlbumForm
-* AlbumShow (composite view, contains PicturesIndex subview)
+* PicturesForm
 * PicturesIndex (composite view, contains PicturesIndexItem subviews)
 * PicturesIndexItem
-* PictureShow
 
 ## Gems/Libraries

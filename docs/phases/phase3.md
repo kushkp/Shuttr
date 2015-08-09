@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Viewing Single Album and Pictures (~1 days)
 
 ## Rails
 ### Models
@@ -6,6 +6,7 @@
 ### Controllers
 
 ### Views
+* pictures/show.json.jbuilder
 
 ## Backbone
 ### Models
@@ -13,7 +14,5 @@
 ### Collections
 
 ### Views
-
-## Gems/Libraries
-* Filepicker
-* GoogleMap API
+* AlbumShow (composite view, contains PicturesIndex subview)
+* PictureShow

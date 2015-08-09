@@ -1,13 +1,11 @@
-# Phase 4: User Feeds
+# Phase 4: Viewing Map of Posts (~3 days)
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
 
 ### Views
-posts/feed.json.jbuilder
 
 ## Backbone
 ### Models
@@ -15,6 +13,9 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-<!-- * FeedShow (composite view, contains PostsIndex subview) -->
+* Map
+* PictureGutter
 
 ## Gems/Libraries
+* Filepicker
+* GoogleMap API

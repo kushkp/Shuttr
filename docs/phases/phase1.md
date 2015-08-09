@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Basic Albums and Pictures
+# Phase 1: User Authentication, Album Creation (~1 day)
 
 ## Rails
 ### Models
@@ -14,8 +14,7 @@
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* albums/index.html.erb
-* albums/new.html.erb
+* root/root.html.erb
 
 ## Backbone
 ### Models
