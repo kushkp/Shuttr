@@ -1,24 +1,23 @@
-# Flux-capacitr
+# Shuttr
 
 [Heroku link][heroku]
 
 [heroku]: http://flux-capacitr.herokuapp.com
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+Shuttr is a clone of Flickr built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+- [ ] Create accounts
+- [ ] Create sessions (log in)
+- [ ] Create albums
+- [ ] Upload pictures
+- [ ] View albums and pictures (album/picture index page)
+- [ ] View a single picture (picture show page)
+- [ ] Map view of pictures
+- [ ] Update picture index at bottom of page when moving map
+- [ ] Select picture for preview on map
 
 ## Design Docs
 * [View Wireframes][views]
@@ -73,11 +72,10 @@ collections, but they will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
+- [ ] "Like" button for pictures
+- [ ] Drag and drop file for picture upload
 - [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
+- [ ] Checkboxes for changing picture albums
 - [ ] Reblogging
 - [ ] Multiple sessions/session management
 - [ ] User avatars
@@ -88,4 +86,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
