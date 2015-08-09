@@ -1,29 +1,29 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Viewing Albums and Pictures
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+Api::AlbumsController (create, destroy, index, show)
+Api::PicturesController (create, destroy, show)
 
 ### Views
-* blogs/show.json.jbuilder
+* albums/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* Album (parses nested `pictures` association)
+* Picture
 
 ### Collections
-* Blogs
-* Posts
+* Albums
+* Pictures
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
+* AlbumForm
+* AlbumShow (composite view, contains PicturesIndex subview)
+* PicturesIndex (composite view, contains PicturesIndexItem subviews)
+* PicturesIndexItem
+* PictureShow
 
 ## Gems/Libraries
