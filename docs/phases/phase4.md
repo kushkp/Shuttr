@@ -15,6 +15,6 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+<!-- * FeedShow (composite view, contains PostsIndex subview) -->
 
 ## Gems/Libraries

@@ -10,14 +10,12 @@
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
 * AlbumsController (create, new, show)
-* PicturesController (create, new, show)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
 * albums/index.html.erb
 * albums/new.html.erb
-* album/show.html.erb
 
 ## Backbone
 ### Models

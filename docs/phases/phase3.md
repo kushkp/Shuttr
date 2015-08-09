@@ -13,9 +13,7 @@
 ### Collections
 
 ### Views
-* PostForm
 
 ## Gems/Libraries
 * Filepicker
-* Markdown-js
-* Bootstrap Markdown
+* GoogleMap API
