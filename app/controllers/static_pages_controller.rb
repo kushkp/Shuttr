@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  # after_initialize :require_login #HELP: is this how to prevent backbone app from loading without login?
+  before_action :require_login
 
   def root
     if logged_in?

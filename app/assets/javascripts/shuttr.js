@@ -4,14 +4,10 @@ window.Shuttr = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    // alert('Hello from Backbone!');
     new Shuttr.Routers.Router({
       $rootEl: $(".main")
     });
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Shuttr.initialize();
-});
