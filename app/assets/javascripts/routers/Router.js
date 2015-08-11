@@ -1,7 +1,7 @@
 Shuttr.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl || $(".main");
-    this.albums = options.albums ;//|| new Shuttr.Collections.Albums();
+    this.albums = options.albums;//|| new Shuttr.Collections.Albums();
   },
 
   routes: {
