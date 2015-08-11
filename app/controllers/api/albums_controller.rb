@@ -21,7 +21,14 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
+    #TODO: test newly written function
     @album = Album.find(params[:id])
+    if (current_user.id == @album.owner_id)
+      render :show
+    else
+      flash[:errors] = ["Invalid Album"]
+      render :index
+    end
   end
 
   def index
@@ -39,6 +46,4 @@ private
   def album_params
     params.require(:album).permit(:title, :url)
   end
-
-
 end
