@@ -1,8 +1,1 @@
-<%= render partial: "shared/errors" %>
-<h1> Sign Up </h1>
-
-<form action="<%=users_url%>" method="post">
-  <%= render partial: "shared/form" %>
-
-  <input type="submit" value="Sign Up">
-</form>
+<%= render partial: "shared/form", locals: { action: "users_url", content: "Sign Up" } %>

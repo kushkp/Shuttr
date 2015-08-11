@@ -1,3 +1,6 @@
+<h2><%= content %></h2>
+
+<form action="<%= action %>" method="post">
 <%=auth_token%>
 
 <label for="user_email">Email</label>
@@ -13,3 +16,6 @@
        id="user_password"
        name="user[password]"
        value="<%= @user.password if @user%>">
+
+<input type="submit" value="<%= content %>">
+</form>
