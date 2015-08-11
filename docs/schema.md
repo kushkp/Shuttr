@@ -16,7 +16,8 @@ owner_id    | integer   | not null, foreign key (references users)
 album_id    | integer   | not null, foreign key (references albums)
 title       | string    | not null
 url         | string    | not null
-location    | string    |
+longitude   | integer   |
+latitude    | integer   |
 
 ## albums
 column name | data type | details
