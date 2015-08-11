@@ -15,11 +15,11 @@
 ## New Album
 ![new-album]
 
-## Picture Show
-![picture-show]
+## Photo Show
+![photo-show]
 
-## New Picture
-![new-picture]
+## New Photo
+![new-photo]
 
 ## Map View
 ![map-view]
@@ -33,7 +33,7 @@
 [map-preview]: ./wireframes/map_preview.jpg
 [map-view]: ./wireframes/map_view.jpg
 [new-album]: ./wireframes/new_album.jpg
-[new-picture]: ./wireframes/new_picture.jpg
+[new-photo]: ./wireframes/new_photo.jpg
 [new-session]: ./wireframes/new_session.jpg
-[picture-show]: ./wireframes/picture_show.jpg
+[photo-show]: ./wireframes/photo_show.jpg
 [user-albums-index]: ./wireframes/user_albums_index.jpg

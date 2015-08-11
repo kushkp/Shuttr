@@ -14,7 +14,7 @@
 
 ### Views
 * Map
-* PictureGutter
+* PhotoGutter
 
 ## Gems/Libraries
 * Filepicker

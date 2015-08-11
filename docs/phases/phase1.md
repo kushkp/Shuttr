@@ -4,7 +4,7 @@
 ### Models
 * User
 * Album
-* Picture
+* Photo
 
 ### Controllers
 * UsersController (create, new)

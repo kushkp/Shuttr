@@ -1,4 +1,4 @@
-# Phase 5: Picture Refreshing (~1-2 days)
+# Phase 5: Photo Refreshing (~1-2 days)
 
 ## Rails
 ### Models

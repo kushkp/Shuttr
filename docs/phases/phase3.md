@@ -1,4 +1,4 @@
-# Phase 3: Viewing Single Album and Pictures (~1 days)
+# Phase 3: Viewing Single Album and Photos (~1 days)
 
 ## Rails
 ### Models
@@ -6,7 +6,7 @@
 ### Controllers
 
 ### Views
-* pictures/show.json.jbuilder
+* photos/show.json.jbuilder
 
 ## Backbone
 ### Models
@@ -14,5 +14,5 @@
 ### Collections
 
 ### Views
-* AlbumShow (composite view, contains PicturesIndex subview)
-* PictureShow
+* AlbumShow (composite view, contains PhotosIndex subview)
+* PhotoShow
