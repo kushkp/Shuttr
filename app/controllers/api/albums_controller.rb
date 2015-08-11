@@ -25,7 +25,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all
+    @albums = Album.all.where(owner_id: current_user.id)
     render :index
   end
 
