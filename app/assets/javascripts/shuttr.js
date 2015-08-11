@@ -5,7 +5,9 @@ window.Shuttr = {
   Routers: {},
   initialize: function() {
     alert('Hello from Backbone!');
-    // new Shuttr.Routers.Router({});
+    new Shuttr.Routers.Router({
+      $rootEl: $(".main")
+    });
     Backbone.history.start();
   }
 };

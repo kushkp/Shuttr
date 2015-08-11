@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
   validates :email, :session_token, uniqueness: true
   after_initialize :ensure_session_token
 
-  has_many :lists
-  has_many :comments, through: :lists
+
 
   def self.find_by_credentials(un, pw)
     @user = User.find_by(email: un)
