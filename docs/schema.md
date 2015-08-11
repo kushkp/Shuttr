@@ -12,7 +12,6 @@ session_token   | string    | not null, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
 album_id    | integer   | not null, foreign key (references albums)
 title       | string    | not null
 url         | string    | not null
@@ -25,3 +24,4 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 url         | string    | not null
+owner_id    | integer   | not null, foreign key (references users)

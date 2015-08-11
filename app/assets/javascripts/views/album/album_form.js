@@ -18,7 +18,7 @@ Shuttr.Views.AlbumForm = Backbone.View.extend({
     this.model.save(formdata, {
       success: function() {
         this.collection.add(this.model);
-        Backbone.history.navigate("albums/", { trigger: true});
+        Backbone.history.navigate("albums/" + this.model.id, { trigger: true});
       }.bind(this),
       error: function() {
         console.log("error");

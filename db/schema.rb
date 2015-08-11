@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150811160325) do
   create_table "albums", force: :cascade do |t|
     t.string   "title",      null: false
     t.string   "url"
-    t.integer  "user_id",    null: false
+    t.integer  "owner_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,5 +36,5 @@ ActiveRecord::Schema.define(version: 20150811160325) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  add_foreign_key "albums", "users"
+  add_foreign_key "albums", "users", column: "owner_id"
 end

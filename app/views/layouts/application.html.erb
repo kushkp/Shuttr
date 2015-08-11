@@ -23,6 +23,11 @@
       <%= link_to "Sign In", new_session_url %>
     <% end %>
 
+    <div class="errors">
+      <%= render partial: "shared/errors" %>
+    </div>
+
+
           <button type="button" class="navbar-toggle collapsed"
                   data-toggle="collapse"
                   data-target="#collapse-menu"

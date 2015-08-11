@@ -8,12 +8,12 @@
 
 Album.create!({title: "Euro-trip",
                url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
-               user_id: "1"})
+               owner_id: "1"})
 
 Album.create!({title: "Around SF",
                url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
-               user_id: "1"})
+               owner_id: "1"})
 
 Album.create!({title: "My Pets",
                url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
-               user_id: "1"})
+               owner_id: "1"})
