@@ -1,4 +1,8 @@
-<a href="<%= "#albums/" + album.id %>" ><%= album.escape("title") %></a>
+<a href="<%= "#albums/" + album.id %>" >
+  <%= album.escape("title") %>
+  <img src="<%= album.escape("url") %>" alt="album-thumbnail"/>
+</a>
+
 <button type="button"
         class="delete_album"
         data-id="<%= album.id %>"

@@ -10,6 +10,7 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template({ albums: this.collection });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   },
 
