@@ -1,5 +1,5 @@
-json.(@album, :title, :id, :owner_id, :url)
+json.(@album, :id, :title, :owner_id, :url)
 
-# json.lists @board.lists do |list|
-#   json.partial! 'api/lists/list', list: list
-# end
+json.photos @album.photos do |photo|
+  json.partial! 'api/photos/photo', photo: photo
+end
