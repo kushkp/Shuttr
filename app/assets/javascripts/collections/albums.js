@@ -1,5 +1,5 @@
 Shuttr.Collections.Albums = Backbone.Collection.extend({
-  url: "/api/boards",
+  url: "/api/albums",
   model: Shuttr.Models.Album,
 
   getOrFetch: function(id) {
