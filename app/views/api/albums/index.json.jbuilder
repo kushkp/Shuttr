@@ -1,1 +1,3 @@
-json.array! @albums, :id, :title, :url
+json.array! (@albums) do |album|
+  json.partial! 'api/albums/album', album: album
+end

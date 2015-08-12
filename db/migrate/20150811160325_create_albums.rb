@@ -8,6 +8,5 @@ class CreateAlbums < ActiveRecord::Migration
     end
 
     add_index :albums, :title, unique: true
-    add_foreign_key :albums, :users, column: :owner_id
   end
 end
