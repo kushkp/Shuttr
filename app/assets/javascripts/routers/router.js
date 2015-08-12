@@ -2,12 +2,14 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl || $(".main");
     this.albums = options.albums || new Shuttr.Collections.Albums();
+    this.photos = options.photos || new Shuttr.Collections.Photos();
   },
 
   routes: {
     "" : "albumsIndex",
     "albums/new" : "albumNew",
-    "albums/:id" : "albumShow"
+    "albums/:id" : "albumShow",
+    "photos/:id" : "photoShow"
   },
 
   albumsIndex: function() {
@@ -28,6 +30,12 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   albumShow: function(id) {
     var album = this.albums.getOrFetch(id);
     var view = new Shuttr.Views.AlbumShow({ model: album });
+    this._swapView(view);
+  },
+
+  photoShow: function(id) {
+    var photo = this.photos.getOrFetch(id);
+    var view = new Shuttr.Views.PhotoShow({ model: photo });
     this._swapView(view);
   },
 

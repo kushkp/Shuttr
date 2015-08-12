@@ -1,5 +1,5 @@
-Shuttr.Views.PhotoShow = Backbone.View.extend ({
-  template: JST["photo/show"],
+Shuttr.Views.PhotoItem = Backbone.View.extend ({
+  template: JST["photo/photo_item"],
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
@@ -9,5 +9,5 @@ Shuttr.Views.PhotoShow = Backbone.View.extend ({
     var content = this.template({ photo: this.model });
     this.$el.html(content);
     return this;
-  }
+  },
 });

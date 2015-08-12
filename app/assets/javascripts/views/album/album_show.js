@@ -15,7 +15,8 @@ Shuttr.Views.AlbumShow = Backbone.CompositeView.extend({
   },
 
   addPhoto: function(photo) {
-    var photoShow = new Shuttr.Views.PhotoShow({ model: photo });
-    this.addSubview(".photos", photoShow);
+    var photoItem = new Shuttr.Views.PhotoItem({ model: photo });
+    this.addSubview(".photos", photoItem);
   }
+
 });
