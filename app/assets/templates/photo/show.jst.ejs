@@ -1,2 +1,6 @@
-<%= photo.escape("title") %>
-<img src="<%= photo.escape("url") %>"/>
+<div class="photo_img">
+  <img src="<%= photo.escape("url") %>"/>
+</div>
+<div class="photo_title">
+  <%= photo.escape("title") %>
+</div>
