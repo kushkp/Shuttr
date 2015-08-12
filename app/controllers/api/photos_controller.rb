@@ -32,13 +32,18 @@ class Api::PhotosController < ApplicationController
 
   def index
     # TODO: Select for 1) photos belonging to user 2) photos in album
-    @albums = Photo.all
+    @photos = Photo.all
     render :index
   end
 
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy!
+    render :index
+  end
+
+  def explore
+    @photos = Photo.all
     render :index
   end
 

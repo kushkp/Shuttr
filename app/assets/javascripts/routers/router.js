@@ -7,9 +7,17 @@ Shuttr.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "" : "albumsIndex",
+    "explore" : "explore",
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
+    "photos" : "photoIndex",
     "photos/:id" : "photoShow"
+  },
+
+  explore: function() {
+    this.photos.fetch();
+    var view = new Shuttr.Views.Explore({ collection: this.photos });
+    this._swapView(view);
   },
 
   albumsIndex: function() {
@@ -30,6 +38,13 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   albumShow: function(id) {
     var album = this.albums.getOrFetch(id);
     var view = new Shuttr.Views.AlbumShow({ model: album });
+    this._swapView(view);
+  },
+
+  photoIndex: function() {
+    // TODO: Do I want to be fetching all the pictures to display just this user's pictures
+    this.photos.fetch();
+    var view = new Shuttr.Views.PhotoIndex({ collection: this.photos });
     this._swapView(view);
   },
 
