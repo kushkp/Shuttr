@@ -16,6 +16,7 @@
 //= require backbone
 //= require shuttr
 //= require bootstrap
+//= require masonry
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
