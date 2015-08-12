@@ -1,0 +1,10 @@
+<div class="photo">
+  <div class="photo_img">
+  <a href="<%= "#photos/" + photo.id %>" >
+    <img src="<%= photo.escape("url") %>" alt="photo-thumbnail"/>
+  </a>
+  </div>
+  <div class="photo_title">
+    <%= photo.escape("title") %>
+  </div>
+</div>
