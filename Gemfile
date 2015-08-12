@@ -7,6 +7,9 @@ gem 'rails', '4.2.3'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+gem 'cloudinary'
+gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -33,16 +36,6 @@ gem 'bootstrap-sass'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-
-
-
-
-# gem 'serialize_json-rails'
-
-
-
-
-
 #TODO: NOT SURE WHERE TO PUT THESE
 gem 'bcrypt'
 
@@ -60,7 +53,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
 
   gem 'better_errors'
 
