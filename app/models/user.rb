@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
   validates :email, :session_token, uniqueness: true
   after_initialize :ensure_session_token
 
-  has_many :albums
+  has_many(
+    :albums,
+    class_name: :Album,
+    primary_key: :id,
+    foreign_key: :owner_id
+  )
+  
   has_many :photos, through: :albums, source: :photos
 
   def self.find_by_credentials(un, pw)

@@ -19,6 +19,7 @@ url         | string    | not null
 longitude   | integer   |
 latitude    | integer   |
 -description| string    |
+-owner_id   | integer   | not null
 
 ## albums
 column name | data type | details

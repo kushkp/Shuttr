@@ -6,8 +6,8 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "albumsIndex",
-    "explore" : "explore",
+    "" : "explore",
+    "albums" : "albumsIndex",
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
     "photos" : "photoIndex",
