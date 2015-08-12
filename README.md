@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://shuttr-app.herokuapp.com
 
 ## Minimum Viable Product
 Shuttr is a clone of Flickr built on Rails and Backbone. Users can:
