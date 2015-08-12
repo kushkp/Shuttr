@@ -8,7 +8,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
-gem 'cloudinary'
+# gem 'cloudinary'
 gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -57,4 +57,5 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'binding_of_caller'
+
 end
