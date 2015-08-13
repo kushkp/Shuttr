@@ -16,7 +16,15 @@
 //= require backbone
 //= require shuttr
 //= require bootstrap
-//= require masonry
+
+//= require masonry/jquery.masonry
+//= require masonry/jquery.event-drag
+//= require masonry/jquery.imagesloaded.min
+//= require masonry/jquery.infinitescroll.min
+//= require masonry/modernizr-transitions
+//= require isotope/jquery.isotope
+
+//= require imagesloaded
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

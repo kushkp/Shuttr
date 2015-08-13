@@ -10,12 +10,5 @@ window.Shuttr = {
     });
     Backbone.history.start();
 
-
-    $('.grid').masonry({
-      itemSelector: '.grid-item'
-    });
-
-
-
   }
 };

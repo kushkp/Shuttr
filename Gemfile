@@ -8,6 +8,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'masonry-rails'
 # gem 'cloudinary'
 gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets

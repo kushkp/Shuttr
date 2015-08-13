@@ -1,21 +1,25 @@
 <h2>Upload Picture</h2>
 
 
-<form class="" action="index.html" method="post">
+<form action="index.html" method="post">
 
   <label for="photo-title">Title:</label><br>
-  <input type="text"
-         id="photo-title"
-         name="photo[title]"
-         class="photo-title"
-         value=""><br>
+  <input type="text" id="photo-title" value=""><br>
 
   <label for="photo-desc">Description:</label><br>
   <textarea id="photo-desc"
             name="photo[description]"
-            class="photo-desc"
             rows="4" cols="20"
             ></textarea><br>
+
+  <label for="album-id">Album:</label><br>
+  <select id="album-id">
+    <!-- <#% current_user.albums().forEach( function(album) { %>
+      <option value="<#%= album.id %>"
+        ><#%= album.escape("title") %>
+      </option>
+    <#%  }); %> -->
+  </select><br>
 
   <input type="submit" value="Upload">
 </form>

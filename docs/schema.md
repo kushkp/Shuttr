@@ -28,3 +28,12 @@ id          | integer   | not null, primary key
 title       | string    | not null
 url         | string    | not null
 owner_id    | integer   | not null, foreign key (references users)
+
+
+## comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+owner_id    | integer   | not null, foreign key (references users)
+photo_id    | integer   | not null, foreign key (references photos)
+body        | text      | not null

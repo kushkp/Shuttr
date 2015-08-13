@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.photo-title {
+  display: none;
+}
 
 /* clear fix */
 .grid:after {
@@ -9,17 +12,30 @@
   display: block;
   clear: both;
 }
+// Can get rid of most of CSS.
+// It is using default bootstrap
 
-/* ---- .grid-item ---- */
+.grid {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
+.grid-sizer,
 .grid-item {
   width: 33.333%;
+}
+
+
+.grid-item {
+  display: block;
   float: left;
+  overflow: hidden;
   border: 2px solid gray;
 }
 
 .grid-item img {
   display: block;
   max-width: 100%;
-  min-width: 100%;
 }
