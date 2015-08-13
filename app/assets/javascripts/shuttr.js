@@ -9,5 +9,14 @@ window.Shuttr = {
       $rootEl: $(".main")
     });
     Backbone.history.start();
+
+
+    $('.grid').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: 160
+    });
+
+
+
   }
 };

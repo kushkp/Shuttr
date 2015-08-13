@@ -5,10 +5,6 @@ Shuttr.Views.PhotoNew = Backbone.View.extend ({
     "submit form" : "upload"
   },
 
-  // initialize: function() {
-  //
-  // },
-
   render: function() {
     var content = this.template({ photo: this.model });
     this.$el.html(content);
@@ -24,6 +20,7 @@ Shuttr.Views.PhotoNew = Backbone.View.extend ({
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       var data = result[0];
       photo.set({url: data.url});
+      console.log(data);
       photo.save({}, {
         success: function() {
           console.log("success");
