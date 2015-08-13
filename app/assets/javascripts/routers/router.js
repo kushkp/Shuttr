@@ -57,7 +57,9 @@ Shuttr.Routers.Router = Backbone.Router.extend({
 
   photoUpload: function() {
     var photo = new Shuttr.Models.Photo();
-    var view = new Shuttr.Views.PhotoNew({ model: photo });
+    var albums = new Shuttr.Collections.Albums();
+    albums.fetch();
+    var view = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
     this._swapView(view);
   },
 

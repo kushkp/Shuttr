@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// minimal styling
+.upload-form {
+  max-width: 300px;
+  margin: 0 auto;
+  background: white;
+}
+
 .photo-title {
   display: none;
 }
