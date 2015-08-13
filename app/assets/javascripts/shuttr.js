@@ -12,8 +12,7 @@ window.Shuttr = {
 
 
     $('.grid').masonry({
-      itemSelector: '.grid-item',
-      columnWidth: 160
+      itemSelector: '.grid-item'
     });
 
 
