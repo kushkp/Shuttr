@@ -14,11 +14,11 @@
 }
 
 /* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+// .grid:after {
+//   content: '';
+//   display: block;
+//   clear: both;
+// }
 // Can get rid of most of CSS.
 // It is using default bootstrap
 
@@ -31,7 +31,7 @@
 
 .grid-sizer,
 .grid-item {
-  width: 33.333%;
+  width: 25%;
 }
 
 

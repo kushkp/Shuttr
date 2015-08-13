@@ -16,6 +16,7 @@
 //= require backbone
 //= require shuttr
 //= require bootstrap
+//= require masonry
 
 //= require masonry/jquery.masonry
 //= require masonry/jquery.event-drag

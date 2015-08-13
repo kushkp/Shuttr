@@ -3,5 +3,4 @@ class Photo < ActiveRecord::Base
 
   belongs_to :album
   has_one :owner, through: :album, source: :owner
-
 end

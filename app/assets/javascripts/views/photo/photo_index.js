@@ -11,6 +11,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     var content = this.template({ photos: this.collection });
     this.$el.html(content);
     this.attachSubviews();
+    this.callMasonry();
     return this;
   },
 
@@ -19,15 +20,8 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     this.addSubview(".photos", photoItem);
   },
 
-  callSalvatorre: function(photo) {
-    var grid = document.querySelector('#grid');
-    var item = document.createElement('article');
-
-    salvattore.appendElements(grid, [item]);
-    item.outerHTML = 'I’ve been appended!';
-  },
-
   callMasonry: function() {
+    $('.grid').append("div").addClass("grid-sizer");
     var $grid = $('.grid').masonry({
       itemSelector: '.grid-item',
       percentPosition: true,
@@ -37,4 +31,12 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
         $grid.masonry();
     });
   }
+  //
+  // callSalvatorre: function(photo) {
+  //   var grid = document.querySelector('#grid');
+  //   var item = document.createElement('article');
+  //
+  //   salvattore.appendElements(grid, [item]);
+  //   item.outerHTML = 'I’ve been appended!';
+  // }
 });
