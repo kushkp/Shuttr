@@ -1,6 +1,9 @@
-<%= comment.escape("body") %>
-<%= comment.escape("body") %>
-<button type="button"
-        class="delete_comment"
-        data-id="<%= comment.id %>"
-        >Delete</button>
+<div class="comment-item">
+  <%= comment.escape("body") %>
+  <%= comment.escape("user_id") %>
+  <%= comment.escape("photo_id") %>
+  <button type="button"
+          class="delete-comment"
+          data-id="<%= comment.id %>"
+          >Delete</button>
+</div>

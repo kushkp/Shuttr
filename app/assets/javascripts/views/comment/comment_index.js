@@ -1,9 +1,10 @@
 Shuttr.Views.CommentsIndex = Backbone.CompositeView.extend ({
-  template: JST["comments/index"],
+  template: JST["comment/index"],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync add", this.render);
     this.listenTo(this.collection, "add", this.addCommentItem);
+    this.listenTo(this.collection, "remove", this.removeCommentItem);
     this.collection.each(this.addCommentItem.bind(this));
   },
 
@@ -14,9 +15,13 @@ Shuttr.Views.CommentsIndex = Backbone.CompositeView.extend ({
     return this;
   },
 
-  addCommentItem: function() {
+  addCommentItem: function(comment) {
     var commentItem = new Shuttr.Views.CommentItem({ model: comment });
     this.addSubview(".comments", commentItem);
+  },
+
+  removeCommentItem: function(comment) {
+    this.removeModelSubview(".comments", comment);
   }
 
 });

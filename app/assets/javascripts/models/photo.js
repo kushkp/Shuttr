@@ -3,7 +3,7 @@ Shuttr.Models.Photo = Backbone.Model.extend ({
 
   comments: function() {
     if (!this._comments) {
-      this._comments = Shuttr.Collections.Comments([], { photo: this });
+      this._comments = new Shuttr.Collections.Comments([], { photo: this });
     }
 
     return this._comments;
