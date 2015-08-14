@@ -1,5 +1,6 @@
 Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
   template: JST['photo/gutter'],
+  className: 'test-class',
 
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
@@ -16,7 +17,7 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
   },
 
   addPhotoItem: function(photo) {
-    var photoItem = new Shuttr.Views.PhotoItem({ model: photo });
+    var photoItem = new Shuttr.Views.PhotoGutterItem({ model: photo });
     this.addSubview(".gutter-photo-index", photoItem);
   },
 
