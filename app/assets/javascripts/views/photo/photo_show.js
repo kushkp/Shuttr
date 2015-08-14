@@ -3,6 +3,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.comments(), "add", this.render);
     this.addCommentsIndex();
   },
 
@@ -13,7 +14,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   },
 
   addCommentsIndex: function() {
-    var commentsIndex = new Shuttr.Views.CommentsIndex({ collection: comments });
+    var commentsIndex = new Shuttr.Views.CommentsIndex({ collection: this.model.comments() });
     this.addSubview(".comments", CommentsIndex);
   }
 });
