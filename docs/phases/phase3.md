@@ -16,3 +16,6 @@
 ### Views
 * AlbumShow (composite view, contains PhotosIndex subview)
 * PhotoShow
+
+## Gems/Libraries
+* Filepicker

@@ -27,5 +27,3 @@ PhotosController (create, new, destroy)
 * PhotosForm
 * PhotosIndex (composite view, contains PhotosIndexItem subviews)
 * PhotosIndexItem
-
-## Gems/Libraries

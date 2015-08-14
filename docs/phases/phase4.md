@@ -17,5 +17,4 @@
 * PhotoGutter
 
 ## Gems/Libraries
-* Filepicker
 * GoogleMap API

@@ -12,7 +12,7 @@ Shuttr is a clone of Flickr built on Rails and Backbone. Users can:
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] Create albums
-- [ ] Upload photos
+- [x] Upload photos
 - [ ] View albums and photos (album/photo index page)
 - [ ] View a single photo (photo show page)
 - [ ] Map view of photos
@@ -46,17 +46,16 @@ indexes, all inside a single Backbone app.
 [Details][phase-two]
 
 ### Phase 3: Viewing Single Album and Photos (~1 days)
-I will add routes that fetch a single album and photo. By the end of this
-phase, users will be able to click on a single album or photo to load
-its show page.
+I plan to use third-party libraries to add functionality, such as integrating
+Filepicker for file upload so users can upload images. I will add routes that
+fetch a single album and photo. By the end of this phase, users will be able
+to click on a single album or photo to load its show page. 
 
 [Details][phase-three]
 
 ### Phase 4: Viewing Map of Posts (~3 days)
-I plan to use third-party libraries to add functionality, such as integrating
-Filepicker for file upload so users can upload images. I will also integrate the
-Google map API, so photos can be viewed on a map by location, and users can
-select a location when uploading the photos.
+I will integrate the Google map API, so photos can be viewed on a map
+by location, and users can select a location when uploading the photos.
 
 [Details][phase-four]
 
