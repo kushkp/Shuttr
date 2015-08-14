@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.clearfix:before, .clearfix:after { content: ""; display: table; margin: 0; padding: 0}
+.clearfix:before, .clearfix:after { content: ""; display: table; margin: 0; padding: 0; }
 .clearfix:after { clear: both; }
-.clearfix { zoom: 1; margin: 0; padding: 0}
+.clearfix { zoom: 1; margin: 0; padding: 0; }
 
 .grid {
   display: block;
