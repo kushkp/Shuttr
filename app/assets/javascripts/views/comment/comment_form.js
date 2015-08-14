@@ -11,7 +11,15 @@ Shuttr.Views.CommentForm = Backbone.View.extend ({
     return this;
   },
 
-  createComment: function() {
+  createComment: function(e) {
+    e.preventDefault();
 
+    this.model.save({
+      body: this.$('textarea').val()
+    }, { wait: true });
+
+    this.$('textarea').val('');
+    this.$('textarea').focus();
+    // TODO: Why is this not focusing?
   }
 });

@@ -23,12 +23,12 @@ class Api::PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     # TODO: is there a way to delegate this? @photo.owner_id
-    if (current_user.id == @photo.owner.id)
+    # if (current_user.id == @photo.owner.id)
       render :show
-    else
-      flash[:errors] = ["Invalid Photo"]
-      render :index
-    end
+    # else
+    #   flash[:errors] = ["Invalid Photo"]
+    #   render :index
+    # end
   end
 
   def index

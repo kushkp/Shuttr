@@ -4,6 +4,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
+    this.listenTo(this.collection, "remove", this.removePhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
   },
 
@@ -20,8 +21,12 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     this.addSubview(".photos", photoItem);
   },
 
+  removePhotoItem: function(photo) {
+    this.removeModelSubview(".photos", photo);
+  },
+
   callMasonry: function() {
-    $('.grid').append("div").addClass("grid-sizer");
+    // $('.grid').append("div").addClass("grid-sizer");
     var $grid = $('.grid').masonry({
       itemSelector: '.grid-item',
       percentPosition: true,
