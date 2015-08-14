@@ -12,7 +12,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     var content = this.template({ photos: this.collection });
     this.$el.html(content);
     this.attachSubviews();
-    this.callMasonry();
+    // this.callMasonry();
     return this;
   },
 

@@ -4,7 +4,10 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    // Shuttr.CURRENT_USER = JSON.parse("<%= current_user.to_json %>");
+    Shuttr.CURRENT_USER = {
+      id: "<%= current_user.id %>",
+      email: "<%= current_user.id %>",
+      };
     Shuttr.initialize();
   });
 </script>

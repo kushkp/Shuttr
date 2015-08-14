@@ -32,8 +32,12 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
-    # TODO: Select for 1) photos belonging to user 2) photos in album
-    @photos = Photo.all.where(owner_id: current_user.id)
+    if (params["owner_id"])
+      @photos = Photo.all.where(owner_id: params["owner_id"])
+    else
+      @photos = Photo.all
+    end
+
     render :index
   end
 
@@ -42,11 +46,6 @@ class Api::PhotosController < ApplicationController
     @photo.destroy!
     render :show
   end
-
-  # def explore
-  #   @photos = Photo.all
-  #   render :index
-  # end
 
 private
   def photo_params
