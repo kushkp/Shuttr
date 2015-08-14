@@ -14,36 +14,84 @@
   clear: both;
 }
 
-.col1 { width: 80px; }
-.col2 { width: 180px; }
-.col3 { width: 280px; }
-.col4 { width: 380px; }
-.col5 { width: 480px; }
+.photos.grid.centered { margin: 0 auto; }
 
-.col1 img { max-width: 80px; }
-.col2 img { max-width: 180px; }
-.col3 img { max-width: 280px; }
-.col4 img { max-width: 380px; }
-.col5 img { max-width: 480px; }
+.col1 { width: 70px; }
+.col2 { width: 140px; }
+.col3 { width: 210px; }
+.col4 { width: 280px; }
+.col5 { width: 350px; }
+.col6 { width: 420px; }
+.col7 { width: 490px; }
+
+.col1 img { max-width: 70px; }
+.col2 img { max-width: 140px; }
+.col3 img { max-width: 210px; }
+.col4 img { max-width: 280px; }
+.col5 img { max-width: 350px; }
+.col6 img { max-width: 420px; }
+.col7 img { max-width: 490px; }
 
 .grid-sizer,
 .grid-item {
-  width: 30.33%;
+  width: 33.33%;
 }
-
 
 .grid-item {
   display: block;
-  // float: left;
   overflow: hidden;
-  border: 2px solid gray;
 }
 
 .grid-item img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
 }
 
-.grid .photo-title {
+.grid-item .photo-title {
+  width: 100%;
+  height: 25px;
+  bottom: inherit;
   display: none;
+}
+
+.grid-item p {
+  top: 0;
+  left: 0;
+  display: none;
+  position: absolute;
+}
+
+// .grid-item:hover .photo-title {
+//   display: block;
+// }
+
+.grid-item:hover img {
+  opacity: 0.5;
+}
+
+.grid,
+.grid .grid-item {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.grid {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.grid .grid-item {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
 }
