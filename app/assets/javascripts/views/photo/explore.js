@@ -23,7 +23,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   callMasonry: function() {
     this.$('.grid').masonry({
       itemSelector: '.grid-item',
-      columnWidth: 200
+      columnWidth: 5
     });
   //   var container = document.querySelector('.grid');
   //   var masonry = new Masonry(container, {
