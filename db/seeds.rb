@@ -8,17 +8,17 @@
 
 #CREATE USERS BEFORE SEEDING!
 
-# Album.create!({ title: "Euro-trip",
-#                url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
-#                owner_id: "1" })
-#
-# Album.create!({ title: "Around SF",
-#                url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
-#                owner_id: "1" })
-#
-# Album.create!({ title: "My Pets",
-#                url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
-#                owner_id: "1" })
+Album.create!({ title: "Euro-trip",
+               url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
+               owner_id: "1" })
+
+Album.create!({ title: "Around SF",
+               url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
+               owner_id: "1" })
+
+Album.create!({ title: "My Pets",
+               url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
+               owner_id: "1" })
 
 Photo.create!({ album_id: 4,
                 title: "Eiffel Tower",
@@ -55,3 +55,8 @@ Photo.create!({ album_id: 6,
 Photo.create!({ album_id: 6,
                 title: "Kitten",
                 url: "http://www.eastcottvets.co.uk/uploads/Animals/gingerkitten.jpg" })
+
+Comment.create!({user_id: 1, photo_id: 2, body: "I want to go to Paris!"})
+Comment.create!({user_id: 2, photo_id: 2, body: "I love Paris!"})
+Comment.create!({user_id: 1, photo_id: 2, body: "Have you even been there?"})
+Comment.create!({user_id: 2, photo_id: 2, body: "no :("})
