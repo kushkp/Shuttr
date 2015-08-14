@@ -5,7 +5,7 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
     this.addMap();
-    // this.addPhotoGutter();
+    this.addPhotoGutter();
   },
 
   render: function() {
@@ -21,6 +21,7 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   },
 
   addPhotoGutter: function() {
+    this.collection.fetch();
     var photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
     this.addSubview(".photo-gutter", photoGutter);
   }
