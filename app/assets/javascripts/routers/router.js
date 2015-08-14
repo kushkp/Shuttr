@@ -64,6 +64,12 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  mapView: function() {
+    this.photos.fetch();
+    var view = new Shuttr.Views.MapContainer({ collection: this.photos });
+    this._swapView(view);
+  },
+
   _swapView: function(view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
