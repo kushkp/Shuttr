@@ -21,20 +21,16 @@
     <div class="collapse navbar-collapse" id="collapse-menu">
       <ul class="nav navbar-nav pull-right">
         <% if logged_in? %>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <%= current_user.email %><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "My Albums", "#albums" %></li>
+                <li><%= link_to "My Photos", "#photos" %></li>
+                <li><%= link_to "Sign Out", session_url, method: :delete %></li>
+              </ul>
+            </li>
 
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button"
-                    id="dropdownMenu1" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true"
-                    ><%= current_user.email %>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to "My Albums", "#albums" %></li>
-              <li><%= link_to "My Photos", "#photos" %></li>
-              <li><%= link_to "Sign Out", session_url, method: :delete %></li>
-            </ul>
-          </div>
 
         <% else %>
           <li><%= link_to "Sign Up", new_user_url %></li>
