@@ -49,7 +49,7 @@ indexes, all inside a single Backbone app.
 I plan to use third-party libraries to add functionality, such as integrating
 Filepicker for file upload so users can upload images. I will add routes that
 fetch a single album and photo. By the end of this phase, users will be able
-to click on a single album or photo to load its show page. 
+to click on a single album or photo to load its show page.
 
 [Details][phase-three]
 
@@ -70,7 +70,8 @@ user moves the map.
 
 
 ### Bonus Features (TBD)
-- [ ] Drag and drop file for photo upload
+- [x] Drag and drop file for photo upload
+- [ ] 3D image hover effects
 - [ ] "Like" button for photos
 - [ ] Toggle Heat map of photo location
 - [ ] Checkboxes for changing photo albums
