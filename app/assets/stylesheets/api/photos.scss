@@ -106,24 +106,33 @@
 
 //New Photo Form
 
+h2.upload-form-heading {
+  display: block;
+  height: 30px;
+}
+
 .upload-form-map-container{
   position :relative;
   width: 600px;
   margin: 0px auto;
-  height:400px;
+  height:450px;
+  margin: 20px;
 }
+
 .upload-form-wrapper {
   position: absolute;
   padding-left: 20px;
   // text-align: center;
   margin: 0 auto;
-  top: 0;
+  // top: 0;
   left: 0;
   background: white;
   width: 300px;
   height: 400px;
   margin: 0;
   padding: 0;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 
 // form input {
@@ -142,9 +151,10 @@
   height: 400px;
   margin: 0;
   padding: 0;
-  top:0;
+  // top:0;
   right:0;
   bottom:0;
+  border-radius: 5px;
 }
 
 #formpage-map-canvas {
@@ -152,6 +162,7 @@
   width: 300px;
   margin: 0;
   padding: 0;
+  border-radius: 5px;
 }
 
 // div.upload-form-map-container {
