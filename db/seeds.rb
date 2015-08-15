@@ -85,7 +85,7 @@ Photo.create!({ album_id: 1,
                 long: 12.3358,
                 lat: 45.4375})
 
-Photo.create!({ album_id: 5,
+Photo.create!({ album_id: 3,
                 title: "Golden Gate Bridge",
                 url: "http://www.history.com/news/wp-content/uploads/2012/05/golden-gate-wide.jpg",
                 owner_id: 2,
@@ -93,7 +93,7 @@ Photo.create!({ album_id: 5,
                 long: -122.4786,
                 lat: 37.8197})
 
-Photo.create!({ album_id: 5,
+Photo.create!({ album_id: 3,
                 title: "The Pier",
                 url: "http://buildingphotos.com/sanfrancisco/pics/pier39.jpg",
                 owner_id: 2,
@@ -101,7 +101,7 @@ Photo.create!({ album_id: 5,
                 long: -122.4104,
                 lat: 37.8100})
 
-Photo.create!({ album_id: 5,
+Photo.create!({ album_id: 3,
                 title: "Financial District",
                 url: "http://media-cdn.tripadvisor.com/media/photo-s/01/66/95/a0/financial-district-taken.jpg",
                 owner_id: 2,
@@ -109,7 +109,7 @@ Photo.create!({ album_id: 5,
                 long: -122.4029,
                 lat: 37.7952})
 
-Photo.create!({ album_id: 6,
+Photo.create!({ album_id: 4,
                 title: "Husky",
                 url: "http://i.dailymail.co.uk/i/pix/2014/09/03/1409738988707_Image_galleryImage_Dated_03_09_2014_HUSKIES_.JPG",
                 owner_id: 1,
@@ -117,7 +117,7 @@ Photo.create!({ album_id: 6,
                 long: -73.9667,
                 lat: 40.7833})
 
-Photo.create!({ album_id: 6,
+Photo.create!({ album_id: 4,
                 title: "Kitten",
                 url: "http://www.eastcottvets.co.uk/uploads/Animals/gingerkitten.jpg",
                 owner_id: 1,

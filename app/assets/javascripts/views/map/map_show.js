@@ -14,7 +14,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   render: function() {
     var mapOptions = {
       center: { lat: 37.7833, lng: -122.4167 },
-      zoom: 1
+      zoom: 2
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
@@ -25,11 +25,12 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   addMarker: function(photo) {
     if (this._markers[photo.id]) { return; }
     // debugger;
+
     var view = this;
     var marker = new google.maps.Marker({
-      // position: { lat: photo.get('lat'), lng: photo.get('long') },
-      // map: this._map,
-      // title: photo.get('title')
+      position: { lat: parseFloat(photo.get('lat')), lng: parseFloat(photo.get('long')) },
+      map: this._map,
+      title: photo.get('title')
       // position: { lat: 48.4224, lng: 2.3453 },
       // map: this._map,
       // title: "Hello World"
