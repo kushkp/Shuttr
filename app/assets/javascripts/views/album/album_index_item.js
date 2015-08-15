@@ -1,8 +1,7 @@
 Shuttr.Views.AlbumIndexItem = Backbone.View.extend({
   template: JST["album/index_item"],
   model: Shuttr.Models.Album,
-  tagName: "li",
-  className: "album-index-item",
+  // className: "album-grid-item album-container",
 
   render: function() {
     var content = this.template({ album: this.model });

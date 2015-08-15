@@ -11,11 +11,25 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
     var content = this.template({ albums: this.collection });
     this.$el.html(content);
     this.attachSubviews();
+    this.callMasonry();
     return this;
   },
 
   addIndexItem: function(album) {
     var subview = new Shuttr.Views.AlbumIndexItem({ model: album });
-    this.addSubview('.albums-index', subview);
+    this.addSubview('.album-grid', subview);
+  },
+
+  callMasonry:function() {
+    var $container = $('.album-grid');
+
+    $container.imagesLoaded( function() {
+      $container.masonry({
+        itemSelector: '.album-grid-item',
+        columnWidth: 25,
+        isResizable: true,
+        isAnimated: !Modernizr.csstransitions,
+      });
+    });
   }
 });
