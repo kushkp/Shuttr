@@ -21,10 +21,15 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   callMasonry: function() {
-    this.$('.grid').masonry({
-      itemSelector: '.grid-item',
-      columnWidth: 10,
-      isAnimated: !Modernizr.csstransitions,
+    var $container = $('.grid');
+
+    $container.imagesLoaded( function() {
+      $container.masonry({
+        itemSelector: '.grid-item',
+        columnWidth: 10,
+        isResizable: true,
+        isAnimated: !Modernizr.csstransitions,
+      });
     });
   }
 });
