@@ -106,7 +106,53 @@
 
 //New Photo Form
 
+.upload-form-map-container{
+  position :relative;
+  width: 600px;
+  margin: 0px auto;
+  height:400px;
+}
+.upload-form-wrapper {
+  position: absolute;
+  padding-left: 20px;
+  // text-align: center;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 300px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
 
+// form input {
+//   margin: 0 auto;
+//   // text-align: center;
+// }
+//
+// form.upload-form-wrapper {
+//   margin: 0;
+//   padding: 0;
+// }
+
+.formpage-map {
+  position :absolute;
+  width: 300px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+#formpage-map-canvas {
+  height: 400px;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+}
 
 // div.upload-form-map-container {
 //   display: block;
