@@ -1,4 +1,4 @@
-Shuttr.Views.PhotoNew = Backbone.View.extend ({
+Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
   template: JST["photo/new"],
 
   events: {
@@ -7,12 +7,19 @@ Shuttr.Views.PhotoNew = Backbone.View.extend ({
 
   initialize: function(options) {
     this.listenTo(this.collection, "sync", this.render);
+    this.addMap();
   },
 
   render: function() {
     var content = this.template({ photo: this.model, albums: this.collection });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
+  },
+
+  addMap: function() {
+    var formPageMap = new Shuttr.Views.FormPageMap();
+    this.addSubview("#formpage-map-canvas", formPageMap);
   },
 
   upload: function(e) {

@@ -1,27 +1,32 @@
 
-<div class="upload-form-wrapper">
-  <form class="upload-form" action="index.html" method="post">
-  <h2 class="upload-form-heading">Upload Picture</h2>
+<div class="upload-form-map-container">
+  <div class="upload-form-wrapper">
+    <form class="upload-form" action="index.html" method="post">
+    <h2 class="upload-form-heading">Upload Picture</h2>
 
-    <label for="photo-title">Title:</label><br>
-    <input type="text" id="photo-title" value=""><br>
+      <label for="photo-title">Title:</label><br>
+      <input type="text" id="photo-title" value=""><br>
 
-    <label for="photo-desc">Description:</label><br>
-    <textarea id="photo-desc"
-              name="photo[description]"
-              rows="4" cols="20"
-              ></textarea><br>
+      <label for="photo-desc">Description:</label><br>
+      <textarea id="photo-desc"
+                name="photo[description]"
+                rows="4" cols="20"
+                ></textarea><br>
 
-    <label for="album-id">Album:</label><br>
-    <select id="album-id">
-        <option value="0">No Album</option>
-      <% albums.each(function(album) { %>
-        <option value="<%= album.id %>"
-          ><%= album.escape("title") %>
-        </option>
-      <%  }); %>
-    </select><br><br>
+      <label for="album-id">Album:</label><br>
+      <select id="album-id">
+          <option value="0">No Album</option>
+        <% albums.each(function(album) { %>
+          <option value="<%= album.id %>"
+            ><%= album.escape("title") %>
+          </option>
+        <%  }); %>
+      </select><br><br>
 
-    <input type="submit" value="Upload">
-  </form>
+
+      <input type="submit" value="Upload">
+    </form>
+  </div>
+  <div class="formpage-map"           id="formpage-map-canvas">
+  </div>
 </div>
