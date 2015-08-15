@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .clearfix:before, .clearfix:after { content: ""; display: table; margin: 0; padding: 0; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; margin: 0; padding: 0; }
+
+
+//Explore Page
 
 .grid {
   display: block;
@@ -103,7 +107,6 @@
           transition-property: left, right, top;
 }
 
-
 //New Photo Form
 
 h2.upload-form-heading {
@@ -111,12 +114,16 @@ h2.upload-form-heading {
   height: 30px;
 }
 
-.upload-form-map-container{
+div.formpage-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+div.upload-form-map-container{
   position :relative;
-  width: 600px;
-  margin: 0px auto;
+  width: 610px;
+  margin: 0 auto;
   height:450px;
-  margin: 20px;
 }
 
 .upload-form-wrapper {
@@ -124,8 +131,6 @@ h2.upload-form-heading {
   padding-left: 20px;
   // text-align: center;
   margin: 0 auto;
-  // top: 0;
-  left: 0;
   background: white;
   width: 300px;
   height: 400px;
@@ -135,23 +140,12 @@ h2.upload-form-heading {
   border-radius: 5px;
 }
 
-// form input {
-//   margin: 0 auto;
-//   // text-align: center;
-// }
-//
-// form.upload-form-wrapper {
-//   margin: 0;
-//   padding: 0;
-// }
-
 .formpage-map {
   position :absolute;
   width: 300px;
   height: 400px;
   margin: 0;
   padding: 0;
-  // top:0;
   right:0;
   bottom:0;
   border-radius: 5px;
@@ -160,35 +154,7 @@ h2.upload-form-heading {
 #formpage-map-canvas {
   height: 400px;
   width: 300px;
-  margin: 0;
+  margin-top: -10px;
   padding: 0;
   border-radius: 5px;
 }
-
-// div.upload-form-map-container {
-//   display: block;
-//   position: relative;
-//   width: 600px;
-//   height: inherit;
-//   margin: 0 auto;
-// }
-//
-// form.upload-form-wrapper {
-//   position: absolute;
-//   display: inline-block;
-//   max-width: 300px;
-//   height: inherit;
-// }
-//
-// .formpage-map {
-//   position: absolute;
-//   display: inline-block;
-//   width: 200px;
-//   height: 200px;
-//   float: left;
-// }
-//
-// #formpage-map-canvas{
-//   width: 200px;
-//   height: 200px;
-// }

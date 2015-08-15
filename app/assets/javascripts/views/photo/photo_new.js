@@ -1,5 +1,6 @@
 Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
   template: JST["photo/new"],
+  className: 'formpage-container',
 
   events: {
     "submit form" : "upload"
