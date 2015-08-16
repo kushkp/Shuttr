@@ -13,10 +13,10 @@ Shuttr is a clone of Flickr built on Rails and Backbone. Users can:
 - [x] Create sessions (log in)
 - [x] Create albums
 - [x] Upload photos
-- [ ] View albums and photos (album/photo index page)
+- [x] View albums and photos (album/photo index page)
 - [ ] View a single photo (photo show page)
-- [ ] Map view of photos
-- [ ] Update photo index at bottom of page when moving map
+- [x] Map view of photos
+- [x] Update photo index at bottom of page when moving map
 - [ ] Select photo for preview on map
 
 ## Design Docs
