@@ -3,7 +3,7 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
   className: 'test-class',
 
   initialize: function() {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync add remove", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.listenTo(this.collection, "remove", this.removePhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));

@@ -18,27 +18,26 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
-    // debugger
     this.collection.each(this.addMarker.bind(this));
+    this.attachMapListeners();
+  },
+
+  attachMapListeners: function() {
+    google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
   },
 
   addMarker: function(photo) {
     if (this._markers[photo.id]) { return; }
-    // debugger;
 
     var view = this;
     var marker = new google.maps.Marker({
       position: { lat: parseFloat(photo.get('lat')), lng: parseFloat(photo.get('long')) },
       map: this._map,
       title: photo.get('title')
-      // position: { lat: 48.4224, lng: 2.3453 },
-      // map: this._map,
-      // title: "Hello World"
     });
 
     google.maps.event.addListener(marker, 'click', function(e) {
       view.showMarkerInfo(event, marker);
-      // alert("marker info!");
     });
 
     this._markers[photo.id] = marker;
@@ -56,5 +55,20 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     });
 
     infoWindow.open(this._map, marker);
+  },
+
+  search: function() {
+    var mapBounds = this._map.getBounds();
+    var ne = mapBounds.getNorthEast();
+    var sw = mapBounds.getSouthWest();
+
+    var filterData = {
+      lat: [sw.lat(), ne.lat()],
+      long: [sw.lng(), ne.lng()]
+    };
+
+    this.collection.fetch({
+      data: { filter_data: filterData }
+    });
   }
 });

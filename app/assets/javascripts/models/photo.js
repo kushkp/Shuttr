@@ -16,5 +16,18 @@ Shuttr.Models.Photo = Backbone.Model.extend ({
     }
 
     return response;
+  },
+
+  search: function(opts) {
+    var model = this,
+        url = model.url() + '/search',
+    options = {
+      url: url,
+      type: 'GET'
+    };
+
+    _.extend(options, opts);
+
+    return (this.sync || Backbone.sync).call(this, null, this, options);
   }
 });
