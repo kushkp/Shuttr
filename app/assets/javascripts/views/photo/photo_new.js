@@ -58,22 +58,19 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
   handleKey: function(event) {
     if (event.keyCode === 27) {
       this.remove();
-      // Backbone.history.navigate("#photos", { trigger: true });
-      Backbone.history.back({trigger: true});
+      // window.history.back();
     }
   },
 
   removeBtn: function(event) {
     event.preventDefault();
     this.remove();
-      Backbone.history.back({trigger: true});
-    // Backbone.history.navigate("#photos", { trigger: true });
+      // window.history.back();
   },
 
   clickAway: function(event) {
     this.remove();
-      Backbone.history.back({trigger: true});
-    // Backbone.history.navigate("#photos", { trigger: true });
+      // window.history.back();
   }
 
 });
