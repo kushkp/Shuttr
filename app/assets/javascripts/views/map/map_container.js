@@ -24,7 +24,5 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   addPhotoGutter: function() {
     var photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
     this.addSubview(".photo-gutter", photoGutter);
-  },
-
-
+  }
 });

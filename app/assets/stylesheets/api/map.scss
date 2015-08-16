@@ -16,6 +16,33 @@ html, body {
 .map-container {
   height: 100%;
 }
+//
+// .photo-gutter {
+//   margin-top: 10px;
+//   height: 20%;
+//   max-height: 100px;
+//   width: 100%;
+//   display: block;
+//   overflow: hidden;
+//   white-space: nowrap;
+// }
+//
+// .gutter-item:first-child {
+//   margin-left: 0px;
+// }
+//
+//
+// .gutter-item {
+//   margin-left: 10px;
+//   height: 100px;
+//   display: inline-block;
+//   float: left;
+// }
+//
+// .gutter-item img {
+//   width: inherit;
+//   height: inherit;
+// }
 
 .photo-gutter {
   margin-top: 10px;
@@ -25,6 +52,7 @@ html, body {
   display: block;
   overflow: hidden;
   white-space: nowrap;
+  overflow-x: scroll;
 }
 
 .gutter-item:first-child {
@@ -34,9 +62,9 @@ html, body {
 
 .gutter-item {
   margin-left: 10px;
-  height: 100px;
-  display: inline-block;
-  float: left;
+  height: 95px;
+  display: inline;
+  // float: left;
 }
 
 .gutter-item img {
