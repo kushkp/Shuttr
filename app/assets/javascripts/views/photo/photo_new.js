@@ -8,19 +8,22 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
 
   initialize: function(options) {
     this.listenTo(this.collection, "sync", this.render);
-    this.addMap();
+    // this.addMap();
+    this.formPageMap = new Shuttr.Views.FormPageMap({ model: this.model });
   },
 
   render: function() {
     var content = this.template({ photo: this.model, albums: this.collection });
     this.$el.html(content);
     this.attachSubviews();
+    this.$('#formpage-map-canvas').html(this.formPageMap.$el);
+    this.formPageMap.render();
     return this;
   },
 
   addMap: function() {
-    var formPageMap = new Shuttr.Views.FormPageMap();
-    this.addSubview("#formpage-map-canvas", formPageMap);
+    // var formPageMap = new Shuttr.Views.FormPageMap();
+    // this.addSubview("#formpage-map-canvas", formPageMap);
   },
 
   upload: function(e) {
