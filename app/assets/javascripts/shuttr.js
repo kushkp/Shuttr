@@ -5,10 +5,19 @@ window.Shuttr = {
   Routers: {},
   initialize: function() {
     // alert('Hello from Backbone!');
-    new Shuttr.Routers.Router({
+
+
+
+    var router = new Shuttr.Routers.Router({
       $rootEl: $(".main")
     });
-    Backbone.history.start();
 
+    var nav = new Shuttr.Views.NavShow({
+      router: router
+    });
+
+    $("#navbar").html(nav.render().$el);
+
+    Backbone.history.start();
   }
 };
