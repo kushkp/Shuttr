@@ -3,13 +3,16 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
   className: 'formpage-container',
 
   events: {
-    "submit form" : "upload"
+    "submit form" : "upload",
+    'click .m-background' : 'clickAway',
+    'click .close' : 'removeBtn'
   },
 
   initialize: function(options) {
     this.listenTo(this.collection, "sync", this.render);
     // this.addMap();
     this.formPageMap = new Shuttr.Views.FormPageMap({ model: this.model });
+    $(document).on('keyup', this.handleKey.bind(this));
   },
 
   render: function() {
@@ -18,7 +21,12 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
     this.attachSubviews();
     this.$('#formpage-map-canvas').html(this.formPageMap.$el);
     this.formPageMap.render();
+    $('#photo-title').focus();
     return this;
+  },
+
+  onRender: function() {
+
   },
 
   addMap: function() {
@@ -45,6 +53,27 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
         }
       });
     });
+  },
+
+  handleKey: function(event) {
+    if (event.keyCode === 27) {
+      this.remove();
+      // Backbone.history.navigate("#photos", { trigger: true });
+      Backbone.history.back({trigger: true});
+    }
+  },
+
+  removeBtn: function(event) {
+    event.preventDefault();
+    this.remove();
+      Backbone.history.back({trigger: true});
+    // Backbone.history.navigate("#photos", { trigger: true });
+  },
+
+  clickAway: function(event) {
+    this.remove();
+      Backbone.history.back({trigger: true});
+    // Backbone.history.navigate("#photos", { trigger: true });
   }
 
 });

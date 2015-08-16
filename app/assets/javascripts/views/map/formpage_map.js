@@ -16,7 +16,6 @@ Shuttr.Views.FormPageMap = Backbone.View.extend ({
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
-
     this.attachMapListeners();
   },
 
@@ -41,10 +40,6 @@ Shuttr.Views.FormPageMap = Backbone.View.extend ({
         lng: photo.get('long') },
       map: this._map
     });
-
-    // google.maps.event.addListener(marker, 'click', function(event) {
-    //   view.showMarkerInfo(event, marker);
-    // })
 
     this._marker = marker;
   }
