@@ -1,5 +1,6 @@
 Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   template: JST["photo/show"],
+  className: "photo-show-wrapper",
 
   initialize: function() {
     this.listenTo(this.model, "add sync", this.render);
@@ -12,7 +13,8 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
 
   events: {
     'click .m-background' : 'clickAway',
-    'click .close' : 'removeBtn'
+    'click .close' : 'removeBtn',
+    'click .post-comment-btn' : "render"
   },
 
   render: function() {
