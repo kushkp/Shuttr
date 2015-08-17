@@ -11,7 +11,6 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
     "photos" : "photoIndex",
-    // "photos/new" : "photoUpload",
     "photos/:id" : "photoShow",
     "map" : "mapView"
   },
@@ -54,14 +53,6 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     var photo = this.photos.getOrFetch(id);
     var view = new Shuttr.Views.PhotoShow({ model: photo });
     this._swapView(view);
-  },
-
-  photoUpload: function() {
-    var photo = new Shuttr.Models.Photo();
-    var albums = new Shuttr.Collections.Albums();
-    albums.fetch();
-    var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
-    this.$rootEl.append(modal.render().$el);
   },
 
   mapView: function() {
