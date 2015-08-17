@@ -23,6 +23,18 @@ Shuttr.Views.NavShow = Backbone.View.extend({
 
   signOut: function(e) {
     e.preventDefault(); //Unnecessary?
+
+    $.ajax({
+      url: "session",
+      type: 'DELETE',
+      success: function() {
+        console.log("Logged Out");
+        window.location.href = "session/new";
+      },
+      error: function () {
+        console.log("signOut error");
+      }
+    });
   }
 
 });
