@@ -1,14 +1,9 @@
-// Place all the styles related to the api/photos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 
 .clearfix:before, .clearfix:after { content: ""; display: table; margin: 0; padding: 0; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; margin: 0; padding: 0; }
 
 
-//Explore Page
 
 .grid {
   display: block;
@@ -107,8 +102,6 @@
           transition-property: left, right, top;
 }
 
-//New Photo Form
-
 div.formpage-container {
   display: block;
   width: 100%;
@@ -116,7 +109,6 @@ div.formpage-container {
 }
 
 div.upload-form-map-container{
-  // position :relative;
   width: 646px;
   margin: 0 auto;
   height:450px;
@@ -131,7 +123,6 @@ h2.upload-form-heading {
   position: relative;
   float: left;
   padding-left: 20px;
-  // text-align: center;
   margin: 0 auto;
   background: white;
   width: 300px;
@@ -159,7 +150,6 @@ h2.upload-form-heading {
 #formpage-map-canvas {
   height: 326px;
   width: 300px;
-  // margin-top: -10px;
   padding: 0;
   border-radius: 5px;
 }
