@@ -47,7 +47,8 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
       photo.save({}, {
         success: function() {
           console.log("success");
-        },
+          this.remove();
+        }.bind(this),
         error: function() {
           console.log("error");
         }

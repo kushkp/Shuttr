@@ -1,6 +1,9 @@
 <div class="photo-container grid-item">
-    <a href="<%= "#photos/" + photo.id %>">
-      <img src="<%= photo.escape("url") %>" alt="photo-thumbnail"/>
+    <!-- <a href="<%= "#photos/" + photo.id %>"> -->
+    <a href="javascript:void(0)">
+      <img data-id="<%= photo.id %>"
+           src="<%= photo.escape("url") %>"
+           alt="photo-thumbnail"/>
     </a>
     <p class="photo-title">
       <%= photo.escape("title") %>

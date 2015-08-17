@@ -6,7 +6,13 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     this.listenTo(this.model.comments(), "sync change add reset remove", this.render);
     this.addCommentsIndex();
     this.addNewCommentForm();
+    $(document).on('keyup', this.handleKey.bind(this));
     // TODO: Get page to rerender when add comment
+  },
+
+  events: {
+    'click .m-background' : 'clickAway',
+    'click .close' : 'removeBtn'
   },
 
   render: function() {
@@ -27,5 +33,23 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
       model: newComment
     });
     this.addSubview(".new-comment-form", newCommentForm);
+  },
+
+  handleKey: function(event) {
+    if (event.keyCode === 27) {
+      this.remove();
+      // window.history.back();
+    }
+  },
+
+  removeBtn: function(event) {
+    event.preventDefault();
+    this.remove();
+      // window.history.back();
+  },
+
+  clickAway: function(event) {
+    this.remove();
+      // window.history.back();
   }
 });

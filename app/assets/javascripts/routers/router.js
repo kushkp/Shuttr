@@ -11,7 +11,7 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
     "photos" : "photoIndex",
-    "photos/:id" : "photoShow",
+    // "photos/:id" : "photoShow",
     "map" : "mapView"
   },
 
