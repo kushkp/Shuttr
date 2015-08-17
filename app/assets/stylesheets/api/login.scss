@@ -4,11 +4,12 @@ body {
 }
 
 .login-wrapper {
-	margin-top: 80px;
+	margin-top: 160px;
   margin-bottom: 80px;
 }
 
 .login-form {
+	max-height: 360;
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;

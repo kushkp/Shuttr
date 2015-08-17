@@ -4,8 +4,12 @@
 	border: none;
 }
 
-.container-fluid, .collapse.navbar-collapse {
+.container-fluid {
   padding-right: 0px !important;
+}
+
+.collapse.navbar-collapse {
+  padding-right: 15px !important;
 }
 
 .navbar.navbar-default {
