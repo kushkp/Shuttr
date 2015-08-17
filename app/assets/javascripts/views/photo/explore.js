@@ -26,13 +26,13 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   addPhotoItem: function(photo) {
-    var photoItem = new Shuttr.Views.PhotoItem({ model: photo });
+    var photoItem = new Shuttr.Views.PhotoItem({ model: photo, inExplore: true });
     this.addSubview(".photos", photoItem);
   },
 
   callMasonry: function() {
     var $container = this.$('.grid');
-    $container.prepend($("<div class='grid-sizer'></div>"));
+
     $container.imagesLoaded(function() {
       $container.masonry({
         itemSelector: '.grid-item',
@@ -45,7 +45,6 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   launchPhotoShowModal: function(e) {
-    // debugger
     var photoId = $(e.currentTarget).find('img').data("id");
     var photo = this.collection.getOrFetch(photoId);
     var modal = new Shuttr.Views.PhotoShow({ model: photo });

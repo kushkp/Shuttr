@@ -2,6 +2,10 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
   template: JST['photo/gutter'],
   className: 'test-class',
 
+    events: {
+      'click .gitter-item-img' : 'launchPhotoShowModal'
+    },
+
   initialize: function() {
     this.listenTo(this.collection, "sync add remove", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
@@ -23,5 +27,14 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
 
   removePhotoItem: function(photo) {
     this.removeModelSubview(".gutter-photo-index", photo);
+  },
+
+
+  launchPhotoShowModal: function(e) {
+    var photoId = $(e.currentTarget).data("id");
+    var photo = this.collection.getOrFetch(photoId);
+    var modal = new Shuttr.Views.PhotoShow({ model: photo });
+    $('body').append(modal.$el);
+    modal.render();
   }
 });

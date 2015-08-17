@@ -13,7 +13,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   },
 
   render: function() {
-    var content = this.template({ photos: this.collection });
+    var content = this.template({ photos: this.collection, inExplore: true });
     this.$el.html(content);
     this.attachSubviews();
     this.callMasonry();
@@ -33,15 +33,17 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
 
   removePhotoItem: function(photo) {
     this.removeModelSubview(".photos", photo);
+    this.reloadMasonry(); //doesn't work. maybe cuz of db error?
   },
 
   callMasonry: function() {
-    var $container = $('.grid');
+    var $container = this.$('.grid');
 
-    $container.imagesLoaded( function() {
+    $container.imagesLoaded(function() {
       $container.masonry({
         itemSelector: '.grid-item',
         columnWidth: 10,
+        percentPosition: true,
         isResizable: true,
         isAnimated: !Modernizr.csstransitions,
       });

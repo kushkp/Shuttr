@@ -3,7 +3,9 @@
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; margin: 0; padding: 0; }
 
-
+div.box {
+  height: 0px;
+}
 
 .grid {
   display: block;
@@ -110,6 +112,19 @@
        -o-transition-property: left, right, top;
           transition-property: left, right, top;
 }
+
+// photo-index
+
+button.delete-photo {
+  z-index: 20;
+  color: white;
+  // top:0;
+  // right:0;
+  // display: none;
+}
+
+
+// new photo
 
 div.formpage-container {
   display: block;

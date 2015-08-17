@@ -83,7 +83,7 @@ private
 
   def photo_params
     params.require(:photo).permit(
-      :title, :url, :long, :lat, :album_id, :description
+      :title, :url, :long, :lat, :album_id, :description, :owner_id
     )
   end
 end

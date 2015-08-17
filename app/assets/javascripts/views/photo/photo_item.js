@@ -5,12 +5,13 @@ Shuttr.Views.PhotoItem = Backbone.View.extend ({
     "click .delete-photo" : "deletePhoto"
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.inExplore = options.inExplore;
     // this.listenTo(this.model, "sync", this.render);
   },
 
   render: function() {
-    var content = this.template({ photo: this.model });
+    var content = this.template({ photo: this.model, inExplore: this.inExplore });
     this.$el.html(content);
     return this;
   },
