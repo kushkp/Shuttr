@@ -176,3 +176,23 @@ h2.upload-form-heading {
   border: 1px solid;
   border-radius: 5px;
 }
+
+.photo-show-content {
+  z-index: 2;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  background-color: white;
+  padding: 1pc;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.photo_img {
+  height: 100%;
+}
+
+.photo_img img {
+  height: auto;
+  max-height: 500px;
+}
