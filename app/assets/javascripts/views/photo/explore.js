@@ -26,13 +26,14 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
 
   callMasonry: function() {
     var $container = this.$('.grid');
-
+    $container.prepend($("<div class='grid-sizer'></div>"));
     $container.imagesLoaded(function() {
       $container.masonry({
         itemSelector: '.grid-item',
         columnWidth: 10,
+        percentPosition: true,
         isResizable: true,
-        isAnimated: !Modernizr.csstransitions,
+        isAnimated: !Modernizr.csstransitions
       });
     });
   },

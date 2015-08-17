@@ -11,7 +11,6 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
     "photos" : "photoIndex",
-    // "photos/:id" : "photoShow",
     "map" : "mapView"
   },
 
@@ -45,12 +44,6 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   photoIndex: function() {
     this.photos.fetch({data: { owner_id: Shuttr.CURRENT_USER.id }, processData: true });
     var view = new Shuttr.Views.PhotoIndex({ collection: this.photos });
-    this._swapView(view);
-  },
-
-  photoShow: function(id) {
-    var photo = this.photos.getOrFetch(id);
-    var view = new Shuttr.Views.PhotoShow({ model: photo });
     this._swapView(view);
   },
 

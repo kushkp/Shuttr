@@ -40,18 +40,15 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   handleKey: function(event) {
     if (event.keyCode === 27) {
       this.remove();
-      // window.history.back();
     }
   },
 
   removeBtn: function(event) {
     event.preventDefault();
     this.remove();
-      // window.history.back();
   },
 
   clickAway: function(event) {
     this.remove();
-      // window.history.back();
   }
 });
