@@ -21,7 +21,7 @@ Shuttr.Views.AlbumForm = Backbone.View.extend({
         Backbone.history.navigate("albums/" + this.model.id, { trigger: true});
       }.bind(this),
       error: function() {
-        console.log("error");
+        console.log("save album error");
       }
     });
   }

@@ -13,11 +13,17 @@ Shuttr.Views.CommentForm = Backbone.View.extend ({
 
   createComment: function(e) {
     e.preventDefault();
-
-    this.model.save({
-      body: this.$('textarea').val()
-    });
+    var formdata = { body: this.$('textarea').val() };
     
+    this.model.save(formdata, {
+      success: function() {
+        this.collection.add(this.model);
+      }.bind(this),
+      error: function() {
+        console.log("save comment error");
+      }
+    });
+
     this.$('textarea').val('');
   }
 });

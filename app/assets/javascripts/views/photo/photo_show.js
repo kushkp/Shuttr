@@ -4,7 +4,9 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
 
   initialize: function() {
     this.listenTo(this.model, "add sync", this.render);
-    this.listenTo(this.model.comments(), "sync change add reset remove", this.render);
+
+    // remove sync change reset from model comments listenTo
+    this.listenTo(this.model.comments(), "add reset", this.render);
     this.addCommentsIndex();
     this.addNewCommentForm();
     $(document).on('keyup', this.handleKey.bind(this));
@@ -32,7 +34,8 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   addNewCommentForm: function() {
     var newComment = new Shuttr.Models.Comment({ photo_id: this.model.id });
     var newCommentForm = new Shuttr.Views.CommentForm({
-      model: newComment
+      model: newComment,
+      collection: this.model.comments()
     });
     this.addSubview(".new-comment-form", newCommentForm);
   },
