@@ -9,7 +9,7 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 
 gem 'masonry-rails'
-# gem 'cloudinary'
+gem 'cloudinary'
 gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

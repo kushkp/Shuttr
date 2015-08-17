@@ -2,11 +2,13 @@ Shuttr.Views.NavShow = Backbone.View.extend({
   template: JST['nav/navbar'],
 
   events: {
-    "click .sign-out-link" : "signOut"
+    "click .sign-out-link" : "signOut",
+    "click .create-photo-btn" : "showNewPhotoForm"
   },
 
   initialize: function (options) {
     this.router = options.router;
+    this.$rootEl = options.$rootEl;
     this.listenTo(this.router, "route", this.handleRoute);
   },
 
@@ -35,6 +37,15 @@ Shuttr.Views.NavShow = Backbone.View.extend({
         console.log("signOut error");
       }
     });
+  },
+
+  showNewPhotoForm: function() {
+    var photo = new Shuttr.Models.Photo();
+    var albums = new Shuttr.Collections.Albums();
+    albums.fetch();
+    var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
+    this.$rootEl.append(modal.$el);
+    modal.render();
   }
 
 });

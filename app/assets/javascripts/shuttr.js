@@ -6,14 +6,15 @@ window.Shuttr = {
   initialize: function() {
     // alert('Hello from Backbone!');
 
-
+    var $rootEl = $(".main");
 
     var router = new Shuttr.Routers.Router({
-      $rootEl: $(".main")
+      $rootEl: $rootEl
     });
 
     var nav = new Shuttr.Views.NavShow({
-      router: router
+      router: router,
+      $rootEl: $rootEl
     });
 
     $("#navbar").html(nav.render().$el);
