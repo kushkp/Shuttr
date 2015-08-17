@@ -61,9 +61,7 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     var albums = new Shuttr.Collections.Albums();
     albums.fetch();
     var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
-
     this.$rootEl.append(modal.render().$el);
-    // this._swapView(view);
   },
 
   mapView: function() {

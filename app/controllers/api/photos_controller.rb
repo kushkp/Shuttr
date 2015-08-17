@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
-    @photo.owner_id = current_user.id;
+    @photo.owner_id = current_user.id
 
     if @photo.save!
       render :show
@@ -33,11 +33,11 @@ class Api::PhotosController < ApplicationController
 
   def index
     if (params["owner_id"])
-      @photos = Photo.all.where(owner_id: params["owner_id"])
+      @photos = Photo.all.where(owner_id: params["owner_id"]).includes(:comments)
     elsif (params["filter_data"])
       @photos = filter_photos(filter_options)
     else
-      @photos = Photo.all
+      @photos = Photo.all.includes(:comments)
     end
 
     render :index
