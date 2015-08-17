@@ -8,7 +8,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   events: {
-    'click .grid-item' : 'launchCarousel'
+    'click .grid-item' : 'launchPhotoShowModal'
   },
 
   render: function() {
@@ -17,6 +17,12 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     this.attachSubviews();
     this.callMasonry();
     return this;
+  },
+
+  reloadMasonry: function (obj) {
+    if (obj !== this.collection) { return; }
+    this.$(".grid").masonry("destroy");
+    this.callMasonry();
   },
 
   addPhotoItem: function(photo) {
@@ -38,24 +44,11 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     });
   },
 
-  reloadMasonry: function (obj) {
-    // this.$(".grid").masonry("reloadItems");
-    if (obj !== this.collection) { return; }
-    this.$(".grid").masonry("destroy");
-    this.callMasonry();
-  },
-
-  launchCarousel: function(e) {
+  launchPhotoShowModal: function(e) {
     var photoId = $(e.target).data("id");
     var photo = this.collection.getOrFetch(photoId);
     var modal = new Shuttr.Views.PhotoShow({ model: photo });
     $('body').append(modal.$el);
     modal.render();
-
-    // var albums = new Shuttr.Collections.Albums();
-    // albums.fetch();
-    // var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
-    // this.$rootEl.append(modal.$el);
-    // modal.render();
   }
 });

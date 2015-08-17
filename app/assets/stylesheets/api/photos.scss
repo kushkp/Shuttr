@@ -193,8 +193,9 @@ h2.upload-form-heading {
 .photo-show-content {
   z-index: 10;
   position: fixed;
-  top: 25%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
+  transform:  translate(-50%, -50%);
   background-color: white;
   padding: 1pc;
   border: 1px solid;
@@ -209,6 +210,11 @@ h2.upload-form-heading {
 .photo-show-img img {
   height: auto;
   max-height: 500px;
+}
+
+.close-photo-show {
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 // .photo-info {

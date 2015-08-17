@@ -2,10 +2,14 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   template: JST["photo/index"],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync", this.reloadMasonry);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.listenTo(this.collection, "remove", this.removePhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
+  },
+
+  events: {
+    'click .grid-item' : 'launchPhotoShowModal'
   },
 
   render: function() {
@@ -16,6 +20,12 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     return this;
   },
 
+  reloadMasonry: function (obj) {
+    if (obj !== this.collection) { return; }
+    this.$(".grid").masonry("destroy");
+    this.callMasonry();
+  },
+
   addPhotoItem: function(photo) {
     var photoItem = new Shuttr.Views.PhotoItem({ model: photo });
     this.addSubview(".photos", photoItem);
@@ -24,18 +34,6 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   removePhotoItem: function(photo) {
     this.removeModelSubview(".photos", photo);
   },
-
-  // callMasonry: function() {
-  //   // $('.grid').append("div").addClass("grid-sizer");
-  //   var $grid = $('.grid').masonry({
-  //     itemSelector: '.grid-item',
-  //     percentPosition: true,
-  //     columnWidth: '.grid-sizer'
-  //   });
-  //   $grid.imagesLoaded().progress( function() {
-  //       $grid.masonry();
-  //   });
-  // }
 
   callMasonry: function() {
     var $container = $('.grid');
@@ -48,13 +46,13 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
         isAnimated: !Modernizr.csstransitions,
       });
     });
+  },
+
+  launchPhotoShowModal: function(e) {
+    var photoId = $(e.target).data("id");
+    var photo = this.collection.getOrFetch(photoId);
+    var modal = new Shuttr.Views.PhotoShow({ model: photo });
+    $('body').append(modal.$el);
+    modal.render();
   }
-  //
-  // callSalvatorre: function(photo) {
-  //   var grid = document.querySelector('#grid');
-  //   var item = document.createElement('article');
-  //
-  //   salvattore.appendElements(grid, [item]);
-  //   item.outerHTML = 'I’ve been appended!';
-  // }
 });

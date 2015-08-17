@@ -16,8 +16,8 @@ Shuttr.Views.CommentForm = Backbone.View.extend ({
 
     this.model.save({
       body: this.$('textarea').val()
-    }, { wait: true });
-
+    });
+    
     this.$('textarea').val('');
   }
 });
