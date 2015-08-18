@@ -6,7 +6,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
   initialize: function() {
     this._markers = {};
-
+    this.openInfoWindow = null;
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
     this.hotIcon = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
@@ -38,9 +38,19 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       animation: google.maps.Animation.DROP
     });
 
+    google.maps.event.addListener(marker, 'mouseover', function(e) {
+      this.openInfoWindow = view.showMarkerInfo(event, marker);
+    }.bind(this));
+
+    google.maps.event.addListener(marker, 'mouseout', function(e) {
+      this.openInfoWindow.close();
+    }.bind(this));
+
     google.maps.event.addListener(marker, 'click', function(e) {
-      view.showMarkerInfo(event, marker);
-    });
+      // view.showMarkerInfo(event, marker);
+      // Launch Modal
+      this.launchPhotoShowModal(photo.id)
+    }.bind(this));
 
     this._markers[photo.id] = marker;
   },
@@ -57,6 +67,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     });
 
     infoWindow.open(this._map, marker);
+    return infoWindow;
   },
 
   search: function() {
@@ -84,5 +95,12 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     var marker = this._markers[id];
     marker.setAnimation(null);
     marker.setIcon();
+  },
+
+  launchPhotoShowModal: function(photoId) {
+    var photo = this.collection.getOrFetch(photoId);
+    var modal = new Shuttr.Views.PhotoShow({ model: photo });
+    $('body').append(modal.$el);
+    modal.render();
   }
 });

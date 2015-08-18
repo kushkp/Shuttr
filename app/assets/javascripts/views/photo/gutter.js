@@ -3,7 +3,7 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
   className: 'test-class',
 
     events: {
-      'click .gitter-item-img' : 'launchPhotoShowModal'
+      'click .gutter-item-img' : 'launchPhotoShowModal'
     },
 
   initialize: function() {
