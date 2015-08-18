@@ -5,7 +5,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   initialize: function() {
-    this._markers = {};
+    this._markers = [];
     this.openInfoWindow = null;
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
@@ -49,9 +49,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     }.bind(this));
 
     google.maps.event.addListener(marker, 'click', function(e) {
-      // view.showMarkerInfo(event, marker);
-      // Launch Modal
-      this.launchPhotoShowModal(photo.id)
+      this.launchPhotoShowModal(photo.id);
     }.bind(this));
 
     this._markers[photo.id] = marker;
@@ -64,8 +62,19 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   showMarkerInfo: function (event, marker) {
+    var photoId = null;
+    for (var i in this._markers) {
+      if (this._markers[i].title === marker.title) {
+        photoId = i;
+      }
+    }
+
+
+    var photoUrl = this.collection.getOrFetch(photoId).get('url');
+    var iwContent = '<div id="info-window-content"><IMG BORDER="0" ALIGN="Center" STYLE="margin:0; padding:0; max-width: 200px; width: 200px; max-height: 200px" SRC="' + photoUrl + '"></div';
     var infoWindow = new google.maps.InfoWindow({
-      content: marker.title
+      //get thumbnail size from couldinary
+      content: iwContent
     });
 
     infoWindow.open(this._map, marker);

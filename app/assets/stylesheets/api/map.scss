@@ -34,7 +34,6 @@ html, body {
   margin-left: 0px;
 }
 
-
 .gutter-item {
   margin-left: 10px;
   height: 95px;
@@ -50,3 +49,15 @@ html, body {
   width: inherit;
   height: inherit;
 }
+
+// GETS RID OF INFO WINDOW CLOSE BUTTON
+// .gm-style-iw + div {
+//   display: none;
+// }
+
+#info-window-content .iw-title {
+  margin:5px;
+  padding:0;
+  border:thin solid red;
+  border-radius: 10px;
+ }
