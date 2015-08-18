@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
                   params[:user][:password])
 
       if @user.nil?
-        flash.now[:errors] = ["Invalid login credentials"]
-        render :new
+        flash[:errors] = ["Invalid login credentials"]
+        redirect_to new_user_url
       else
         login(@user)
         redirect_to root_url

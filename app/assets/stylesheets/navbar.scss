@@ -17,3 +17,15 @@
   border: none;
   border-bottom: 1px solid transparent;
 }
+
+.error-ul {
+	padding-left: 0;
+}
+
+.error-li {
+	text-align: center;
+  display: block;
+  margin-top: -20px;
+  background-color: rgb(232, 78, 78);
+  color: black;
+}

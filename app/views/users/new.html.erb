@@ -1,5 +1,6 @@
 <div class="splash-pg-bg">
-<%= render partial: "nav/navbar" %>
+  <%= render partial: "nav/navbar" %>
+  <%= render partial: "shared/errors" %>
   <%= render partial: "shared/form",
     locals: { action: users_url, content: "Sign Up" } %>
 </div>
