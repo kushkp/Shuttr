@@ -36,17 +36,23 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
 
   upload: function(e) {
     e.preventDefault();
+    var view = this;
     var photo = this.model;
     var formdata = $(e.currentTarget).serializeJSON();
+    formdata.photo.lat = this.formPageMap._marker.position.G;
+    formdata.photo.long = this.formPageMap._marker.position.K;
+
     photo.set(formdata.photo);
+
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       var data = result[0];
       photo.set({url: data.url});
-      console.log(data);
+
+      var uploadModal = view;
       photo.save({}, {
         success: function() {
           console.log("success");
-          this.remove();
+          uploadModal.remove();
         }.bind(this),
         error: function() {
           console.log("error");
