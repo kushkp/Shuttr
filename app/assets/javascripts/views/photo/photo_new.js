@@ -10,7 +10,6 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
 
   initialize: function(options) {
     this.listenTo(this.collection, "sync", this.render);
-    // this.addMap();
     this.formPageMap = new Shuttr.Views.FormPageMap({ model: this.model });
     $(document).on('keyup', this.handleKey.bind(this));
   },
@@ -27,11 +26,6 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
 
   onRender: function() {
 
-  },
-
-  addMap: function() {
-    // var formPageMap = new Shuttr.Views.FormPageMap();
-    // this.addSubview("#formpage-map-canvas", formPageMap);
   },
 
   upload: function(e) {
@@ -64,19 +58,16 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
   handleKey: function(event) {
     if (event.keyCode === 27) {
       this.remove();
-      // window.history.back();
     }
   },
 
   removeBtn: function(event) {
     event.preventDefault();
     this.remove();
-      // window.history.back();
   },
 
   clickAway: function(event) {
     this.remove();
-      // window.history.back();
   }
 
 });
