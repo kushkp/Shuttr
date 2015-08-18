@@ -39,8 +39,8 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
     var photo = this.model;
     var formdata = $(e.currentTarget).serializeJSON();
     photo.set(formdata.photo);
-
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
+    debugger;
+    $.cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       var data = result[0];
       photo.set({url: data.url});
       console.log(data);

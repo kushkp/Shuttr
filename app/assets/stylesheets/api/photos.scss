@@ -134,7 +134,8 @@ div.formpage-container {
 
 div.upload-form-map-container{
   width: 646px;
-  margin: 0 auto;
+  margin-left: -323px;
+  margin-top: -225px;
   height:450px;
 }
 
@@ -193,8 +194,8 @@ h2.upload-form-heading {
 .m-content {
   z-index: 10;
   position: fixed;
-  top: 25%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
   background-color: white;
   padding: 1pc;
   border: 1px solid;

@@ -8,48 +8,40 @@
 
 #CREATE USERS BEFORE SEEDING!
 
-User.create!({id: 1,
-              email: "kush@gmail.com",
+User.create!({email: "kush@gmail.com",
               name: "Kush Patel",
               password_digest: BCrypt::Password.create("kushkush"),
               session_token: SecureRandom.urlsafe_base64(16)
               })
-User.create!({id: 2,
-              email: "ed@gmail.com",
+User.create!({email: "ed@gmail.com",
               name: "Ed Huang",
               password_digest: BCrypt::Password.create("ededed"),
               session_token: SecureRandom.urlsafe_base64(16)
               })
-User.create!({id: 3,
-              email: "robert@gmail.com",
+User.create!({email: "robert@gmail.com",
               name: "Robert Yaman",
               password_digest: BCrypt::Password.create("robert"),
               session_token: SecureRandom.urlsafe_base64(16)
               })
-User.create!({id: 4,
-              email: "alan@gmail.com",
+User.create!({email: "alan@gmail.com",
               name: "Alan Tran",
               password_digest: BCrypt::Password.create("alanalan"),
               session_token: SecureRandom.urlsafe_base64(16)
               })
 
-Album.create!({id: 1,
-               title: "Euro-trip",
+Album.create!({title: "Euro-trip",
                url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
                owner_id: "1" })
 
-Album.create!({id: 2,
-               title: "Food",
+Album.create!({title: "Food",
                url: "http://ak-static.scoopon.com.au/scpn/deals/main/45000/45813_1.jpg",
                owner_id: "1" })
 
-Album.create!({id: 3,
-               title: "Around SF",
+Album.create!({title: "Around SF",
                url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
                owner_id: "2" })
 
-Album.create!({id: 4,
-               title: "My Pets",
+Album.create!({title: "My Pets",
                url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
                owner_id: "3" })
 
