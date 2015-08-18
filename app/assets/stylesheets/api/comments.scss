@@ -20,3 +20,18 @@
 form.login-form {
   padding-bottom: 15px;
 }
+
+p.comment-item-author {
+  // right: 0;
+  // float:right;
+}
+
+p.comment-item-body {
+  // left:0;
+  // float:left;
+  // position: absolute;
+}
+
+button.delete-comment {
+  float: right;
+}

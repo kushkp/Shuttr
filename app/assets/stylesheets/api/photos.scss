@@ -244,9 +244,15 @@ h2.upload-form-heading {
   max-height: 500px;
 }
 
-.close-photo-show {
+button.close.close-photo-show {
   margin-top: 10px;
   margin-right: 10px;
+  color: gray;
+  opacity: 1;
+  z-index: 200;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 button.close.delete-photo {
