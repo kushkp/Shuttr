@@ -11,12 +11,4 @@ Shuttr.Views.PhotoGutterItem = Backbone.View.extend ({
     this.$el.html(content);
     return this;
   }
-  //
-  // launchPhotoShowModal: function(e) {
-  //   var photoId = $(e.currentTarget).find('img').data("id");
-  //   var photo = this.collection.getOrFetch(photoId);
-  //   var modal = new Shuttr.Views.PhotoShow({ model: photo });
-  //   $('body').append(modal.$el);
-  //   modal.render();
-  // }
 });

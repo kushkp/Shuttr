@@ -9,6 +9,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     this.openInfoWindow = null;
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
+    this.coldIcon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
     this.hotIcon = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
   },
 
@@ -35,7 +36,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       position: { lat: parseFloat(photo.get('lat')), lng: parseFloat(photo.get('long')) },
       map: this._map,
       title: photo.get('title'),
-      animation: google.maps.Animation.DROP
+      animation: google.maps.Animation.DROP,
+      icon: this.coldIcon
     });
 
     google.maps.event.addListener(marker, 'mouseover', function(e) {
@@ -94,7 +96,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   stopBounce: function(id) {
     var marker = this._markers[id];
     marker.setAnimation(null);
-    marker.setIcon();
+    marker.setIcon(this.coldIcon);
   },
 
   launchPhotoShowModal: function(photoId) {

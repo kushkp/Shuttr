@@ -10,6 +10,7 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   events: {
     'mouseenter .gutter-item-img' : 'startBounce',
     'mouseleave .gutter-item-img' : 'stopBounce',
+    'click .gutter-item-img' : 'launchPhotoShowModal'
   },
 
   render: function() {
@@ -43,5 +44,14 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   stopBounce: function(event) {
     var photoId = $(event.currentTarget).data("id");
     this.mapView.stopBounce(photoId);
+  },
+
+  launchPhotoShowModal: function(event) {
+    this.stopBounce(event);
+    var photoId = $(event.currentTarget).data("id");
+    var photo = this.collection.getOrFetch(photoId);
+    var modal = new Shuttr.Views.PhotoShow({ model: photo });
+    $('body').append(modal.$el);
+    modal.render();
   }
 });
