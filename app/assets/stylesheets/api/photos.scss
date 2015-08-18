@@ -249,6 +249,16 @@ h2.upload-form-heading {
   margin-right: 10px;
 }
 
+button.close.delete-photo {
+  color: #D7D3D8;
+  z-index: 200;
+  opacity: 0.8;
+  font-size: inherit;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
 // .photo-info {
 //   background-color: white;
 //   border-right: thick solid white;
