@@ -42,12 +42,8 @@ div.box {
 .col6 img { max-width: 420px; }
 .col7 img { max-width: 490px; }
 
-.grid-sizer,
 .grid-item {
   width: 33.33%;
-}
-
-.grid-item {
   display: block;
   overflow: hidden;
   border: 5px solid white;

@@ -2,7 +2,8 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   template: JST["photo/explore"],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.reloadMasonry);
+    // this.listenTo(this.collection, "sync", this.reloadMasonry);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
   },
@@ -36,9 +37,9 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     $container.imagesLoaded(function() {
       $container.masonry({
         itemSelector: '.grid-item',
-        columnWidth: 10,
-        percentPosition: true,
-        isResizable: true,
+        columnWidth: 1,
+        // percentPosition: true,
+        // isResizable: true,
         isAnimated: !Modernizr.csstransitions
       });
     });
@@ -51,4 +52,5 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     $('body').append(modal.$el);
     modal.render();
   }
+
 });
