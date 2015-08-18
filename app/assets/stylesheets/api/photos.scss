@@ -136,12 +136,18 @@ div.upload-form-map-container{
   width: 646px;
   margin-left: -323px;
   margin-top: -225px;
-  height:450px;
+  height: 461px;
+
+  span {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
 }
 
 h2.upload-form-heading {
   display: block;
   height: 30px;
+  margin-bottom: 30px;
 }
 
 .upload-form-wrapper {
@@ -153,10 +159,23 @@ h2.upload-form-heading {
   width: 300px;
   height: 326px;
   margin: 0;
-  top: 30px;
   padding: 0;
   margin-right: 10px;
   border-radius: 5px;
+}
+
+.upload-form #photo-title {
+  width: 80%;
+}
+
+.upload-form #photo-desc {
+  width: 80%;
+  resize: none;
+}
+
+.new-photo-submit {
+  position: absolute;
+  width: 80%;
 }
 
 .formpage-map {
@@ -166,7 +185,6 @@ h2.upload-form-heading {
   height: 326px;
   margin: 0;
   padding: 0;
-  top: 30px;
   right:0;
   bottom:0;
   border-radius: 5px;
@@ -178,6 +196,8 @@ h2.upload-form-heading {
   padding: 0;
   border-radius: 5px;
 }
+
+// photo show
 
 .m-background {
   background: rgba(92, 88, 88, 0.6);
