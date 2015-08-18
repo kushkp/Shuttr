@@ -7,6 +7,11 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
     this.photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
   },
 
+  events: {
+    'mouseenter .gutter-item-img' : 'startBounce',
+    'mouseleave .gutter-item-img' : 'stopBounce',
+  },
+
   render: function() {
     var content = this.template();
     this.$el.html(content);
@@ -28,5 +33,15 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   addPhotoGutter: function() {
     var photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
     this.addSubview(".photo-gutter", photoGutter);
+  },
+
+  startBounce: function(event) {
+    var photoId = $(event.currentTarget).data("id");
+    this.mapView.startBounce(photoId);
+  },
+
+  stopBounce: function(event) {
+    var photoId = $(event.currentTarget).data("id");
+    this.mapView.stopBounce(photoId);
   }
 });

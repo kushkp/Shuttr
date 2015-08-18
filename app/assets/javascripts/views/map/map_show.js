@@ -9,6 +9,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
+    this.hotIcon = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
   },
 
   render: function() {
@@ -33,7 +34,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     var marker = new google.maps.Marker({
       position: { lat: parseFloat(photo.get('lat')), lng: parseFloat(photo.get('long')) },
       map: this._map,
-      title: photo.get('title')
+      title: photo.get('title'),
+      animation: google.maps.Animation.DROP
     });
 
     google.maps.event.addListener(marker, 'click', function(e) {
@@ -70,5 +72,17 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     this.collection.fetch({
       data: { filter_data: filterData }
     });
+  },
+
+  startBounce: function(id) {
+    var marker = this._markers[id];
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+    marker.setIcon(this.hotIcon);
+  },
+
+  stopBounce: function(id) {
+    var marker = this._markers[id];
+    marker.setAnimation(null);
+    marker.setIcon();
   }
 });
