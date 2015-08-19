@@ -222,7 +222,7 @@ h2.upload-form-heading {
   width: 100%;
 }
 
-.photo-show-content {
+div.photo-show-content {
   z-index: 10;
   position: fixed;
   top: 50%;
@@ -233,6 +233,7 @@ h2.upload-form-heading {
   border: 1px solid;
   border-radius: 5px;
   max-width: 80%;
+  min-width: 350px;
 }
 
 .photo-show-img {
