@@ -10,7 +10,6 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     this.addCommentsIndex();
     this.addNewCommentForm();
     $(document).on('keyup', this.handleKey.bind(this));
-    // TODO: Get page to rerender when add multiple comments
   },
 
   events: {
@@ -23,6 +22,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     var content = this.template({ photo: this.model });
     this.$el.html(content);
     this.attachSubviews();
+    this.$('textarea').focus();
     return this;
   },
 
@@ -34,6 +34,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   addNewCommentForm: function() {
     var newComment = new Shuttr.Models.Comment({ photo_id: this.model.id });
     var newCommentForm = new Shuttr.Views.CommentForm({
+      photo_id: this.model.id,
       model: newComment,
       collection: this.model.comments()
     });

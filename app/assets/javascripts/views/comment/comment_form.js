@@ -1,7 +1,8 @@
 Shuttr.Views.CommentForm = Backbone.View.extend ({
   template: JST["comment/form"],
 
-  initialize: function() {
+  initialize: function(options) {
+    this.photoId = options.photo_id;
     $(document).on('keyup', this.handleKey.bind(this));
   },
 
@@ -28,7 +29,10 @@ Shuttr.Views.CommentForm = Backbone.View.extend ({
 
   saveComment: function() {
     var formdata = { body: this.$('textarea').val() };
-
+    if (this.model.id !== "undefined") {
+      this.model = new Shuttr.Models.Comment({ photo_id: this.photoId });
+    }
+    
     this.model.save(formdata, {
       success: function() {
         this.collection.add(this.model);
