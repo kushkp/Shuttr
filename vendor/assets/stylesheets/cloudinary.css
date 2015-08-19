@@ -3,7 +3,7 @@
 }
 
 #cloudinary-overlay {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.7);
 }
 
 #cloudinary-widget {
@@ -15,13 +15,12 @@
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  font-family: 'ProximaNova-Regular';
-  height: 400px;
 }
 
 #cloudinary-navbar {
   background: #fff;
   border: none;
+  border-bottom: 1px solid #eee;
   margin: 0 0 10px 0;
   height: 30px;
 }
@@ -44,6 +43,7 @@
 
 #cloudinary-navbar .source.active {
   background: none;
+  border-bottom: 3px solid #037FCB;
 }
 
 #cloudinary-navbar .source.active .label {
@@ -52,17 +52,17 @@
 
 #cloudinary-widget .drag_area {
   background: #fff;
-  border: 2px dashed #ccc;
-  margin: 0px 30px 0px 30px;
+  border: 2px dashed #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin: 30px 20px 0px 20px;
 }
 
 #cloudinary-widget .drag_area.in {
   border-color: #01BB16
 }
 
-#cloudinary-navbar .sources {
-  display: none;
-}
 #cloudinary-navbar .sources .icon {
   background-position-x: 0px ;
 }
@@ -72,17 +72,16 @@
 }
 
 #cloudinary-widget .button, #cloudinary-widget .button.small_button {
-  font: 14px 'ProximaNova-Regular';
-  letter-spacing: 1px;
   box-sizing: border-box;
-  color: white;
-  background: #69017A;
+  color: #037FCB;
+  background: none;
+  border: 2px solid #037FCB;
 }
 
 #cloudinary-widget .button {
+  height: 45px;
   width: 180px;
-  padding: 10px;
-  border-radius: 0;
+  line-height: 30px;
 }
 
 #cloudinary-widget .button.small_button {
@@ -92,22 +91,21 @@
 }
 
 #cloudinary-widget .button:hover, #cloudinary-widget .button.small_button:hover, #cloudinary-widget .upload_button_holder:hover .button {
-  background-color: darken(#69017A, 20);
+  background: #037FCB;
   color: #fff;
 }
 
 #cloudinary-widget .panel {
-  height: 330px;
+  height: 479px;
 }
 
 #cloudinary-widget .panel.local {
-  margin-top: -8px;
+  margin-top: 20px;
 }
 
 #cloudinary-widget .panel.local .drag_area .drag_content .label {
-  color: #ccc;
-  font-size: 35px;
-  letter-spacing: 1px;
+  color: #00619D;
+  font-size: 22px;
 }
 
 #cloudinary-widget .panel.progress .thumbnails {
@@ -139,16 +137,6 @@
   margin: 0px 20px 0px 20px;
   padding-top: 10px;
 }
-
-
-// .widget .panel.local .drag_area .drag_content .or {
-//   display: block;
-//   text-align: center;
-//   font-size: 13px;
-//   line-height: 23px;
-//   color: purple;
-//   margin-bottom: 20px;
-// }
 
 @media screen and (max-width: 767px) {
   #cloudinary-widget .drag_area {
