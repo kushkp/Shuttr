@@ -45,9 +45,9 @@ Shuttr.Views.LargeModal = Backbone.View.extend({
   },
 
   displayImage: function (difference) {
-    if (!this.rendering) {
-
-    }
+    // if (!this.rendering) {
+    //
+    // }
 
     this.rendering = true;
     var currentImage = this.model;
@@ -66,13 +66,8 @@ Shuttr.Views.LargeModal = Backbone.View.extend({
       }
     });
 
-    var photoItem = new Shuttr.Views.PhotoItem({
-      model: nextImage,
-      collection: this.collection
-    });
-
-    $('.gallery-modal').remove();
-    photoItem.displayModal();
+    this.model = nextImage;
+    this.render();
   },
 
   galleryImagePositioning: function () {
