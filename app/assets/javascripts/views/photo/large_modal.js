@@ -10,7 +10,8 @@ Shuttr.Views.LargeModal = Backbone.View.extend({
   events: {
     'click .next-image': 'displayNextImage',
     'click .prev-image': 'displayPreviousImage',
-    'click .close-gallery-modal': 'hideModal'
+    'click .close-gallery-modal': 'hideModal',
+    'click .large-modal-bg' : 'hideModal'
   },
 
   keyBinds: function (e) {
