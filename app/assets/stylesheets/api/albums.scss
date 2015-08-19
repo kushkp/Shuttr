@@ -1,7 +1,13 @@
-.album-grid {
+div.albums {
+  width: 100%;
+  height: 100%;
+}
+
+div.album-grid {
   display: block;
   position: relative;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   clear: both;
 }
@@ -24,8 +30,7 @@
 .col6 img { max-width: 420px; }
 .col7 img { max-width: 490px; }
 
-.grid-sizer,
-.grid-item {
+.album-grid-item {
   width: 33.33%;
 }
 
@@ -33,6 +38,9 @@
   display: block;
   overflow: hidden;
   border: 5px solid white;
+  height: auto;
+  min-height: 100px;
+  min-width: 150px;
 }
 
 .album-grid-item img {

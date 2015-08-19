@@ -1,5 +1,6 @@
 Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
   template: JST["album/index"],
+  className: "albums",
 
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
@@ -20,15 +21,13 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
     this.addSubview('.album-grid', subview);
   },
 
-  callMasonry:function() {
-    var $container = $('.album-grid');
+  callMasonry: function() {
+    var $container = this.$('.album-grid');
 
-    $container.imagesLoaded( function() {
+    $container.imagesLoaded(function() {
       $container.masonry({
         itemSelector: '.album-grid-item',
-        columnWidth: 25,
-        isResizable: true,
-        isAnimated: !Modernizr.csstransitions,
+        columnWidth: 1
       });
     });
   }

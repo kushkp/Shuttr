@@ -3,7 +3,6 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.reloadMasonry);
-    // this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
   },
