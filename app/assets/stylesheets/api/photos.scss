@@ -341,6 +341,7 @@ div.large-modal-bg {
 }
 
 div.prev-image {
+  position: fixed;
   top: 50%;
   left: 0;
   margin-left: 10px;
@@ -353,6 +354,7 @@ div.prev-image {
 }
 
 div.next-image {
+  position: fixed;
   top: 50%;
   right:0;
   margin-right: 10px;
@@ -364,12 +366,14 @@ div.next-image {
   }
 }
 
-div.close-gallery-modal, div.close-gallery-modal i {
+div.close-gallery-modal {
+  position: relative;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-right: 30px;
   color: white;
   opacity: 1;
   z-index: 10000;
+
   &:hover {
     opacity: 0.5;
   }
