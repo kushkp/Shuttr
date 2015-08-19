@@ -317,6 +317,7 @@ div.gallery-modal {
 }
 
 .active-image img {
+  padding: 0 40px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -345,6 +346,7 @@ div.prev-image {
   top: 50%;
   left: 0;
   margin-left: 10px;
+  font-size: large;
   color: white;
   opacity: 1;
   z-index: 10000;
@@ -358,6 +360,7 @@ div.next-image {
   top: 50%;
   right:0;
   margin-right: 10px;
+  font-size: large;
   color: white;
   opacity: 1;
   z-index: 10000;
