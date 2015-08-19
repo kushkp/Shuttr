@@ -232,16 +232,23 @@ h2.upload-form-heading {
   padding: 1pc;
   border: 1px solid;
   border-radius: 5px;
+  max-width: 80%;
 }
 
 .photo-show-img {
   height: 100%;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .photo-show-img img {
   height: auto;
-  max-height: 500px;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
 }
 
 button.close.close-photo-show {

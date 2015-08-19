@@ -21,17 +21,30 @@ form.login-form {
   padding-bottom: 15px;
 }
 
-p.comment-item-author {
-  // right: 0;
-  // float:right;
+div.comments, div.photo-info, div.comments-index {
+  width: 100%;
 }
 
-p.comment-item-body {
-  // left:0;
+div.comment-item {
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+span.comment-item-author {
+}
+
+span.comment-item-body {
+  left: 10px;
   // float:left;
-  // position: absolute;
+  position: relative;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 button.delete-comment {
+  position: relative;
   float: right;
+  font-size: inherit;
+  color: firebrick;
+  opacity: 0.5;
 }

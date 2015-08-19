@@ -1,15 +1,15 @@
 <div class="comment-item">
-  <p class="comment-item-author">
-    <%= comment.escape("author_name") %>:
-  </p>
   <% if (Shuttr.CURRENT_USER.id === comment.escape("user_id")) { %>
     <button type="button"
-            class="delete-comment"
-            data-id="<%= comment.id %>"
-            >Delete</button>
+            class="close delete-comment glyphicon glyphicon-trash"
+            data-id="<%= comment.id %>">
+    </button>
   <% } %>
-  <p class="comment-item-body">
+  <span class="comment-item-author">
+    <%= comment.escape("author_name") %>:
+  </span><br>
+  <span class="comment-item-body">
     <%= comment.escape("body") %>
-  </p>
+  </span>
 
 </div>
