@@ -24,5 +24,4 @@ Shuttr.Views.CommentsIndex = Backbone.CompositeView.extend ({
   removeCommentItem: function(comment) {
     this.removeModelSubview(".comments", comment);
   }
-
 });

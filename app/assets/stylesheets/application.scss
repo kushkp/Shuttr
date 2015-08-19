@@ -19,10 +19,13 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
+ *= require 'slick/slick'
+ *= require 'slick/slick-theme'
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 .navbar-brand {
   font-weight: 900;

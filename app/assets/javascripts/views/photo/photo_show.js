@@ -15,7 +15,8 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   events: {
     'click .m-background' : 'clickAway',
     'click .close' : 'removeBtn',
-    'click .post-comment-btn' : "render"
+    'click .post-comment-btn' : "render",
+    'click div.photo-show-img' : "launchLargeModal"
   },
 
   render: function() {
@@ -54,5 +55,21 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
 
   clickAway: function(event) {
     this.remove();
+  },
+
+  launchLargeModal: function(e) {
+    // var photoId = $(e.currentTarget).find('img').data("id");
+    // var photo = this.collection.getOrFetch(photoId);
+    var modal = new Shuttr.Views.LargeModal({ model: this.model, collection: this.collection });
+    $('body').append(modal.$el);
+    modal.render();
+    //
+    // var $container = this.$('.single-item');
+    // $container.imagesLoaded(function() {
+    //   $('.single-item').slick({
+    //     // $('.grid').slick
+    //     // setting-name: setting-value
+    //   });
+    // });
   }
 });

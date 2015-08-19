@@ -305,3 +305,80 @@ button.close.delete-photo {
 // @media screen and (min-width: 1000px) {
 //   .photo-sizer, .photo-item { width: 25% }
 // }
+
+div.gallery-modal {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 10000;
+}
+
+.active-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto !important;
+  width: auto;
+  max-width: 100% !important;
+  max-height: 100%;
+  z-index: 10000;
+}
+
+div.large-modal-bg {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+}
+
+div.prev-image {
+  top: 50%;
+  left: 0;
+  margin-left: 10px;
+  color: white;
+  opacity: 1;
+  z-index: 10000;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+div.next-image {
+  top: 50%;
+  right:0;
+  margin-right: 10px;
+  color: white;
+  opacity: 1;
+  z-index: 10000;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+div.close-gallery-modal, div.close-gallery-modal i {
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  opacity: 1;
+  z-index: 10000;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+div.gallery-modal + div {
+  -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}

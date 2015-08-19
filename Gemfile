@@ -9,7 +9,7 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 
 gem 'masonry-rails'
-
+gem 'font-awesome-rails'
 # gem 'cloudinary'
 
 gem 'figaro'
