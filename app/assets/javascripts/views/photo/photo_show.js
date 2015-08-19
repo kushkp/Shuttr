@@ -10,7 +10,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     this.addCommentsIndex();
     this.addNewCommentForm();
     $(document).on('keyup', this.handleKey.bind(this));
-    // TODO: Get page to rerender when add comment
+    // TODO: Get page to rerender when add multiple comments
   },
 
   events: {
