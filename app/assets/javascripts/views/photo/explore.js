@@ -37,7 +37,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     $container.imagesLoaded(function() {
       $container.masonry({
         itemSelector: '.grid-item',
-        columnWidth: 1,
+        columnWidth: 1
         // percentPosition: true,
         // isResizable: true,
         // isAnimated: !Modernizr.csstransitions

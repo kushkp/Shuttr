@@ -45,6 +45,7 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
       var uploadModal = view;
       photo.save({}, {
         success: function() {
+          this.collection.add(photo);
           console.log("success");
           uploadModal.remove();
         }.bind(this),

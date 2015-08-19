@@ -37,7 +37,7 @@ class Api::PhotosController < ApplicationController
     elsif (params["filter_data"])
       @photos = filter_photos(filter_options)
     else
-      @photos = Photo.all.includes(:comments)
+      @photos = Photo.all.includes(comments: :user)
     end
 
     render :index
