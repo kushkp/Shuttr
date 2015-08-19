@@ -8,6 +8,10 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
     this.collection.each(this.addIndexItem.bind(this));
   },
 
+  events: {
+    'click .new-album-button' : 'launchNewAlbumModal'
+  },
+
   render: function() {
     var content = this.template({ albums: this.collection });
     this.$el.html(content);
@@ -30,5 +34,12 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
         columnWidth: 1
       });
     });
+  },
+
+  launchNewAlbumModal: function(e) {
+    var album = new Shuttr.Models.Album();
+    var modal = new Shuttr.Views.AlbumForm({ model: album, collection: this.collection });
+    $('body').append(modal.$el);
+    modal.render();
   }
 });

@@ -24,10 +24,6 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
     return this;
   },
 
-  onRender: function() {
-
-  },
-
   upload: function(e) {
     e.preventDefault();
     var view = this;

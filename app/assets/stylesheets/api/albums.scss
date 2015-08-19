@@ -63,4 +63,29 @@ div.album-grid {
   opacity: 0.8;
   color: white;
   z-index: 3;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.new-album-button {
+  color: blue;
+  opacity: 0.6;
+}
+
+// new album form modal
+
+.new-album-wrapper {
+  height:100%;
+  width:100%;
+}
+
+.new-album-form {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 10000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

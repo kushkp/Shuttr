@@ -1,10 +1,18 @@
-<h2>New Album</h2>
+<div class="new-album-form">
+  <h2>New Album</h2>
 
-<form class="new_album">
-  <label for="album_title">Title</label>
-  <input type="text" name="album[title]" id="album_title">
+  <div class="form-group">
+    <form class="new_album">
+      <label for="album_title">Title</label>
+      <input type="text" class="album-title form-control" name="album[title]" id="album_title">
 
-  <input type="submit" value="Create Album!">
-</form>
+      <br>
 
-<a href="#">Back to Album Index</a>
+      <button class="create-album-btn btn btn-primary">Create Album!</button>
+    </form>
+  </div>
+
+  <a href="#albums">Back to Album Index</a>
+</div>
+
+<div class="m-background"></div>
