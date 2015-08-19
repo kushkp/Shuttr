@@ -63,6 +63,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     var modal = new Shuttr.Views.LargeModal({ model: this.model, collection: this.collection });
     $('body').append(modal.$el);
     modal.render();
+    this.$el.css({ "-webkit-filter": "blur(3px)", "-moz-filter": "blur(3px)", "-o-filter": "blur(3px)", "-ms-filter": "blur(3px)", "filter": "blur(3px)" });
     //
     // var $container = this.$('.single-item');
     // $container.imagesLoaded(function() {
