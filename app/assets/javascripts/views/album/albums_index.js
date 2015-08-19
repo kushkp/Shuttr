@@ -41,5 +41,6 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
     var modal = new Shuttr.Views.AlbumForm({ model: album, collection: this.collection });
     $('body').append(modal.$el);
     modal.render();
+    this.$el.css({ "-webkit-filter": "blur(3px)", "-moz-filter": "blur(3px)", "-o-filter": "blur(3px)", "-ms-filter": "blur(3px)", "filter": "blur(3px)" });
   }
 });

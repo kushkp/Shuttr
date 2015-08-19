@@ -50,20 +50,5 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     var modal = new Shuttr.Views.PhotoShow({ model: photo, collection: this.collection });
     $('body').append(modal.$el);
     modal.render();
-  },
-
-  launchCarousel: function(e) {
-    // this.collection.each(function(photo) {
-    //   var content = $('<div><img src="' + photo.escape('url') + '" alt=""</div>');
-    //   $('.single-image').append(content);
-    // });
-    var $container = this.$('.single-item');
-    $container.imagesLoaded(function() {
-      $('.single-item').slick({
-        // $('.grid').slick({
-        // setting-name: setting-value
-      });
-    });
   }
-
 });

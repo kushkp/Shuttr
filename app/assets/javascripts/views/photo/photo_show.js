@@ -4,8 +4,6 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
 
   initialize: function() {
     this.listenTo(this.model, "add sync", this.render);
-
-    // remove sync change reset from model comments listenTo
     this.listenTo(this.model.comments(), "add reset", this.render);
     this.addCommentsIndex();
     this.addNewCommentForm();
@@ -58,19 +56,9 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   },
 
   launchLargeModal: function(e) {
-    // var photoId = $(e.currentTarget).find('img').data("id");
-    // var photo = this.collection.getOrFetch(photoId);
     var modal = new Shuttr.Views.LargeModal({ model: this.model, collection: this.collection });
     $('body').append(modal.$el);
     modal.render();
     this.$el.css({ "-webkit-filter": "blur(3px)", "-moz-filter": "blur(3px)", "-o-filter": "blur(3px)", "-ms-filter": "blur(3px)", "filter": "blur(3px)" });
-    //
-    // var $container = this.$('.single-item');
-    // $container.imagesLoaded(function() {
-    //   $('.single-item').slick({
-    //     // $('.grid').slick
-    //     // setting-name: setting-value
-    //   });
-    // });
   }
 });
