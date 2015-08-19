@@ -6,12 +6,12 @@ Shuttr.Views.PhotoItem = Backbone.View.extend ({
   },
 
   initialize: function(options) {
-    this.inExplore = options.inExplore;
+    this.inMyPhotos = options.inMyPhotos;
     // this.listenTo(this.model, "sync", this.render);
   },
 
   render: function() {
-    var content = this.template({ photo: this.model, inExplore: this.inExplore });
+    var content = this.template({ photo: this.model, inMyPhotos: this.inMyPhotos });
     this.$el.html(content);
     return this;
   },

@@ -86,11 +86,11 @@ div.box {
 
 .grid,
 .grid .grid-item {
-  -webkit-transition-duration: 0.7s;
-     -moz-transition-duration: 0.7s;
-      -ms-transition-duration: 0.7s;
-       -o-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+      -ms-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .grid {
@@ -232,14 +232,21 @@ div.photo-show-content {
   padding: 1pc;
   border: 1px solid;
   border-radius: 5px;
-  max-width: 80%;
+  max-width: 62.5%;
   min-width: 350px;
 }
 
 .photo-show-img {
   height: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 100%;
+}
+
+.photo-show-title {
+  font-family: inherit;
+  font-size: large;
+  font-weight: bold;
+  padding-left: 20px;
 }
 
 .photo-show-img img {

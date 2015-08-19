@@ -1,6 +1,13 @@
-.new-comment-form textarea {
-  width: 100%;
+.new-comment-form {
+  padding: 0px 2px;;
+
+  textarea {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
 }
+
 //
 // .comment-index {
 //   background-color: white;
@@ -21,21 +28,36 @@ form.login-form {
   padding-bottom: 15px;
 }
 
-div.comments, div.photo-info, div.comments-index {
+div.comments, div.photo-info, div.comments-index div.comment-list-wrapper{
   width: 100%;
+}
+
+div.comment-list-wrapper {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 div.comment-item {
   margin-bottom: 10px;
+  // margin-right: 10px;
   max-width: 100%;
+  border: thin solid lightgray;
+  border-radius: 5px;
+  background-color: lightgray;
+  padding: 10px;
+
+  &:hover button.delete-comment {
+    display: block;
+  }
 }
 
 span.comment-item-author {
+  color: darkslategray;
 }
 
 span.comment-item-body {
   left: 10px;
-  // float:left;
   position: relative;
   width: 100%;
   overflow-wrap: break-word;
@@ -47,4 +69,9 @@ button.delete-comment {
   font-size: inherit;
   color: firebrick;
   opacity: 0.5;
+  padding-top: 5px;
+  padding-right: 5px;
+  display: none;
+
+
 }

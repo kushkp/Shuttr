@@ -7,7 +7,7 @@
     </a>
     <p class="photo-title">
       <%= photo.escape("title") %>
-      <% if (!inExplore) { %>
+      <% if (inMyPhotos) { %>
           <button class="close delete-photo glyphicon glyphicon-trash"></button>
       <% } %>
     </p>
