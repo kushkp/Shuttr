@@ -3,13 +3,27 @@
     <h2 class="login-form-heading"><%= content %></h2>
     <%=auth_token%>
 
+
+
+    <label for="user_alias">Alias</label>
+    <br>
+    <input type="text"
+           class="form-control"
+           id="user_alias"
+           name="user[alias]"
+           placeholder="Ex. John Smith, Redfin102, etc..."
+           autofocus=""
+           value="<%= @user.email if @user%>">
+
+    <br>
+
     <label for="user_email">Email</label>
     <br>
     <input type="text"
            class="form-control"
            id="user_email"
            name="user[email]"
-           placeholder="Email Address"
+           placeholder="example@gmail.com"
            autofocus=""
            value="<%= @user.email if @user%>">
 
@@ -21,7 +35,7 @@
            class="form-control"
            id="user_password"
            name="user[password]"
-           placeholder="Password"
+           placeholder="Password123"
            autofocus=""
            value="<%= @user.password if @user%>">
 
