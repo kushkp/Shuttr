@@ -6,15 +6,14 @@ column name     | data type | details
 id              | integer   | not null, primary key
 email           | string    | not null, unique
 password_digest | string    | not null
-session_token   | string    | not null, unique
-name            | string    | not null
+session_token   | string    | not null
+alias           | string    | not null, unique
 avatar_url      | string    | not null
 
 ## photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-album_id    | integer   | not null, foreign key (references albums)
 title       | string    | not null
 url         | string    | not null
 longitude   | integer   |
