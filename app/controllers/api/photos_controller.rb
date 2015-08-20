@@ -33,11 +33,11 @@ class Api::PhotosController < ApplicationController
 
   def index
     if (params["owner_id"])
-      @photos = Photo.all.where(owner_id: params["owner_id"]).includes(:comments)
+      @photos = Photo.all.where(owner_id: params["owner_id"]).includes(:comments).order(created_at: :desc)
     elsif (params["filter_data"])
-      @photos = filter_photos(filter_options)
+      @photos = filter_photos(filter_options).order(created_at: :desc)
     else
-      @photos = Photo.all.includes(comments: :user)
+      @photos = Photo.all.includes(comments: :user).order(created_at: :desc)
     end
 
     render :index

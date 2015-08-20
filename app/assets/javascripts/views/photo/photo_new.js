@@ -38,6 +38,9 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
 
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       var data = result[0];
+      if (photo.get('title') === '') {
+        photo.set({title: data.original_filename});
+      }
       photo.set({url: data.url});
 
       var uploadModal = view;

@@ -21,6 +21,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   },
 
   reloadMasonry: function (obj) {
+    //test without the flag that is present in explore
     this.$(".grid").masonry("reload");
   },
 
