@@ -1,5 +1,6 @@
 Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   template: JST["photo/explore"],
+  className: "explore-container",
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.reloadMasonry);
