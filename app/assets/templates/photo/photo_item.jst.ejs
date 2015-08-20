@@ -6,9 +6,15 @@
            alt="photo-thumbnail"/>
     </a>
     <p class="photo-title">
-      <%= photo.escape("title") %>
+      <span class="span-photo-title">
+        <%= photo.escape("title") %>
+      </span>
+      <span class="span-photo-button">
       <% if (inMyPhotos) { %>
           <button class="close delete-photo glyphicon glyphicon-trash"></button>
+      <% } else { %>
+          <button class="close add-to-album glyphicon glyphicon-plus-sign"></button>
       <% } %>
+      </span>
     </p>
 </div>
