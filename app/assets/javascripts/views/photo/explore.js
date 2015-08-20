@@ -35,9 +35,6 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
       $container.masonry({
         itemSelector: '.grid-item',
         columnWidth: 1
-        // percentPosition: true,
-        // isResizable: true,
-        // isAnimated: !Modernizr.csstransitions
       });
     });
   },
