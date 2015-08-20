@@ -9,7 +9,6 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
   },
 
   initialize: function(options) {
-    this.listenTo(this.collection, "sync", this.render);
     this.formPageMap = new Shuttr.Views.FormPageMap({ model: this.model });
     $(document).on('keyup', this.handleKey.bind(this));
   },
@@ -55,7 +54,7 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
           console.log("error");
         }
       });
-    });
+    }.bind(this));
   },
 
   handleKey: function(event) {

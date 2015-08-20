@@ -27,7 +27,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
 
   addPhotoItem: function(photo) {
     var photoItem = new Shuttr.Views.PhotoItem({ model: photo, inMyPhotos: true });
-    this.addSubview(".photos", photoItem);
+    this.addSubview(".photos", photoItem, true);
   },
 
   removePhotoItem: function(photo) {
@@ -38,13 +38,15 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   callMasonry: function() {
     var $container = this.$('.grid');
 
-    $container.imagesLoaded(function() {
-      $container.masonry({
-        itemSelector: '.grid-item',
-        columnWidth: 1,
-        // percentPosition: true,
-        // isResizable: true,
-        // isAnimated: !Modernizr.csstransitions,
+    $(document).ready(function() {
+      $container.imagesLoaded(function() {
+        $container.masonry({
+          itemSelector: '.grid-item',
+          columnWidth: 1,
+          // percentPosition: true,
+          // isResizable: true,
+          // isAnimated: !Modernizr.csstransitions,
+        });
       });
     });
   },

@@ -34,11 +34,12 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
 
   callMasonry: function() {
     var $container = this.$('.album-grid');
-
-    $container.imagesLoaded(function() {
-      $container.masonry({
-        itemSelector: '.album-grid-item',
-        columnWidth: 1
+    $(document).ready(function() {
+      $container.imagesLoaded(function() {
+        $container.masonry({
+          itemSelector: '.album-grid-item',
+          columnWidth: 1
+        });
       });
     });
   },

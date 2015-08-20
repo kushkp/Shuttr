@@ -27,16 +27,18 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
 
   addPhotoItem: function(photo) {
     var photoItem = new Shuttr.Views.PhotoItem({ model: photo, inMyPhotos: false });
-    this.addSubview(".photos", photoItem);
+    this.addSubview(".photos", photoItem, true);
   },
 
   callMasonry: function() {
     var $container = this.$('.grid');
 
-    $container.imagesLoaded(function() {
-      $container.masonry({
-        itemSelector: '.grid-item',
-        columnWidth: 1
+    $(document).ready(function() {
+      $container.imagesLoaded(function() {
+        $container.masonry({
+          itemSelector: '.grid-item',
+          columnWidth: 1
+        });
       });
     });
   },

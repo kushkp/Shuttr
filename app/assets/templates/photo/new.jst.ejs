@@ -15,15 +15,9 @@
                 rows="5"
                 ></textarea><br>
 
-      <label for="album-id">Album:</label><br>
-      <select id="album-id">
-          <option value="0">No Album</option>
-        <% albums.each(function(album) { %>
-          <option value="<%= album.id %>"
-            ><%= album.escape("title") %>
-          </option>
-        <%  }); %>
-      </select><br><br>
+
+
+      <br>
 
 
       <input type="submit" class="btn btn-primary new-photo-submit centered" value="Select File and Upload">
