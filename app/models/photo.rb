@@ -1,17 +1,12 @@
 class Photo < ActiveRecord::Base
-  validates :title, :url, :owner_id, presence: true
+  validates :title, :url, :user_id, presence: true
 
+  belongs_to :user
   has_many :comments
-  belongs_to :album
   has_many :albumings
-  belongs_to(
-    :owner,
-    class_name: :User,
-    foreign_key: :owner_id,
-    primary_key: :id
-  )
+  has_many :albums, through: :albumings
 
-  def owner_name
-    owner.name
+  def user_name
+    user.name
   end
 end

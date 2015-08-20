@@ -1,12 +1,7 @@
 class Album < ActiveRecord::Base
-  validates :title, :owner_id, presence: true
+  validates :title, :user_id, presence: true
 
-  belongs_to(
-    :owner,
-    class_name: :User,
-    primary_key: :id,
-    foreign_key: :owner_id
-  )
+  belongs_to :user
 
   has_many :photos
   has_many :comments, through: :photos, source: :comments

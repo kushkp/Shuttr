@@ -3,5 +3,5 @@ class Albuming < ActiveRecord::Base
 
   belongs_to :albums
   belongs_to :photos
-
+  belongs_to :user, through: :albums
 end
