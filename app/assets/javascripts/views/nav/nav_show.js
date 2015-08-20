@@ -83,7 +83,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     this.photos.each(function(photo) {
       if (re.test(photo.get('title').toLowerCase()) ||
           re.test(photo.get('description').toLowerCase()) ||
-          re.test(photo.get('owner_name').toLowerCase())) {
+          re.test(photo.get('user_name').toLowerCase())) {
             searchResults.add(photo);
           }
     });

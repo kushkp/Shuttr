@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
-    @photo.owner_id = current_user.id
+    @photo.user_id = current_user.id
 
     if @photo.save!
       render :show
@@ -22,8 +22,8 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    # TODO: is there a way to delegate this? @photo.owner_id
-    # if (current_user.id == @photo.owner.id)
+    # TODO: is there a way to delegate this? @photo.user_id
+    # if (current_user.id == @photo.user.id)
       render :show
     # else
     #   flash[:errors] = ["Invalid Photo"]
@@ -32,8 +32,8 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
-    if (params["owner_id"])
-      @photos = Photo.all.where(owner_id: params["owner_id"]).includes(:comments).order(created_at: :desc)
+    if (params["user_id"])
+      @photos = Photo.all.where(user_id: params["user_id"]).includes(:comments).order(created_at: :desc)
     elsif (params["filter_data"])
       @photos = filter_photos_by_loc(filter_loc_options).order(created_at: :desc)
     elsif (params["search_data"])
@@ -85,17 +85,17 @@ private
 
   def filter_photos_by_keyword(keyword)
     kw = "%" + keyword + "%"
-    a = Photo.joins('INNER JOIN "users" ON "photos"."owner_id" = "users"."id"').where(<<-SQL, kw, kw, kw)
+    a = Photo.joins('INNER JOIN "users" ON "photos"."user_id" = "users"."id"').where(<<-SQL, kw, kw, kw)
         photos.title LIKE ? OR
         photos.description LIKE ? OR
-        users.name LIKE ?
+        users.alias LIKE ?
       SQL
   end
 
   def photo_params
     params.require(:photo).permit(
-      :title, :url, :long, :lat, :album_id, :description, :owner_id
+      :title, :url, :long, :lat, :album_id, :description, :user_id
     )
-    # TODO: ^remove owner_id?
+    # TODO: ^remove user_id?
   end
 end

@@ -1,7 +1,7 @@
 class Api::AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
-    @album.owner_id = current_user.id
+    @album.user_id = current_user.id
 
     if @album.save!
       render :show
@@ -23,7 +23,7 @@ class Api::AlbumsController < ApplicationController
   def show
     #TODO: test newly written function
     @album = Album.includes(:comments).find(params[:id])
-    if (current_user.id == @album.owner_id)
+    if (current_user.id == @album.user_id)
       render :show
     else
       flash[:errors] = ["Invalid Album"]
@@ -32,7 +32,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all.where(owner_id: current_user.id).includes(:comments)
+    @albums = Album.all.where(user_id: current_user.id).includes(:comments)
     render :index
   end
 

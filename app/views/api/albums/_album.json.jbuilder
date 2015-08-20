@@ -1,4 +1,4 @@
-json.(album, :id, :title, :url, :owner_id)
+json.(album, :id, :title, :url, :user_id)
 
 json.photos album.photos do |photo|
   json.partial! 'api/photos/photo', photo: photo

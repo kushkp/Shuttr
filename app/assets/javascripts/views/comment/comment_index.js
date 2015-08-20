@@ -1,6 +1,6 @@
 Shuttr.Views.CommentsIndex = Backbone.CompositeView.extend ({
   template: JST["comment/index"],
-  className: "",
+  className: "comment-list-wrapper",
 
   initialize: function () {
     this.listenTo(this.collection, "sync add", this.render);

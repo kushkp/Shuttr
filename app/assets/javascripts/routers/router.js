@@ -42,7 +42,7 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   },
 
   photoIndex: function() {
-    this.photos.fetch({data: { owner_id: Shuttr.CURRENT_USER.id }, processData: true });
+    this.photos.fetch({data: { user_id: Shuttr.CURRENT_USER.id }, processData: true });
     var view = new Shuttr.Views.PhotoIndex({ collection: this.photos });
     this._swapView(view);
   },

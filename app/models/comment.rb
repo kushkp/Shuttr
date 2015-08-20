@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
   belongs_to :photo
 
   def author_name
-    user.name
+    user.alias
   end
 end

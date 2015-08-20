@@ -7,6 +7,6 @@ class Photo < ActiveRecord::Base
   has_many :albums, through: :albumings
 
   def user_name
-    user.name
+    user.alias
   end
 end
