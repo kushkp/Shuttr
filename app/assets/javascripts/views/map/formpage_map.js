@@ -21,11 +21,11 @@ Shuttr.Views.FormPageMap = Backbone.View.extend ({
 
   attachMapListeners: function() {
     google.maps.event.addListener(
-      this._map, 'click', this.createPhoto.bind(this)
+      this._map, 'click', this.setLocation.bind(this)
     );
   },
 
-  createPhoto: function(event) {
+  setLocation: function(event) {
     this.model.set({
       lat: event.latLng.lat(),
       long: event.latLng.lng()
@@ -33,7 +33,7 @@ Shuttr.Views.FormPageMap = Backbone.View.extend ({
   },
 
   addMarker: function(photo) {
-    if (this._marker) { this._marker.setMap(null); }
+    if (this._marker !== null ) { this._marker.setMap(null); }
     var marker = new google.maps.Marker({
       position: {
         lat: photo.get('lat'),

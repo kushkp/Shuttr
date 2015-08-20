@@ -29,10 +29,11 @@ Shuttr.Views.PhotoNew = Backbone.CompositeView.extend ({
     var view = this;
     var photo = this.model;
     var formdata = $(e.currentTarget).serializeJSON();
-    // if (this.formPageMap._marker !== null) {
-      formdata.photo.lat = this.formPageMap._marker.position.G;
-      formdata.photo.long = this.formPageMap._marker.position.K;
-    // }
+    if (this.formPageMap._marker !== null &&
+        typeof this.formPageMap._marker.position !== "undefined") {
+          formdata.photo.lat = this.formPageMap._marker.position.G;
+          formdata.photo.long = this.formPageMap._marker.position.K;
+    }
 
     photo.set(formdata.photo);
 

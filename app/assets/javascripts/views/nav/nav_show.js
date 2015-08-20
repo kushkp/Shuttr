@@ -3,7 +3,8 @@ Shuttr.Views.NavShow = Backbone.View.extend({
 
   events: {
     "click .sign-out-link" : "signOut",
-    "click .create-photo-btn" : "showNewPhotoForm"
+    "click .create-photo-btn" : "showNewPhotoForm",
+    "keyup .search-input" : "keyBinds"
   },
 
   initialize: function (options) {
@@ -11,7 +12,6 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     this.$rootEl = options.$rootEl;
     this.photos = options.photos;
     this.listenTo(this.router, "route", this.handleRoute);
-    $(document).on('keyup', this.keyBinds.bind(this));
   },
 
   handleRoute: function(routeName, params) {
