@@ -8,6 +8,7 @@ window.Shuttr = {
 
     var $rootEl = $(".main");
     var photos = new Shuttr.Collections.Photos();
+    photos.fetch();
 
     var router = new Shuttr.Routers.Router({
       $rootEl: $rootEl,

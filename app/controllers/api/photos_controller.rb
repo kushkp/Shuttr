@@ -96,5 +96,6 @@ private
     params.require(:photo).permit(
       :title, :url, :long, :lat, :album_id, :description, :owner_id
     )
+    # TODO: ^remove owner_id?
   end
 end

@@ -3,8 +3,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
 
   events: {
     "click .sign-out-link" : "signOut",
-    "click .create-photo-btn" : "showNewPhotoForm",
-    'click .search-submit' : 'search'
+    "click .create-photo-btn" : "showNewPhotoForm"
   },
 
   initialize: function (options) {
@@ -30,7 +29,8 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     if ((event.keyCode === 13) ||
         (event.keyCode >= 48 && event.keyCode <= 57) ||
         (event.keyCode >= 65 && event.keyCode <= 90)) {
-          this.search();
+          event.preventDefault();
+          this.dynamicSearch();
         }
 
     if (event.keyCode === 8 && this.$el.find('.search-input').val() === '') {
@@ -63,32 +63,37 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     modal.render();
   },
 
-  search: function(event) {
-    // event.preventDefault();
-    var keyword = this.$el.find('.search-input').val();
-
-    var photos = new Shuttr.Collections.Photos();
-    photos.fetch({
-      data: { search_data: keyword }
-    });
-
-    this.router.searchListings(photos);
-  },
-
-  // dynamicSearch: function(event) {
-  //   // event.preventDefault();
+  // search: function(event) {
+  //   event.preventDefault();
   //   var keyword = this.$el.find('.search-input').val();
   //
-  //
-  //
-  //
+  //   var photos = new Shuttr.Collections.Photos();
+  //   photos.fetch({
+  //     data: { search_data: keyword }
+  //   });
   //
   //   this.router.searchListings(photos);
   // },
 
+  dynamicSearch: function() {
+    var keyword = this.$el.find('.search-input').val().toLowerCase();
+    var re = new RegExp(keyword);
+
+    var searchResults = new Shuttr.Collections.Photos();
+    this.photos.each(function(photo) {
+      if (re.test(photo.get('title').toLowerCase()) ||
+          re.test(photo.get('description').toLowerCase()) ||
+          re.test(photo.get('owner_name').toLowerCase())) {
+            searchResults.add(photo);
+          }
+    });
+
+    this.router.searchListings(searchResults);
+  },
+
   restoreExplore: function() {
     this.photos.fetch();
-    this.router.explore({ collection: photos });
+    this.router.explore({ collection: this.photos });
   }
 
 });
