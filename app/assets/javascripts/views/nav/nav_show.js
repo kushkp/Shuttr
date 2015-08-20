@@ -3,13 +3,16 @@ Shuttr.Views.NavShow = Backbone.View.extend({
 
   events: {
     "click .sign-out-link" : "signOut",
-    "click .create-photo-btn" : "showNewPhotoForm"
+    "click .create-photo-btn" : "showNewPhotoForm",
+    'click .search-submit' : 'dynamicSearch'
   },
 
   initialize: function (options) {
     this.router = options.router;
     this.$rootEl = options.$rootEl;
+    this.photos = options.photos;
     this.listenTo(this.router, "route", this.handleRoute);
+    $(document).on('keyup', this.keyBinds.bind(this));
   },
 
   handleRoute: function(routeName, params) {
@@ -23,8 +26,20 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     return this;
   },
 
-  signOut: function(e) {
-    e.preventDefault(); //Unnecessary?
+  keyBinds: function(event) {
+    if ((event.keyCode === 13) ||
+        (event.keyCode >= 48 && event.keyCode <= 57) ||
+        (event.keyCode >= 65 && event.keyCode <= 90)) {
+          this.dynamicSearch();
+        }
+
+    if (event.keyCode === 8 && this.$el.find('.search-input').val() === '') {
+      this.restoreExplore();
+    }
+  },
+
+  signOut: function(event) {
+    event.preventDefault(); //Unnecessary?
 
     $.ajax({
       url: "session",
@@ -46,6 +61,34 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
     this.$rootEl.append(modal.$el);
     modal.render();
+  },
+
+  // search: function(event) {
+  //   event.preventDefault();
+  //   var keyword = this.$el.find('.search-input').val();
+  //
+  //   var photos = new Shuttr.Collections.Photos();
+  //   photos.fetch({
+  //     data: { search_data: keyword }
+  //   });
+  //
+  //   this.router.searchListings(photos);
+  // },
+
+  dynamicSearch: function(event) {
+    // event.preventDefault();
+    var keyword = this.$el.find('.search-input').val();
+
+    
+
+
+
+    this.router.searchListings(photos);
+  },
+
+  restoreExplore: function() {
+    this.photos.fetch();
+    this.router.explore({ collection: photos });
   }
 
 });

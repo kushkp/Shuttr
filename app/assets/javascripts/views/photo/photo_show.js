@@ -7,7 +7,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     this.listenTo(this.model.comments(), "add reset", this.render);
     this.addCommentsIndex();
     this.addNewCommentForm();
-    $(document).on('keyup', this.handleKey.bind(this));
+    $(document).on('keyup', this.keyBinds.bind(this));
   },
 
   events: {
@@ -40,7 +40,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     this.addSubview(".new-comment-form", newCommentForm);
   },
 
-  handleKey: function(event) {
+  keyBinds: function(event) {
     if (event.keyCode === 27) {
       this.remove();
     }

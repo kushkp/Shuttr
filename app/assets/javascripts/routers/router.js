@@ -58,5 +58,10 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$rootEl.html(view.$el);
     view.render();
+  },
+
+  searchListings: function(results) {
+    var view = new Shuttr.Views.SearchListings({ collection: results });
+    this._swapView(view);
   }
 });

@@ -3,7 +3,7 @@ Shuttr.Views.LargeModal = Backbone.View.extend({
   className: 'gallery-modal',
 
   initialize: function () {
-    $('body').keydown(this.keyBinds.bind(this));
+    $(document).keydown(this.keyBinds.bind(this));
     this.rendering = false;
   },
 

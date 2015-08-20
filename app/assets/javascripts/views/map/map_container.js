@@ -23,9 +23,6 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
     return this;
   },
 
-  onRender: function() {
-  },
-
   addMap: function() {
     var mapShow = new Shuttr.Views.MapShow({ collection: this.collection });
     this.addSubview("#map-canvas", mapShow);

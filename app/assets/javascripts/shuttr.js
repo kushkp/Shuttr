@@ -7,14 +7,17 @@ window.Shuttr = {
     // alert('Hello from Backbone!');
 
     var $rootEl = $(".main");
+    var photos = new Shuttr.Collections.Photos();
 
     var router = new Shuttr.Routers.Router({
-      $rootEl: $rootEl
+      $rootEl: $rootEl,
+      photos: photos
     });
 
     var nav = new Shuttr.Views.NavShow({
       router: router,
-      $rootEl: $rootEl
+      $rootEl: $rootEl,
+      photos: photos
     });
 
     $("#navbar").html(nav.render().$el);
