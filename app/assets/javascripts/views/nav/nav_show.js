@@ -4,7 +4,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
   events: {
     "click .sign-out-link" : "signOut",
     "click .create-photo-btn" : "showNewPhotoForm",
-    'click .search-submit' : 'dynamicSearch'
+    'click .search-submit' : 'search'
   },
 
   initialize: function (options) {
@@ -30,7 +30,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     if ((event.keyCode === 13) ||
         (event.keyCode >= 48 && event.keyCode <= 57) ||
         (event.keyCode >= 65 && event.keyCode <= 90)) {
-          this.dynamicSearch();
+          this.search();
         }
 
     if (event.keyCode === 8 && this.$el.find('.search-input').val() === '') {
@@ -63,28 +63,28 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     modal.render();
   },
 
-  // search: function(event) {
-  //   event.preventDefault();
-  //   var keyword = this.$el.find('.search-input').val();
-  //
-  //   var photos = new Shuttr.Collections.Photos();
-  //   photos.fetch({
-  //     data: { search_data: keyword }
-  //   });
-  //
-  //   this.router.searchListings(photos);
-  // },
-
-  dynamicSearch: function(event) {
-    // event.preventDefault();
+  search: function(event) {
+    event.preventDefault();
     var keyword = this.$el.find('.search-input').val();
 
-    
-
-
+    var photos = new Shuttr.Collections.Photos();
+    photos.fetch({
+      data: { search_data: keyword }
+    });
 
     this.router.searchListings(photos);
   },
+
+  // dynamicSearch: function(event) {
+  //   // event.preventDefault();
+  //   var keyword = this.$el.find('.search-input').val();
+  //
+  //
+  //
+  //
+  //
+  //   this.router.searchListings(photos);
+  // },
 
   restoreExplore: function() {
     this.photos.fetch();
