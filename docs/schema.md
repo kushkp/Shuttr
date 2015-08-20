@@ -8,6 +8,7 @@ email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 name            | string    | not null
+avatar_url      | string    | not null
 
 ## photos
 column name | data type | details
@@ -19,13 +20,13 @@ url         | string    | not null
 longitude   | integer   |
 latitude    | integer   |
 description | string    |
-owner_id    | integer   | not null
+user_id     | integer   | not null
 
 ## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
+user_id     | integer   | not null, foreign key (references users)
 photo_id    | integer   | not null, foreign key (references photos)
 body        | text      | not null
 
@@ -34,12 +35,12 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
+user_id     | integer   | not null, foreign key (references users)
 url         | string    | not null
-owner_id    | integer   | not null, foreign key (references users)
 
 ## albumings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
+album_id    | integer   | not null, foreign key (references albums)
 photo_id    | integer   | not null, foreign key (references photos)

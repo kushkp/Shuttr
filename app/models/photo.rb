@@ -3,6 +3,7 @@ class Photo < ActiveRecord::Base
 
   has_many :comments
   belongs_to :album
+  has_many :albumings
   belongs_to(
     :owner,
     class_name: :User,

@@ -10,5 +10,6 @@ class Album < ActiveRecord::Base
 
   has_many :photos
   has_many :comments, through: :photos, source: :comments
+  has_many :albumings
 
 end
