@@ -64,7 +64,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
   },
 
   search: function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     var keyword = this.$el.find('.search-input').val();
 
     var photos = new Shuttr.Collections.Photos();
