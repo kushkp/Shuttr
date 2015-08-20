@@ -20,9 +20,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   reloadMasonry: function (obj) {
-    if (obj !== this.collection) { return; }
-    this.$(".grid").masonry("destroy");
-    this.callMasonry();
+    this.$(".grid").masonry("reload");
   },
 
   addPhotoItem: function(photo) {

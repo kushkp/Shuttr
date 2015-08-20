@@ -3,9 +3,10 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
   className: "albums",
 
   initialize: function() {
-    this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, 'add', this.addIndexItem);
-    this.collection.each(this.addIndexItem.bind(this));
+    this.listenTo(this.collection, "sync", this.reloadMasonry);
+    this.listenTo(this.collection, 'add', this.addAlbumItem);
+    this.listenTo(this.collection, "remove", this.removeAlbumItem);
+    this.collection.each(this.addAlbumItem.bind(this));
   },
 
   events: {
@@ -20,9 +21,15 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
     return this;
   },
 
-  addIndexItem: function(album) {
+  addAlbumItem: function(album) {
     var subview = new Shuttr.Views.AlbumIndexItem({ model: album });
     this.addSubview('.album-grid', subview);
+    this.reloadMasonry();
+  },
+
+  removeAlbumItem: function(album) {
+    this.removeModelSubview(".album-grid", album);
+    this.reloadMasonry();
   },
 
   callMasonry: function() {
@@ -34,6 +41,10 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
         columnWidth: 1
       });
     });
+  },
+
+  reloadMasonry: function (obj) {
+    this.$(".album-grid").masonry("reload");
   },
 
   launchNewAlbumModal: function(e) {
