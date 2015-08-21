@@ -20,9 +20,103 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
-    this.collection.each(this.addMarker.bind(this));
-    this.attachMapListeners();
+
+    this.autocomplete = new google.maps.places.Autocomplete(
+      (document.getElementById('autocomplete')), {
+        types: ["geocode"]
+      });
+    this.places = new google.maps.places.PlacesService(this._map);
+
+    // document.getElementById('country').addEventListener(
+    //   'change', setAutocompleteCountry);
+
+    this.autocomplete.addListener('place_changed', this.onPlaceChanged);
+      this.collection.each(this.addMarker.bind(this));
+      this.attachMapListeners();
   },
+
+  searchLoc: function() {
+  var search = {
+    types: ['geocode']
+  };
+
+    this.places.nearbySearch(search, function(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        this.clearResults();
+        this.clearMarkers();
+        // Create a marker for each hotel found, and
+        // assign a letter of the alphabetic to each marker icon.
+        for (var i = 0; i < results.length; i++) {
+          var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
+          var markerIcon = MARKER_PATH + markerLetter + '.png';
+          // Use marker animation to drop the icons incrementally on the map.
+          this.markers[i] = new google.maps.Marker({
+            position: results[i].geometry.location,
+            animation: google.maps.Animation.DROP,
+            icon: markerIcon
+          });
+          // If the user clicks a hotel marker, show the details of that hotel
+          // in an info window.
+          this.markers[i].placeResult = results[i];
+          google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+          setTimeout(dropMarker(i), i * 100);
+          this.addResult(results[i], i);
+        }
+      }
+    });
+  },
+
+  dropMarker: function(i) {
+    return function() {
+      this.markers[i].setMap(map);
+    }.bind(this);
+  },
+
+  addResult: function(result, i) {
+    var results = document.getElementById('results');
+    var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
+    var markerIcon = MARKER_PATH + markerLetter + '.png';
+
+    var tr = document.createElement('tr');
+    tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+    tr.onclick = function() {
+      google.maps.event.trigger(markers[i], 'click');
+    };
+
+    var iconTd = document.createElement('td');
+    var nameTd = document.createElement('td');
+    var icon = document.createElement('img');
+    icon.src = markerIcon;
+    icon.setAttribute('class', 'placeIcon');
+    icon.setAttribute('className', 'placeIcon');
+    var name = document.createTextNode(result.name);
+    iconTd.appendChild(icon);
+    nameTd.appendChild(name);
+    tr.appendChild(iconTd);
+    tr.appendChild(nameTd);
+    results.appendChild(tr);
+  },
+
+  clearResults: function() {
+    var results = document.getElementById('results');
+    while (results.childNodes[0]) {
+      results.removeChild(results.childNodes[0]);
+    }
+  },
+
+  onPlaceChanged: function() {
+    var place = this.autocomplete.getPlace();
+    if (place.geometry) {
+      map.panTo(place.geometry.location);
+      map.setZoom(15);
+      this.searchLoc();
+    } else {
+      document.getElementById('autocomplete').placeholder = 'Enter a city';
+    }
+  },
+
+
+//OLD stuff
 
   attachMapListeners: function() {
     google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
@@ -78,6 +172,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     });
 
     infoWindow.open(this._map, marker);
+
+    // $(".gutter-item").mThumbnailScroller("scrollTo", $("div").find("[data-id='" + photoId + "']"));
     return infoWindow;
   },
 
@@ -96,10 +192,15 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     });
   },
 
+  centerAround: function(marker) {
+    this._map.panTo(marker.position);
+  },
+
   startBounce: function(id) {
     var marker = this._markers[id];
     marker.setAnimation(google.maps.Animation.BOUNCE);
     marker.setIcon(this.hotIcon);
+    this._map.panTo(marker.position);
   },
 
   stopBounce: function(id) {
