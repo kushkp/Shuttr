@@ -7,7 +7,7 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
     },
 
   initialize: function() {
-    this.listenTo(this.collection, "sync add remove", this.render);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.listenTo(this.collection, "remove", this.removePhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
@@ -17,6 +17,7 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+    this.callScroller();
     return this;
   },
 
@@ -36,5 +37,15 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
     var modal = new Shuttr.Views.PhotoShow({ model: photo });
     $('body').append(modal.$el);
     modal.render();
+  },
+
+  callScroller: function() {
+    (function($){
+        $(window).load(function(){
+            $(".gutter-photo-index").mThumbnailScroller({
+              axis:"x", type:"hover-precise", live: true
+            });
+        });
+    })(jQuery);
   }
 });

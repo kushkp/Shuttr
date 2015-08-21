@@ -26,6 +26,7 @@
 //= require isotope/jquery.isotope
 
 //= require imagesloaded
+//= require mThumbnailScroller.min.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
