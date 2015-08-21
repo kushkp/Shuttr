@@ -7,8 +7,10 @@ window.Shuttr = {
     // alert('Hello from Backbone!');
 
     var $rootEl = $(".main");
-    Shuttr.USER_ALBUMS = new Shuttr.Collections.Albums().fetch();
-    var photos = new Shuttr.Collections.Photos().fetch();
+    Shuttr.USER_ALBUMS = new Shuttr.Collections.Albums();
+    Shuttr.USER_ALBUMS.fetch();
+    var photos = new Shuttr.Collections.Photos();
+    photos.fetch();
 
     var router = new Shuttr.Routers.Router({
       $rootEl: $rootEl,

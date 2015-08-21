@@ -4,15 +4,11 @@
   <div class="form-group">
     <form class="add-to-album-form">
       <label for="album-id">Select Album:</label><br>
-      <select id="album-id" name="album[id]">
+      <select id="album-id" name="albuming[album_id]">
         <% albums.each(function(album) { %>
           <option value="<%= album.id %>"
             ><%= album.escape("title") %>
           </option>
-          <option value="hi"
-            >hi
-          </option>
-
         <%  }); %>
       </select><br><br>
       <br>

@@ -27,9 +27,12 @@ Shuttr.Views.AddToAlbum = Backbone.View.extend({
     var view = this;
 
     var albuming = new Shuttr.Models.Albuming();
+    formdata.albuming.photo_id = this.model.id;
+    formdata.albuming.album_id = parseInt(formdata.albuming.album_id);
 
-    albuming.save(formdata.album, {
+    albuming.save(formdata.albuming, {
       success: function() {
+        console.log("success");
         view.hideModal();
       },
       error: function() {
