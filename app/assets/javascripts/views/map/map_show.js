@@ -26,13 +26,14 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
         types: ["geocode"]
       });
     this.places = new google.maps.places.PlacesService(this._map);
+    this.autocomplete.addListener('place_changed', this.onPlaceChanged.bind(this));
 
     // document.getElementById('country').addEventListener(
     //   'change', setAutocompleteCountry);
 
-    this.autocomplete.addListener('place_changed', this.onPlaceChanged);
-      this.collection.each(this.addMarker.bind(this));
-      this.attachMapListeners();
+
+    this.collection.each(this.addMarker.bind(this));
+    this.attachMapListeners();
   },
 
   searchLoc: function() {
@@ -107,8 +108,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   onPlaceChanged: function() {
     var place = this.autocomplete.getPlace();
     if (place.geometry) {
-      map.panTo(place.geometry.location);
-      map.setZoom(15);
+      this._map.panTo(place.geometry.location);
+      this._map.setZoom(10);
       this.searchLoc();
     } else {
       document.getElementById('autocomplete').placeholder = 'Enter a city';

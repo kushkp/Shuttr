@@ -17,7 +17,7 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
     var content = this.template();
     this.$el.html(content);
     this.$(".photo-gutter").html(this.photoGutter.render().$el);
-    this.$("#map-canvas").html(this.mapView.$el);
+    this.$("#map-wrapper").html(this.mapView.$el);
     this.mapView.render();
     this.onRender();
     return this;
@@ -25,7 +25,7 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
 
   addMap: function() {
     var mapShow = new Shuttr.Views.MapShow({ collection: this.collection });
-    this.addSubview("#map-canvas", mapShow);
+    this.addSubview("#map-wrapper", mapShow);
   },
 
   addPhotoGutter: function() {
