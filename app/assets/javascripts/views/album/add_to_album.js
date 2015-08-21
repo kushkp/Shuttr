@@ -1,35 +1,39 @@
-Shuttr.Views.AlbumForm = Backbone.View.extend({
-  template: JST["album/form"],
-  className: "new-album-form-wrapper",
+Shuttr.Views.AddToAlbum = Backbone.View.extend({
+  template: JST["album/add_to_album"],
+  className: "add-to-album-wrapper",
 
-  initialize: function() {
+  initialize: function(options) {
+    this.albums = options.albums;
+    this.listenTo(this.albums, "sync", this.render);
     $(document).on('keyup', this.handleKey.bind(this));
   },
 
   events: {
-    "submit .new-album-form" : "saveAlbum",
-    'click .m-background' : 'clickAway',
+    "submit .add-to-album-form" : "saveToAlbum",
+    'click .add-to-album-background' : 'clickAway',
     'click .close' : 'removeBtn'
   },
 
   render: function() {
-    var content = this.template({album: this.model});
+    var content = this.template({photo: this.model, albums: this.albums});
     this.$el.html(content);
-    this.$("input.album-title").focus();
+    this.$("#album-id").focus();
     return this;
   },
 
-  saveAlbum: function(e) {
+  saveToAlbum: function(e) {
     e.preventDefault();
     var formdata = $(e.currentTarget).serializeJSON();
     var view = this;
-    this.model.save(formdata, {
+
+    var albuming = new Shuttr.Models.Albuming();
+
+    albuming.save(formdata.album, {
       success: function() {
-        this.collection.add(this.model);
         view.hideModal();
-      }.bind(this),
+      },
       error: function() {
-        console.log("save album error");
+        console.log("add to album error");
       }
     });
   },
@@ -50,7 +54,6 @@ Shuttr.Views.AlbumForm = Backbone.View.extend({
   },
 
   hideModal: function (event) {
-    $('.albums').css({ "-webkit-filter": "blur(0px)", "-moz-filter": "blur(0px)", "-o-filter": "blur(0px)", "-ms-filter": "blur(0px)", "filter": "blur(0px)" });
     this.remove();
   }
 });

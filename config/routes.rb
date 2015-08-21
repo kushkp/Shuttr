@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :albums, only: [:index, :create, :destroy, :update, :show]
     resources :photos, only: [:index, :create, :destroy, :update, :show]
     resources :comments, only: [:index, :create, :destroy, :show]
+    resources :albumings, only: [:index, :create, :destroy]
   end
 end

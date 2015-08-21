@@ -14,7 +14,8 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
     'click .m-background' : 'clickAway',
     'click .close' : 'removeBtn',
     'click .post-comment-btn' : "render",
-    'click div.photo-show-img' : "launchLargeModal"
+    'click div.photo-show-img' : "launchLargeModal",
+    "click .add-to-album-background" : "clickAway"
   },
 
   render: function() {

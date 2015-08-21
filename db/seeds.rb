@@ -36,22 +36,6 @@ User.create!({email: "alan@gmail.com",
               avatar_url: "http://res.cloudinary.com/dydhzgrty/image/upload/c_scale,w_50/v1440092203/blank-avatar_r9sqmu.png"
               })
 
-# Album.create!({title: "Euro-trip",
-#                url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
-#                user_id: "1" })
-#
-# Album.create!({title: "Food",
-#                url: "http://ak-static.scoopon.com.au/scpn/deals/main/45000/45813_1.jpg",
-#                user_id: "1" })
-#
-# Album.create!({title: "Around SF",
-#                url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
-#                user_id: "2" })
-#
-# Album.create!({title: "My Pets",
-#                url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
-#                user_id: "3" })
-
 Photo.create!({ title: "Eiffel Tower",
                 url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
                 user_id: 1,
@@ -119,3 +103,19 @@ Comment.create!({user_id: 1, photo_id: 2, body: "I want to go to Paris!"})
 Comment.create!({user_id: 2, photo_id: 2, body: "I love Paris!"})
 Comment.create!({user_id: 1, photo_id: 2, body: "Have you even been there?"})
 Comment.create!({user_id: 2, photo_id: 2, body: "no :("})
+
+# Album.create!({title: "Euro-trip",
+#                url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
+#                user_id: "1" })
+#
+# Album.create!({title: "Food",
+#                url: "http://ak-static.scoopon.com.au/scpn/deals/main/45000/45813_1.jpg",
+#                user_id: "1" })
+#
+# Album.create!({title: "Around SF",
+#                url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
+#                user_id: "2" })
+#
+# Album.create!({title: "My Pets",
+#                url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
+#                user_id: "3" })

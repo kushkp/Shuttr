@@ -1,5 +1,5 @@
-Shuttr.Models.Album = Backbone.Model.extend({
-  urlRoot: "/api/albums",
+Shuttr.Models.Albuming = Backbone.Model.extend({
+  urlRoot: "/api/albumings",
 
 //   photos: function() {
 //   if (!this._photos) {

@@ -32,7 +32,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all.where(user_id: current_user.id).includes(:comments)
+    @albums = Album.all.where(user_id: current_user.id)
     render :index
   end
 

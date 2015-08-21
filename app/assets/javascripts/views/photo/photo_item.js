@@ -2,7 +2,8 @@ Shuttr.Views.PhotoItem = Backbone.View.extend ({
   template: JST["photo/photo_item"],
 
   events: {
-    "click .delete-photo" : "deletePhoto"
+    "click .delete-photo" : "deletePhoto",
+    "click .add-to-album" : "addToAlbum"
   },
 
   initialize: function(options) {
@@ -35,5 +36,15 @@ Shuttr.Views.PhotoItem = Backbone.View.extend ({
   deletePhoto: function(e) {
     e.preventDefault();
     this.model.destroy();
+  },
+
+  addToAlbum: function(e) {
+    e.preventDefault();
+    var modal = new Shuttr.Views.AddToAlbum({
+      model: this.model,
+      albums: Shuttr.USER_ALBUMS
+    });
+    $('body').append(modal.$el);
+    modal.render();
   }
 });

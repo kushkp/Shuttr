@@ -1,0 +1,25 @@
+<div class="add-to-album-modal">
+  <h2>Save to Album</h2>
+
+  <div class="form-group">
+    <form class="add-to-album-form">
+      <label for="album-id">Select Album:</label><br>
+      <select id="album-id" name="album[id]">
+        <% albums.each(function(album) { %>
+          <option value="<%= album.id %>"
+            ><%= album.escape("title") %>
+          </option>
+          <option value="hi"
+            >hi
+          </option>
+
+        <%  }); %>
+      </select><br><br>
+      <br>
+
+      <input type="submit" class="add-to-album-btn btn btn-primary" value="Save To My Album!">
+    </form>
+  </div>
+</div>
+
+<div class="add-to-album-background"></div>

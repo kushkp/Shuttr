@@ -44,6 +44,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   launchPhotoShowModal: function(e) {
+    if (e.target.tagName === "BUTTON") { return; }
     var photoId = $(e.currentTarget).find('img').data("id");
     var photo = this.collection.getOrFetch(photoId);
     var modal = new Shuttr.Views.PhotoShow({ model: photo, collection: this.collection });
