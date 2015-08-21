@@ -21,8 +21,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-    #TODO: test newly written function
-    @album = Album.includes(:comments).find(params[:id])
+    @album = Album.find(params[:id])
     if (current_user.id == @album.user_id)
       render :show
     else
@@ -32,7 +31,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all.where(user_id: current_user.id)
+    @albums = Album.all.includes(albumings: :photo).where(user_id: current_user.id)
     render :index
   end
 

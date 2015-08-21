@@ -1,4 +1,4 @@
-class AlbumingsController < ApplicationController
+class Api::AlbumingsController < ApplicationController
   def create
     @albuming = Albuming.new(albuming_params)
 
