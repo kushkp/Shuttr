@@ -4,9 +4,14 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     id: "map-canvas"
   },
 
+  // events: {
+  // },
+
   initialize: function() {
     this._markers = [];
     this.openInfoWindow = null;
+    this.loadHeatMap();
+    this.listenTo(this.collection, 'sync', this.loadHeatMap);
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
     this.coldIcon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
@@ -33,7 +38,10 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
 
     this.collection.each(this.addMarker.bind(this));
+    // this.loadHeatMap(this.collection);
     this.attachMapListeners();
+    // this.heatmap.setMap(this.heatmap.getMap() ? null : this._map);
+    // debugger
   },
 
   searchLoc: function() {
@@ -115,9 +123,6 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       document.getElementById('autocomplete').placeholder = 'Enter a city';
     }
   },
-
-
-//OLD stuff
 
   attachMapListeners: function() {
     google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
@@ -215,5 +220,47 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     var modal = new Shuttr.Views.PhotoShow({ model: photo });
     $('body').append(modal.$el);
     modal.render();
-  }
+  },
+
+  loadHeatMap: function() {
+    var heatmapData = [];
+    var photos = this.collection;
+
+    photos.each(function(photo) {
+      if (photo.has("lat") && photo.has("long")) {
+        var lat = parseFloat(photo.get('lat'));
+        var lng = parseFloat(photo.get('long'));
+        var dataPoint = new google.maps.LatLng(lat, lng);
+        heatmapData.push(dataPoint);
+      }
+    });
+
+
+    this.heatmap = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData,
+      map: this._map
+    });
+
+    this.heatmap.setMap(null);
+
+
+
+    // this.heatmap = new google.maps.Map(document.getElementById('map-canvas'), {
+    //   zoom: 13,
+    //   mapTypeId: google.maps.MapTypeId.SATELLITE
+    // });
+    //
+    //
+    // this.heatmap = new google.maps.visualization.HeatmapLayer({
+    //   data: heatmapData
+    // });
+    //
+    // this.heatmap.setMap(this._map);
+
+
+  },
+
+  toggleHeatmap: function(e) {
+    this.heatmap.setMap(this.heatmap.getMap() ? null : this._map);
+}
 });

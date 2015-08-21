@@ -3,6 +3,7 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   className: 'map',
 
   initialize: function() {
+
     this.mapView = new Shuttr.Views.MapShow({ collection: this.collection });
     this.photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
   },
@@ -10,7 +11,13 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   events: {
     'mouseenter .gutter-item-img' : 'startBounce',
     'mouseleave .gutter-item-img' : 'stopBounce',
-    'click .gutter-item-img' : 'launchPhotoShowModal'
+    'click .gutter-item-img' : 'launchPhotoShowModal',
+    "click .toggleHeatmap": "toggleHeatmap"
+  },
+
+  toggleHeatmap: function(e) {
+    this.mapView.toggleHeatmap(e);
+    // this.heatmap.setMap(this.heatmap.getMap() ? null : this._map);
   },
 
   render: function() {
@@ -21,6 +28,10 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
     this.mapView.render();
     this.onRender();
     return this;
+  },
+
+  onRender: function() {
+    this.delegateEvents();
   },
 
   addMap: function() {
