@@ -35,15 +35,18 @@
                  type="submit"
                  value="Sign In">
           <input class="btn btn-lg btn-secondary btn-block guest-btn"
-                 type=""
+                 type="button"
+                 onclick="location.href='/session/new?demo=true';"
                  value="Guest Login">
 
         </form>
       </div>
 </div>
 
-<script>
-  $(document).ready(function() {
-    Guest.initialize();
-  });
-</script>
+<% if params[:demo] %>
+  <script>
+    $(document).ready(function() {
+      Guest.initialize();
+    });
+  </script>
+<% end %>

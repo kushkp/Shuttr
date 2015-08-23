@@ -1,14 +1,10 @@
 window.Guest = {
   initialize: function() {
-    $('.guest-btn').on("click", this.guestLogin.bind(this));
+    this.guestLogin();
   },
 
-  guestLogin: function(event) {
-    event.preventDefault;
+  guestLogin: function() {
     var that = this;
-    // $(".existing-users-btn").click(function(e) {
-    // });
-
 
     $email = $('#user_email');
     $password = $('#user_password');
@@ -30,6 +26,6 @@ window.Guest = {
         clearInterval(typing);
         callback();
       }
-    }, 40);
+    }, 90);
   }
 };
