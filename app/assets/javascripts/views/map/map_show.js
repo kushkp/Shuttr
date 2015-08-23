@@ -10,6 +10,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   initialize: function() {
     this._markers = [];
     this.openInfoWindow = null;
+    this.heatmap = null;
     this.loadHeatMap();
     this.listenTo(this.collection, 'sync', this.loadHeatMap);
     this.listenTo(this.collection, 'add', this.addMarker);
@@ -20,8 +21,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
   render: function() {
     var mapOptions = {
-      center: { lat: 37.7833, lng: -122.4167 },
-      zoom: 2
+      center: { lat: 23.2357, lng: -55.6198 },
+      zoom: 3
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
@@ -242,25 +243,25 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     });
 
     this.heatmap.setMap(null);
-
-
-
-    // this.heatmap = new google.maps.Map(document.getElementById('map-canvas'), {
-    //   zoom: 13,
-    //   mapTypeId: google.maps.MapTypeId.SATELLITE
-    // });
-    //
-    //
-    // this.heatmap = new google.maps.visualization.HeatmapLayer({
-    //   data: heatmapData
-    // });
-    //
-    // this.heatmap.setMap(this._map);
-
-
   },
 
   toggleHeatmap: function(e) {
-    this.heatmap.setMap(this.heatmap.getMap() ? null : this._map);
-}
+    var i = 0;
+
+    if (this.heatmap.getMap()) {
+      this.heatmap.setMap(null);
+      for (i = 0; i < this._markers.length; i++) {
+        if (typeof this._markers[i] !== "undefined") {
+          this._markers[i].setMap(this._map);
+        }
+      }
+    } else {
+      this.heatmap.setMap(this._map);
+      for (i = 0; i < this._markers.length; i++) {
+        if (typeof this._markers[i] !== "undefined") {
+          this._markers[i].setMap(null);
+        }
+      }
+    }
+  }
 });

@@ -94,6 +94,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
 
   restoreExplore: function() {
     this.photos.fetch();
+    Backbone.history.navigate("#", {trigger: true});
     this.router.explore({ collection: this.photos });
   }
 
