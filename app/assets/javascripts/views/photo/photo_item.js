@@ -35,7 +35,14 @@ Shuttr.Views.PhotoItem = Backbone.View.extend ({
 
   deletePhoto: function(e) {
     e.preventDefault();
-    this.model.destroy();
+
+    bootbox.confirm(
+      "Are you sure you want to delete this photo?", function(result) {
+        console.log(result);
+        if (result === true) {
+          this.model.destroy();
+        }
+      }.bind(this));
   },
 
   addToAlbum: function(e) {

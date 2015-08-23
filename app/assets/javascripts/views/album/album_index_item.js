@@ -15,6 +15,13 @@ Shuttr.Views.AlbumIndexItem = Backbone.View.extend({
 
   deleteAlbum: function(e) {
     e.preventDefault();
-    this.model.destroy();
+    
+    bootbox.confirm(
+      "Are you sure you want to delete this album?", function(result) {
+        console.log(result);
+        if (result === true) {
+          this.model.destroy();
+        }
+      }.bind(this));
   }
 });
