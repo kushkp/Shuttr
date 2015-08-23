@@ -39,8 +39,7 @@ class Api::PhotosController < ApplicationController
     elsif (params["search_data"])
       @photos = filter_photos_by_keyword(params["search_data"])
     else
-      @photos = Photo.all.includes(comments: :user)
-      # .order(created_at: :desc)
+      @photos = Photo.all.includes(comments: :user).page(params[:page]).per(2)
     end
 
     render :index

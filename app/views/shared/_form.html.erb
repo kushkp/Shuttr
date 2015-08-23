@@ -42,10 +42,16 @@
     <br>
     <input class="btn btn-lg btn-primary btn-block signup-btn"
            type="submit"
-           value="Sign Up">
+           value="<%= content %>">
     <input class="btn btn-lg btn-secondary btn-block guest-btn"
-           type="submit"
+           type=""
            value="Guest Login">
 
   </form>
 </div>
+
+<script>
+  $(document).ready(function() {
+    Guest.initialize();
+  });
+</script>

@@ -1,6 +1,62 @@
 <div class="splash-pg-bg">
-  <%= render partial: "nav/navbar" %>
-  <%= render partial: "shared/errors" %>
-  <%= render partial: "shared/form",
-    locals: { action: users_url, content: "Sign Up" } %>
+  <%= render partial: "nav/navbar",
+      locals: { action: new_session_url, content: "Sign In" } %>
+
+      <div class="login-wrapper">
+        <form action="<%= users_url %>" method="post" class="login-form">
+          <h2 class="login-form-heading">Sign Up</h2>
+          <%=auth_token%>
+
+
+
+          <label for="user_alias">Alias</label>
+          <br>
+          <input type="text"
+                 class="form-control"
+                 id="user_alias"
+                 name="user[alias]"
+                 placeholder="Ex. John Smith, Redfin102, etc..."
+                 autofocus=""
+                 value="<%= @user.alias if @user%>">
+
+          <br>
+
+          <label for="user_email">Email</label>
+          <br>
+          <input type="text"
+                 class="form-control"
+                 id="user_email"
+                 name="user[email]"
+                 placeholder="example@gmail.com"
+                 autofocus=""
+                 value="<%= @user.email if @user%>">
+
+          <br>
+
+          <label for="user_password">Password</label>
+          <br>
+          <input type="password"
+                 class="form-control"
+                 id="user_password"
+                 name="user[password]"
+                 placeholder="Password123"
+                 autofocus=""
+                 value="<%= @user.password if @user%>">
+
+          <br>
+          <input class="btn btn-lg btn-primary btn-block signup-btn"
+                 type="submit"
+                 value="Sign Up">
+          <input class="btn btn-lg btn-secondary btn-block guest-btn"
+                 type=""
+                 value="Guest Login">
+
+        </form>
+      </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    Guest.initialize();
+  });
+</script>

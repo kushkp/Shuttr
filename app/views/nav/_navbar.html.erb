@@ -15,9 +15,11 @@
     <div class="collapse navbar-collapse" id="collapse-menu">
       <ul class="nav navbar-nav pull-right">
 
-          <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Existing Users<strong class="caret"></strong></a>
-            <div class="dropdown-menu dropdown-menu-right" style="padding: 0px; padding-bottom: 0px; border-bottom-right-radius: 10px;
+        <li class="<%= action %>-li">
+          <a class="dropdown-toggle sign-in-link" href="<%= action %>"><%= content %></a>
+        </li>
+            <!-- <a class="dropdown-toggle existing-users-btn" href="#" data-toggle="dropdown">Existing Users<strong class="caret"></strong></a> -->
+            <!-- <div class="dropdown-menu dropdown-menu-right" style="padding: 0px; padding-bottom: 0px; border-bottom-right-radius: 10px;
           	border-bottom-left-radius: 10px;">
 
               <form action="<%= session_url %>" method="post" class="login-form nav-login-form">
@@ -32,12 +34,12 @@
                        name="user[password]"
                        placeholder="Password"
                        autofocus=""><br>
-               <input class="btn btn-lg btn-primary btn-block"
+               <input class="btn btn-lg btn-primary btn-block user-login"
                       type="submit"
                       value="Log In">
               </form>
 
-            </div>
+            </div> -->
           </li>
       </ul>
 

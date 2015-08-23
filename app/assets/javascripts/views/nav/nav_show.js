@@ -48,7 +48,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
       type: 'DELETE',
       success: function() {
         console.log("Logged Out");
-        window.location.href = "users/new";
+        window.location.href = "session/new";
       },
       error: function () {
         console.log("signOut error");

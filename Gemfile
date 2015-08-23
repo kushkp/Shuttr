@@ -12,6 +12,8 @@ gem 'masonry-rails'
 gem 'font-awesome-rails'
 # gem 'cloudinary'
 
+gem 'kaminari'
+
 gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -39,7 +41,6 @@ gem 'bootstrap-sass'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-#TODO: NOT SURE WHERE TO PUT THESE
 gem 'bcrypt'
 
 gem 'backbone-on-rails'
