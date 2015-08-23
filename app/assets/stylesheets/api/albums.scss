@@ -101,9 +101,9 @@ button.delete-album {
   width:100%;
 }
 
-.new-album-form {
+div.new-album-form {
   width: 400px;
-  height: 400px;
+  height: 350px;
   padding: 20px;
   background-color: white;
   border-radius: 5px;
@@ -125,7 +125,9 @@ button.delete-album {
 
 form.new-album-form {
   position: relative;
+  margin-top: 50px;
 }
+
 //album show page
 
 a.back-to-album {

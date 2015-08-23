@@ -14,6 +14,7 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    $("body").addClass("loading");
     var content = this.template({ albums: this.collection });
     this.$el.html(content);
     this.attachSubviews();
@@ -40,6 +41,7 @@ Shuttr.Views.AlbumsIndex = Backbone.CompositeView.extend({
           itemSelector: '.album-grid-item',
           columnWidth: 1
         });
+        $("body").removeClass("loading");
       });
     });
   },

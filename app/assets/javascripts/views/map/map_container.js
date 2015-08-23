@@ -17,10 +17,10 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
 
   toggleHeatmap: function(e) {
     this.mapView.toggleHeatmap(e);
-    // this.heatmap.setMap(this.heatmap.getMap() ? null : this._map);
   },
 
   render: function() {
+    $("body").addClass("loading");
     var content = this.template();
     this.$el.html(content);
     this.$(".photo-gutter").html(this.photoGutter.render().$el);
@@ -32,6 +32,8 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
 
   onRender: function() {
     this.delegateEvents();
+    $("body").removeClass("loading");
+
   },
 
   addMap: function() {

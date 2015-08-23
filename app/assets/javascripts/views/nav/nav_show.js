@@ -56,9 +56,6 @@ Shuttr.Views.NavShow = Backbone.View.extend({
 
   showNewPhotoForm: function() {
     var photo = new Shuttr.Models.Photo();
-    // var albums = new Shuttr.Collections.Albums();
-    // albums.fetch();
-    // var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: albums });
     var modal = new Shuttr.Views.PhotoNew({ model: photo, collection: this.photos });
     this.$rootEl.append(modal.$el);
     modal.render();

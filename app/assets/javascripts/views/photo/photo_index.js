@@ -13,6 +13,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   },
 
   render: function() {
+    $("body").addClass("loading");
     var content = this.template({ photos: this.collection });
     this.$el.html(content);
     this.attachSubviews();
@@ -43,10 +44,8 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
         $container.masonry({
           itemSelector: '.grid-item',
           columnWidth: 1,
-          // percentPosition: true,
-          // isResizable: true,
-          // isAnimated: !Modernizr.csstransitions,
         });
+        $("body").removeClass("loading");
       });
     });
   },

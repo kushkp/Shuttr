@@ -13,6 +13,7 @@ Shuttr.Views.AlbumShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    $("body").addClass("loading");
     var content = this.template({ album: this.model });
     this.$el.html(content);
     this.attachSubviews();
@@ -42,6 +43,7 @@ Shuttr.Views.AlbumShow = Backbone.CompositeView.extend({
         itemSelector: '.grid-item',
         columnWidth: 1
       });
+      $("body").removeClass("loading");
     });
   },
 

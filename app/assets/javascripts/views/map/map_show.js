@@ -4,9 +4,6 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     id: "map-canvas"
   },
 
-  // events: {
-  // },
-
   initialize: function() {
     this._markers = [];
     this.openInfoWindow = null;
@@ -34,15 +31,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     this.places = new google.maps.places.PlacesService(this._map);
     this.autocomplete.addListener('place_changed', this.onPlaceChanged.bind(this));
 
-    // document.getElementById('country').addEventListener(
-    //   'change', setAutocompleteCountry);
-
-
     this.collection.each(this.addMarker.bind(this));
-    // this.loadHeatMap(this.collection);
     this.attachMapListeners();
-    // this.heatmap.setMap(this.heatmap.getMap() ? null : this._map);
-    // debugger
   },
 
   searchLoc: function() {
@@ -54,19 +44,14 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         this.clearResults();
         this.clearMarkers();
-        // Create a marker for each hotel found, and
-        // assign a letter of the alphabetic to each marker icon.
         for (var i = 0; i < results.length; i++) {
           var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
           var markerIcon = MARKER_PATH + markerLetter + '.png';
-          // Use marker animation to drop the icons incrementally on the map.
           this.markers[i] = new google.maps.Marker({
             position: results[i].geometry.location,
             animation: google.maps.Animation.DROP,
             icon: markerIcon
           });
-          // If the user clicks a hotel marker, show the details of that hotel
-          // in an info window.
           this.markers[i].placeResult = results[i];
           google.maps.event.addListener(markers[i], 'click', showInfoWindow);
           setTimeout(dropMarker(i), i * 100);
@@ -174,13 +159,11 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     var photoUrl = this.collection.getOrFetch(photoId).get('url');
     var iwContent = '<div id="info-window-content"><IMG BORDER="0" ALIGN="Center" STYLE="margin:0; padding:0; max-width: 200px; width: 200px; max-height: 200px" SRC="' + photoUrl + '"></div';
     var infoWindow = new google.maps.InfoWindow({
-      //get thumbnail size from couldinary
       content: iwContent
     });
 
     infoWindow.open(this._map, marker);
 
-    // $(".gutter-item").mThumbnailScroller("scrollTo", $("div").find("[data-id='" + photoId + "']"));
     return infoWindow;
   },
 

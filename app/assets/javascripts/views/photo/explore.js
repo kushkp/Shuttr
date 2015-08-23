@@ -3,7 +3,6 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   className: "explore-container",
 
   initialize: function () {
-    // this.listenTo(this.collection, "sync", this.reloadMasonry); //causing stacking?
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
@@ -14,6 +13,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   },
 
   render: function() {
+    $("body").addClass("loading");
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
@@ -33,12 +33,14 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   callMasonry: function() {
     var $container = this.$('.grid');
 
+
     $(document).ready(function() {
       $container.imagesLoaded(function() {
         $container.masonry({
           itemSelector: '.grid-item',
           columnWidth: 1
         });
+        $("body").removeClass("loading");
       });
     });
   },
