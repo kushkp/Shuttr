@@ -11,7 +11,8 @@ Shuttr.Routers.Router = Backbone.Router.extend({
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
     "photos" : "photoIndex",
-    "map" : "mapView"
+    "map" : "mapView",
+    "search" : "searchListings"
   },
 
   explore: function() {
@@ -61,7 +62,10 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   },
 
   searchListings: function(results) {
-    var view = new Shuttr.Views.SearchListings({ collection: results });
-    this._swapView(view);
+    !results && Backbone.history.navigate("#", {trigger: true});
+    if (results) {
+      var view = new Shuttr.Views.SearchListings({ collection: results });
+      this._swapView(view);
+    }
   }
 });

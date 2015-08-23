@@ -26,7 +26,7 @@ div.map {
   left: 50%;
   width: 80%;
   transform: translate(-50%);
-  height: calc(100% - 95px);
+  height: calc(100% - 71px);
 }
 
 .map-container {
@@ -78,4 +78,19 @@ div.map {
   padding:0;
   border:thin solid red;
   border-radius: 10px;
+ }
+
+button.toggleHeatmap {
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  z-index: 500;
+ }
+
+input#autocomplete {
+  position: absolute;
+  z-index: 500;
+  top: 25px;
+  width: 250px;
+  left: 80px;
  }

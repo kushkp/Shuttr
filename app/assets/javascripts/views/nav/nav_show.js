@@ -4,13 +4,15 @@ Shuttr.Views.NavShow = Backbone.View.extend({
   events: {
     "click .sign-out-link" : "signOut",
     "click .create-photo-btn" : "showNewPhotoForm",
-    "keyup .search-input" : "keyBinds"
+    "keyup .search-input" : "keyBinds",
+    "focus .search-input" : "savePage"
   },
 
   initialize: function (options) {
     this.router = options.router;
     this.$rootEl = options.$rootEl;
     this.photos = options.photos;
+    this.prevPage = null;
     this.listenTo(this.router, "route", this.handleRoute);
   },
 
@@ -34,7 +36,7 @@ Shuttr.Views.NavShow = Backbone.View.extend({
         }
 
     if (event.keyCode === 8 && this.$el.find('.search-input').val() === '') {
-      this.restoreExplore();
+      this.restorePrevPage();
     }
   },
 
@@ -61,6 +63,9 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     modal.render();
   },
 
+  savePage: function() {
+    this.prevPage = Backbone.history.getFragment();
+  },
   // search: function(event) {
   //   event.preventDefault();
   //   var keyword = this.$el.find('.search-input').val();
@@ -86,13 +91,12 @@ Shuttr.Views.NavShow = Backbone.View.extend({
           }
     });
 
+    Backbone.history.navigate("search");
     this.router.searchListings(searchResults);
   },
 
-  restoreExplore: function() {
-    this.photos.fetch();
-    Backbone.history.navigate("#", {trigger: true});
-    this.router.explore({ collection: this.photos });
+  restorePrevPage: function() {
+    Backbone.history.navigate("#" + this.prevPage, {trigger: true});
   }
 
 });

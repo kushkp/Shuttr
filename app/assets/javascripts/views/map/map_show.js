@@ -28,6 +28,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       (document.getElementById('autocomplete')), {
         types: ["geocode"]
       });
+    document.getElementById('autocomplete').placeholder = "Search by Location:";
     this.places = new google.maps.places.PlacesService(this._map);
     this.autocomplete.addListener('place_changed', this.onPlaceChanged.bind(this));
 
@@ -106,7 +107,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       this._map.setZoom(10);
       this.searchLoc();
     } else {
-      document.getElementById('autocomplete').placeholder = 'Enter a city';
+      document.getElementById('autocomplete').placeholder = 'Search by location';
     }
   },
 
@@ -190,7 +191,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     var marker = this._markers[id];
     marker.setAnimation(google.maps.Animation.BOUNCE);
     marker.setIcon(this.hotIcon);
-    this._map.panTo(marker.position);
+    // this._map.panTo(marker.position);
   },
 
   stopBounce: function(id) {
