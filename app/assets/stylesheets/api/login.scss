@@ -8,9 +8,18 @@
 	border-bottom: none;
 }
 
+.slogan {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  h1 {
+    font-weight: bold;
+  }
+}
 
 .login-wrapper {
-  background-image: url("http://res.cloudinary.com/dydhzgrty/image/upload/v1440398139/Shuttr/Mountain-Photography.jpg") !important;
+  background-image: url("http://res.cloudinary.com/dydhzgrty/image/upload/v1440448885/Shuttr/La.Casa.del.Arbol.jpg") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
