@@ -47,7 +47,6 @@ Shuttr.Views.NavShow = Backbone.View.extend({
       url: "session",
       type: 'DELETE',
       success: function() {
-        console.log("Logged Out");
         window.location.href = "session/new";
       },
       error: function () {
@@ -85,7 +84,6 @@ Shuttr.Views.NavShow = Backbone.View.extend({
     var searchResults = new Shuttr.Collections.Photos();
     this.photos.each(function(photo) {
       if (re.test(photo.get('title').toLowerCase()) ||
-          re.test(photo.get('description').toLowerCase()) ||
           re.test(photo.get('user_name').toLowerCase())) {
             searchResults.add(photo);
           }

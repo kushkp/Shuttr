@@ -45,11 +45,11 @@ body {
   overflow-y: auto !important;
 }
 
-.modal {
+.modal-loading {
   display:    none;
   position:   fixed;
   z-index:    1000;
-  top:        50px;
+  top:        0;
   left:       0;
   height:     100%;
   width:      100%;
@@ -63,6 +63,6 @@ body.loading {
     overflow: hidden !important;
 }
 
-body.loading .modal {
+body.loading .modal-loading {
     display: block;
 }

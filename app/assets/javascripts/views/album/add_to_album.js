@@ -32,7 +32,6 @@ Shuttr.Views.AddToAlbum = Backbone.View.extend({
 
     albuming.save(formdata.albuming, {
       success: function() {
-        console.log("success");
         view.hideModal();
       },
       error: function() {

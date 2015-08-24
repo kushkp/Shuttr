@@ -10,8 +10,8 @@ window.Guest = {
     $password = $('#user_password');
     $loginButton = $('.login-btn');
 
-    this.fillin($email, "ed@gmail.com", function() {
-      that.fillin($password, "ededed", function() {
+    this.fillin($email, "guest_user@gmail.com", function() {
+      that.fillin($password, "example", function() {
         $loginButton.click();
       });
     });

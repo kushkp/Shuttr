@@ -22,24 +22,18 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    # TODO: is there a way to delegate this? @photo.user_id
-    # if (current_user.id == @photo.user.id)
-      render :show
-    # else
-    #   flash[:errors] = ["Invalid Photo"]
-    #   render :index
-    # end
+    render :show
   end
 
   def index
-    if (params["user_id"])
-      @photos = Photo.all.where(user_id: params["user_id"]).includes(:comments)
-    elsif (params["filter_data"])
-      @photos = filter_photos_by_loc(filter_loc_options)
-    elsif (params["search_data"])
+    if (params["user_id"]) #my photos
+      @photos = Photo.all.where(user_id: params["user_id"]).includes(:comments).order(created_at: :desc).page(params[:page]).per(9)
+    elsif (params["filter_data"]) #map search
+      @photos = filter_photos_by_loc(filter_loc_options).page(params[:page]).per(9)
+    elsif (params["search_data"]) #navbar search
       @photos = filter_photos_by_keyword(params["search_data"])
-    else
-      @photos = Photo.all.includes(comments: :user).page(params[:page]).per(2)
+    else #explore
+      @photos = Photo.all.includes(comments: :user).page(params[:page]).per(9)
     end
 
     render :index
@@ -96,6 +90,5 @@ private
     params.require(:photo).permit(
       :title, :url, :long, :lat, :album_id, :description, :user_id
     )
-    # TODO: ^remove user_id?
   end
 end

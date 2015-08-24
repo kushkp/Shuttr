@@ -38,7 +38,6 @@ Shuttr.Views.PhotoItem = Backbone.View.extend ({
 
     bootbox.confirm(
       "Are you sure you want to delete this photo?", function(result) {
-        console.log(result);
         if (result === true) {
           this.model.destroy();
         }

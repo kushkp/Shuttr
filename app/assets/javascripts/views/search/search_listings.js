@@ -3,7 +3,6 @@ Shuttr.Views.SearchListings = Backbone.CompositeView.extend ({
   className: "search-listings-container",
 
   initialize: function () {
-    // this.listenTo(this.collection, "sync", this.reloadMasonry); //causing stacking?
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));

@@ -3,7 +3,8 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   className: "explore-container",
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.rendered = false;
+    this.listenTo(this.collection, "sync", this.reloadMasonry);
     this.listenTo(this.collection, "add", this.addPhotoItem);
     this.collection.each(this.addPhotoItem.bind(this));
   },
@@ -34,34 +35,46 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
       if (view.collection.page_number < view.collection.total_pages) {
         view.collection.fetch({
           data: { page: view.collection.page_number + 1 },
-          remove: false
+          remove: false,
+          success: function() {
+            view.reloadMasonry();
+          }
         });
       }
     }
   },
 
   reloadMasonry: function (obj) {
-    this.$(".grid").masonry("reload");
+    $("body").addClass("loading");
+    if (this.rendered) {
+      setTimeout(function() {
+        this.$(".grid").masonry("reload");
+        $("body").removeClass("loading");
+      }.bind(this), 50);
+    }
   },
 
   addPhotoItem: function(photo) {
     var photoItem = new Shuttr.Views.PhotoItem({ model: photo, inMyPhotos: false });
-    this.addSubview(".photos", photoItem, true);
+    this.addSubview(".photos", photoItem, false);
   },
 
   callMasonry: function() {
+    var view = this;
     var $container = this.$('.grid');
-
 
     $(document).ready(function() {
       $container.imagesLoaded(function() {
+        setTimeout(function() {
         $container.masonry({
           itemSelector: '.grid-item',
           columnWidth: 1
         });
         $("body").removeClass("loading");
-      });
-    });
+        this.rendered = true;
+      }.bind(this), 1000);
+    }.bind(this));
+    }.bind(this));
   },
 
   launchPhotoShowModal: function(e) {
