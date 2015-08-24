@@ -12,8 +12,10 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     this.listenTo(this.collection, 'sync', this.loadHeatMap);
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
-    this.coldIcon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-    this.hotIcon = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
+    this.coldIcon =
+      "http://res.cloudinary.com/dydhzgrty/image/upload/v1440398194/Shuttr/red-dot.png";
+    this.hotIcon =
+      "http://res.cloudinary.com/dydhzgrty/image/upload/v1440398216/Shuttr/purple-dot.png";
   },
 
   render: function() {
