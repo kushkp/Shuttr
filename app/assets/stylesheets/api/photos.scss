@@ -230,9 +230,9 @@ h2.upload-form-heading {
 }
 
 div.photo-show-content {
+  max-height: 100%;
   z-index: 10;
   position: fixed;
-  // height: 100%;
   overflow-y: auto;
   top: 50%;
   left: 50%;

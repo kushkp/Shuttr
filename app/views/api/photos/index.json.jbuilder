@@ -4,5 +4,7 @@ json.models do
   end
 end
 
-json.page_number params[:page] || 1
-json.total_pages @photos.total_pages
+if @photos.total_pages
+  json.page_number params[:page] || 1
+  json.total_pages @photos.total_pages
+end

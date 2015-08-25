@@ -29,7 +29,7 @@ class Api::PhotosController < ApplicationController
     if (params["user_id"]) #my photos
       @photos = Photo.all.where(user_id: params["user_id"]).includes(:comments).order(created_at: :desc).page(params[:page]).per(9)
     elsif (params["filter_data"]) #map search
-      @photos = filter_photos_by_loc(filter_loc_options).page(params[:page]).per(9)
+      @photos = filter_photos_by_loc(filter_loc_options)
     elsif (params["search_data"]) #navbar search
       @photos = filter_photos_by_keyword(params["search_data"])
     else #explore

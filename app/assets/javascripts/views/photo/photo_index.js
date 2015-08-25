@@ -18,7 +18,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     this.$el.html(content);
     this.attachSubviews();
     this.callMasonry();
-    this.listenForScroll();
+    // this.listenForScroll();
     return this;
   },
 
@@ -76,7 +76,7 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
         });
         $("body").removeClass("loading");
         this.rendered = true;
-      }.bind(this), 1000);
+      }.bind(this), 2000);
     }.bind(this));
     }.bind(this));
   },

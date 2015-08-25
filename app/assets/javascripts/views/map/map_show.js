@@ -171,18 +171,21 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   search: function() {
-    var mapBounds = this._map.getBounds();
-    var ne = mapBounds.getNorthEast();
-    var sw = mapBounds.getSouthWest();
+    // debugger
+    if (!this.heatmap.getMap()) {
+      var mapBounds = this._map.getBounds();
+      var ne = mapBounds.getNorthEast();
+      var sw = mapBounds.getSouthWest();
 
-    var filterData = {
-      lat: [sw.lat(), ne.lat()],
-      long: [sw.lng(), ne.lng()]
-    };
+      var filterData = {
+        lat: [sw.lat(), ne.lat()],
+        long: [sw.lng(), ne.lng()]
+      };
 
-    this.collection.fetch({
-      data: { filter_data: filterData }
-    });
+      this.collection.fetch({
+        data: { filter_data: filterData }
+      });
+    }
   },
 
   centerAround: function(marker) {

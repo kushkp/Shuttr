@@ -968,22 +968,18 @@ Photo.create!({
   user_id: 6
 });
 
+Comment.create!({user_id: 6, photo_id: 1, body: "The love the lights!"})
+Comment.create!({user_id: 1, photo_id: 1, body: "I want to go to Paris!"})
 
+Comment.create!({user_id: 1, photo_id: 114, body: "Best affordable sandwiches around!"})
 
+Comment.create!({user_id: 2, photo_id: 109, body: "I've never had a piece of meat so tasty."})
 
+Comment.create!({user_id: 4, photo_id: 14, body: "I saw Kim Kardashian in line!"})
+Comment.create!({user_id: 6, photo_id: 14, body: "I just had to take the picture :X"})
 
-
-
-
-
-
-
-
-
-# Comment.create!({user_id: 1, photo_id: 2, body: "I want to go to Paris!"})
-# Comment.create!({user_id: 2, photo_id: 2, body: "I love Paris!"})
-# Comment.create!({user_id: 1, photo_id: 2, body: "Have you even been there?"})
-# Comment.create!({user_id: 2, photo_id: 2, body: "no :("})
+Comment.create!({user_id: 4, photo_id: 14, body: "I saw Kim Kardashian in line!"})
+Comment.create!({user_id: 6, photo_id: 14, body: "I j"})
 
 # Album.create!({title: "Euro-trip",
 #url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
