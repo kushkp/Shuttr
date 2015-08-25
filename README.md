@@ -4,9 +4,19 @@
 
 [heroku]: http://shuttr-app.herokuapp.com
 
-## Minimum Viable Product
-Shuttr is a clone of Flickr built on Rails and Backbone. Users can:
+## Main Features
+- Explore feed is responsive using Masonry
+- Users can create album collections and choose photos from the feed to add to their albums
+- Users may leave comments on photos
+- Users may view pictures in gallery mode (fullscreen)
+- Dynamic search instantly displays results, updating with each keystroke
+- Map displays location of picture
+- Photo thumbnails below map update as map is moved
+- Experimental: Toggling heatmap displays regions with most uploaded pictures
 
+
+## Minimum Viable Product
+Shuttr is a photo sharing application, inspired by Flickr, built on Rails and Backbone. Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [x] Create accounts
@@ -70,14 +80,13 @@ user moves the map.
 
 
 ### Bonus Features (TBD)
-- [x] Drag and drop file for photo upload
+- [x] Toggle Heat map of photo location
+- [x] Dynamic search
 - [ ] 3D image hover effects
 - [ ] "Like" button for photos
-- [ ] Toggle Heat map of photo location
 - [ ] Checkboxes for changing photo albums
 - [ ] Multiple sessions/session management
 - [ ] User avatars
-- [ ] Typeahead search bar
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
