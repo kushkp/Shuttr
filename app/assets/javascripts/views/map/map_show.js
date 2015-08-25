@@ -119,7 +119,6 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   addMarker: function(photo) {
-    // debugger
     if (this._markers[photo.id]) { return; }
 
     if (!this.heatmap.getMap()) {
@@ -175,7 +174,6 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   search: function() {
-    // debugger
     // if (!this.heatmap.getMap()) {
       var mapBounds = this._map.getBounds();
       var ne = mapBounds.getNorthEast();
@@ -219,7 +217,6 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   loadHeatMap: function() {
     var heatmapData = [];
     var photos = this.heatmapPhotos;
-    // debugger
     photos.each(function(photo) {
       if (photo.has("lat") && photo.has("long")) {
         var lat = parseFloat(photo.get('lat'));
