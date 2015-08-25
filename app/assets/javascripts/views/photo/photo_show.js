@@ -57,6 +57,7 @@ Shuttr.Views.PhotoShow = Backbone.CompositeView.extend ({
   },
 
   launchLargeModal: function(e) {
+    // debugger
     var modal = new Shuttr.Views.LargeModal({ model: this.model, collection: this.collection });
     $('body').append(modal.$el);
     modal.render();

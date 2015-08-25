@@ -66,14 +66,14 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
     $(document).ready(function() {
       $container.imagesLoaded(function() {
         setTimeout(function() {
-        $container.masonry({
-          itemSelector: '.grid-item',
-          columnWidth: 1
-        });
-        $("body").removeClass("loading");
-        this.rendered = true;
-      }.bind(this), 1000);
-    }.bind(this));
+          $container.masonry({
+            itemSelector: '.grid-item',
+            columnWidth: 1
+          });
+          $("body").removeClass("loading");
+          this.rendered = true;
+        }.bind(this), 2000);
+      }.bind(this));
     }.bind(this));
   },
 

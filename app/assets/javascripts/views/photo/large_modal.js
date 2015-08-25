@@ -46,10 +46,6 @@ Shuttr.Views.LargeModal = Backbone.View.extend({
   },
 
   displayImage: function (difference) {
-    // if (!this.rendering) {
-    //
-    // }
-
     this.rendering = true;
     var currentImage = this.model;
     var nextImage = this.model;
@@ -77,11 +73,6 @@ Shuttr.Views.LargeModal = Backbone.View.extend({
 
     var windowWidth = $(window).width();
     var maxImageWidth = windowWidth - 100;
-
-    //maximixes image size to window
-    // this.$el.find('.active-image img').css('height', imageHeight);
-    // this.$el.find('.active-image img').css('max-width', maxImageWidth);
-
   },
 
   render: function () {
