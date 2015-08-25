@@ -72,7 +72,7 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
           });
           $("body").removeClass("loading");
           this.rendered = true;
-        }.bind(this), 2000);
+        }.bind(this), 3000);
       }.bind(this));
     }.bind(this));
   },

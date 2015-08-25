@@ -3,6 +3,8 @@ Shuttr.Views.AlbumShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.photos(), "sync", this.render);
+    this.listenTo(this.model.photos(), "sync", this.addPhotos);
     this.listenTo(this.model.photos(), "add", this.addPhoto);
     this.listenTo(this.model.photos(), "remove", this.removePhoto);
     this.model.photos().each(this.addPhoto.bind(this));
@@ -19,6 +21,9 @@ Shuttr.Views.AlbumShow = Backbone.CompositeView.extend({
     this.attachSubviews();
     this.callMasonry();
     return this;
+  },
+
+  addPhotos: function(photos) {
   },
 
   addPhoto: function(photo) {
