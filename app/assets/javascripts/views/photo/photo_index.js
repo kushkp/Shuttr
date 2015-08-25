@@ -85,7 +85,10 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
     // var photoId = $(e.currentTarget).find('img').data("id");
     var photoId = $(e.target).data("id");
     var photo = this.collection.getOrFetch(photoId);
-    var modal = new Shuttr.Views.PhotoShow({ model: photo });
+    var modal = new Shuttr.Views.PhotoShow({
+      model: photo,
+      collection: this.collection
+    });
     $('body').append(modal.$el);
     modal.render();
   }
