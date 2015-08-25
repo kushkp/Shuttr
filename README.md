@@ -1,8 +1,8 @@
 # Shuttr
 
-Live: [Shuttrphoto][live_link]
+Live: [Shuttrphoto][live]
 
-[live_link]: www.shuttrphoto.xyz
+[live]: http://www.shuttrphoto.xyz
 
 ## Main Features
 - Explore feed is responsive using Masonry
