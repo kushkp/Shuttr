@@ -1,8 +1,8 @@
 # Shuttr
 
-[Heroku link][heroku]
+Live: [Shuttrphoto][live_link]
 
-[heroku]: http://shuttr-app.herokuapp.com
+[live_link]: www.shuttrphoto.xyz
 
 ## Main Features
 - Explore feed is responsive using Masonry
