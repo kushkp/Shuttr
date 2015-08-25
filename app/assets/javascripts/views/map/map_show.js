@@ -4,12 +4,13 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     id: "map-canvas"
   },
 
-  initialize: function() {
+  initialize: function(options) {
     this._markers = [];
     this.openInfoWindow = null;
     this.heatmap = null;
+    this.heatmapPhotos = options.heatmapPhotos;
     this.loadHeatMap();
-    this.listenTo(this.collection, 'sync', this.loadHeatMap);
+    this.listenTo(this.heatmapPhotos, 'sync', this.loadHeatMap);
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
     this.coldIcon =
@@ -20,8 +21,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
   render: function() {
     var mapOptions = {
-      center: { lat: 23.2357, lng: -55.6198 },
-      zoom: 3
+      center: { lat: 41.0158, lng: 258.5452 },
+      zoom: 4
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
@@ -118,16 +119,18 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   addMarker: function(photo) {
+    // debugger
     if (this._markers[photo.id]) { return; }
 
-    var view = this;
-    var marker = new google.maps.Marker({
-      position: { lat: parseFloat(photo.get('lat')), lng: parseFloat(photo.get('long')) },
-      map: this._map,
-      title: photo.get('title'),
-      animation: google.maps.Animation.DROP,
-      icon: this.coldIcon
-    });
+    if (!this.heatmap.getMap()) {
+      var view = this;
+      var marker = new google.maps.Marker({
+        position: { lat: parseFloat(photo.get('lat')), lng: parseFloat(photo.get('long')) },
+        map: this._map,
+        title: photo.get('title'),
+        // animation: google.maps.Animation.DROP,
+        icon: this.coldIcon
+      });
 
     google.maps.event.addListener(marker, 'mouseover', function(e) {
       this.openInfoWindow = view.showMarkerInfo(event, marker);
@@ -142,6 +145,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     }.bind(this));
 
     this._markers[photo.id] = marker;
+    }
   },
 
   removeMarker: function(photo) {
@@ -172,7 +176,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
   search: function() {
     // debugger
-    if (!this.heatmap.getMap()) {
+    // if (!this.heatmap.getMap()) {
       var mapBounds = this._map.getBounds();
       var ne = mapBounds.getNorthEast();
       var sw = mapBounds.getSouthWest();
@@ -185,7 +189,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       this.collection.fetch({
         data: { filter_data: filterData }
       });
-    }
+    // }
   },
 
   centerAround: function(marker) {
@@ -214,8 +218,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
   loadHeatMap: function() {
     var heatmapData = [];
-    var photos = this.collection;
-
+    var photos = this.heatmapPhotos;
+    // debugger
     photos.each(function(photo) {
       if (photo.has("lat") && photo.has("long")) {
         var lat = parseFloat(photo.get('lat'));
@@ -238,6 +242,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     var i = 0;
 
     if (this.heatmap.getMap()) {
+      this.search();
       this.heatmap.setMap(null);
       for (i = 0; i < this._markers.length; i++) {
         if (typeof this._markers[i] !== "undefined") {

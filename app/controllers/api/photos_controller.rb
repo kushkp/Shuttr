@@ -27,11 +27,14 @@ class Api::PhotosController < ApplicationController
 
   def index
     if (params["user_id"]) #my photos
-      @photos = Photo.all.where(user_id: params["user_id"]).includes(:comments).order(created_at: :desc).page(params[:page]).per(9)
+      @photos = Photo.all.where(user_id: params["user_id"]).includes(:comments).order(created_at: :desc).page(params[:page]).per(50)
     elsif (params["filter_data"]) #map search
-      @photos = filter_photos_by_loc(filter_loc_options)
+      @photos = filter_photos_by_loc(filter_loc_options).page(params[:page]).per(100)
     elsif (params["search_data"]) #navbar search
-      @photos = filter_photos_by_keyword(params["search_data"])
+      @photos = filter_photos_by_keyword(params["search_data"]).page(params[:page]).per(100)
+    elsif (params["heatmap"])
+      fail
+      @photos = Photo.all.includes(comments: :user).page(params[:page]).per(100)
     else #explore
       @photos = Photo.all.includes(comments: :user).page(params[:page]).per(9)
     end

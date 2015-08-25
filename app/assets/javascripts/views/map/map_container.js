@@ -3,9 +3,15 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   className: 'map',
 
   initialize: function() {
-
-    this.mapView = new Shuttr.Views.MapShow({ collection: this.collection });
-    this.photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
+    this.allPhotos = new Shuttr.Collections.Photos({ data: { heatmap: true } });
+    this.allPhotos.fetch();
+    this.mapView = new Shuttr.Views.MapShow({
+      collection: this.collection,
+      heatmapPhotos: this.allPhotos
+    });
+    this.photoGutter = new Shuttr.Views.PhotoGutter({
+      collection: this.collection
+    });
   },
 
   events: {
@@ -42,7 +48,9 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   },
 
   addPhotoGutter: function() {
-    var photoGutter = new Shuttr.Views.PhotoGutter({ collection: this.collection });
+    var photoGutter = new Shuttr.Views.PhotoGutter({
+      collection: this.collection
+    });
     this.addSubview(".photo-gutter", photoGutter);
   },
 

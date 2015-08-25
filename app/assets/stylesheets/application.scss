@@ -66,3 +66,40 @@ body.loading {
 body.loading .modal-loading {
     display: block;
 }
+
+.btn-primary {
+  background-color: #81133A;
+  border-color: #81133A;
+  color: #F2F1ED;
+
+  &:hover {
+    background-color: darken(#81133A, 10%);
+    border-color: darken(#81133A, 10%);
+    color: #F2F1ED;
+  }
+
+  &:focus, &:active, &:focus:active {
+    background-color: darken(#81133A, 20%);
+    border-color: darken(#81133A, 20%);
+    color: #F2F1ED;
+  }
+}
+
+.btn-secondary {
+  background-color: #539299;
+  border-color: #539299;
+  color: #F2F1ED;
+
+  &:hover {
+    background-color: darken(#539299, 10%);
+    border-color: darken(#539299, 10%);
+    color: #F2F1ED;
+  }
+
+  &:focus, &:active, &:focus:active {
+    background-color: darken(#539299, 20%);
+    border-color: darken(#539299, 20%);
+    color: #F2F1ED;
+  }
+
+}
