@@ -3,8 +3,8 @@ Shuttr.Views.MapContainer = Backbone.CompositeView.extend ({
   className: 'map',
 
   initialize: function() {
-    this.allPhotos = new Shuttr.Collections.Photos({ data: { heatmap: true } });
-    this.allPhotos.fetch();
+    this.allPhotos = new Shuttr.Collections.Photos();
+    this.allPhotos.fetch({ data: { heatmap: true } });
     this.mapView = new Shuttr.Views.MapShow({
       collection: this.collection,
       heatmapPhotos: this.allPhotos

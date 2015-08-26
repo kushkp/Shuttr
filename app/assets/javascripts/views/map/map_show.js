@@ -187,7 +187,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
   },
 
   search: function() {
-    // if (!this.heatmap.getMap()) {
+    if (!this.heatmap.getMap()) {
       var mapBounds = this._map.getBounds();
       var ne = mapBounds.getNorthEast();
       var sw = mapBounds.getSouthWest();
@@ -200,7 +200,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
       this.collection.fetch({
         data: { filter_data: filterData }
       });
-    // }
+    }
   },
 
   centerAround: function(marker) {
