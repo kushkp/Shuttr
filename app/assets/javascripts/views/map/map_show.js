@@ -162,7 +162,7 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     }
 
 
-    var photoUrl = this.collection.getOrFetch(photoId).get('url');
+    var photoUrl = this.findNewUrl(this.collection.getOrFetch(photoId));
     var iwContent = '<div id="info-window-content"><IMG BORDER="0" ALIGN="Center" STYLE="margin:0; padding:0; max-width: 200px; width: 200px; max-height: 200px" SRC="' + photoUrl + '"></div';
     var infoWindow = new google.maps.InfoWindow({
       content: iwContent
@@ -171,6 +171,19 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
     infoWindow.open(this._map, marker);
 
     return infoWindow;
+  },
+
+  findNewUrl: function(photo) {
+    var height = 200;
+    var width = 200;
+    var newUrl = photo.get("url");
+    if (newUrl.match(/\S+dydhzgrty\/image\/upload\//) !== null) {
+       newUrl = newUrl.match(/\S+dydhzgrty\/image\/upload\//) +
+                "c_fit,h_" + height + ",w_" + width +
+                newUrl.match(/dydhzgrty\/image\/upload\/\S+/)[0].slice(22);
+    }
+
+    return newUrl;
   },
 
   search: function() {
