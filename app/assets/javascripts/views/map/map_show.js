@@ -242,7 +242,8 @@ Shuttr.Views.MapShow = Backbone.View.extend ({
 
     this.heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
-      map: this._map
+      map: this._map,
+      radius: 20
     });
 
     this.heatmap.setMap(null);

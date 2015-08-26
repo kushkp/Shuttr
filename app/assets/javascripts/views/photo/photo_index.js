@@ -36,7 +36,9 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
           data: { page: view.collection.page_number + 1 },
           remove: false,
           success: function() {
-            view.reloadMasonry();
+            view.$('.grid').imagesLoaded(function() {
+              view.reloadMasonry();
+            });
           }
         });
       }
@@ -46,10 +48,10 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   reloadMasonry: function (obj) {
     $("body").addClass("loading");
     if (this.rendered) {
-      setTimeout(function() {
+      // setTimeout(function() {
         this.$(".grid").masonry("reload");
         $("body").removeClass("loading");
-      }.bind(this), 200);
+      // }.bind(this), 200);
     }
   },
 
@@ -82,7 +84,6 @@ Shuttr.Views.PhotoIndex = Backbone.CompositeView.extend ({
   },
 
   launchPhotoShowModal: function(e) {
-    // var photoId = $(e.currentTarget).find('img').data("id");
     var photoId = $(e.target).data("id");
     var photo = this.collection.getOrFetch(photoId);
     var modal = new Shuttr.Views.PhotoShow({

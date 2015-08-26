@@ -33,7 +33,7 @@ class Api::PhotosController < ApplicationController
     elsif (params["search_data"]) #navbar search
       @photos = filter_photos_by_keyword(params["search_data"]).page(params[:page]).per(100)
     elsif (params["heatmap"])
-      @photos = Photo.all.includes(comments: :user).page(params[:page]).per(100)
+      @photos = Photo.all.includes(comments: :user).page(params[:page]).per(120)
     else #explore
       @photos = Photo.all.includes(comments: :user).page(params[:page]).per(9)
     end

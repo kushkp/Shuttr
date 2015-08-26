@@ -37,7 +37,9 @@ Shuttr.Views.AlbumShow = Backbone.CompositeView.extend({
   },
 
   reloadMasonry: function (obj) {
-    this.$(".grid").masonry("reload");
+    $('.grid').imagesLoaded(function() {
+      this.$(".grid").masonry("reload");
+    });
   },
 
   callMasonry: function() {
