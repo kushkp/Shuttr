@@ -37,7 +37,9 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
           data: { page: view.collection.page_number + 1 },
           remove: false,
           success: function() {
-            view.reloadMasonry();
+            view.$('.grid').imagesLoaded(function() {
+              view.reloadMasonry();
+            });
           }
         });
       }
@@ -47,10 +49,10 @@ Shuttr.Views.Explore = Backbone.CompositeView.extend ({
   reloadMasonry: function (obj) {
     $("body").addClass("loading");
     if (this.rendered) {
-      setTimeout(function() {
+      // setTimeout(function() {
         this.$(".grid").masonry("reload");
         $("body").removeClass("loading");
-      }.bind(this), 50);
+      // }.bind(this), 50);
     }
   },
 
