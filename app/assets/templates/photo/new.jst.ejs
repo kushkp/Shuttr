@@ -3,28 +3,26 @@
   <button class="close">&times;</button>
   <h2 class="upload-form-heading">Upload Picture</h2>
 
+  <div class="photo-saved">
+    <img src="http://res.cloudinary.com/dydhzgrty/image/upload/c_scale,w_125/v1440699706/Shuttr/checkmark.png"/>
+    <br>
+    Photo Saved!
+  </div>
+
   <div class="upload-form-wrapper">
     <form class="upload-form" action="index.html" method="post">
 
       <label for="photo-title">Title:</label><br>
-      <input type="text" name="photo[title]" id="photo-title" value=""><br>
+      <input type="text" name="photo[title]" id="photo-title" value=""><br><br>
+      <label >Select Location (optional): </label><br>
 
-      <label for="photo-desc">Description:</label><br>
-      <textarea id="photo-desc"
-                name="photo[description]"
-                rows="5"
-                ></textarea><br>
+      <div class="formpage-map"
+           id="formpage-map-canvas">
+      </div>
 
-
-
-      <br>
-
+      <br><br>
 
       <input type="submit" class="btn btn-primary new-photo-submit centered" value="Select File and Upload">
     </form>
-  </div>
-  <span>Select Location:</span>
-  <div class="formpage-map"
-       id="formpage-map-canvas">
   </div>
 </div>
