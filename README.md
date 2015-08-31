@@ -14,10 +14,8 @@ Live: [Shuttrphoto.xyz][live]
 - Photo thumbnails below map update as map is moved
 - Experimental: Toggling heatmap displays regions with most uploaded pictures
 
-as
 ## Minimum Viable Product
 Shuttr is a photo sharing application, inspired by Flickr, built on Rails and Backbone. Users can:
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [x] Create accounts
 - [x] Create sessions (log in)
