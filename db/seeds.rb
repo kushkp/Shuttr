@@ -112,6 +112,23 @@ Photo.create!({
   user_id: 5
 })
 
+
+Photo.create!({
+  title: 'The Painted Ladies',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384727/Shuttr/kr9kIOa.jpg',
+  lat: 37.7764,
+  long: -122.4331,
+  user_id: 6
+})
+
+Photo.create!({
+  title: 'The Googleplex',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384736/Shuttr/6c283c62e7710e6de559efd62caf7b08.jpg',
+  lat: 37.4184,
+  long: -122.088,
+  user_id: 6
+})
+
 Photo.create!({
   title: 'Trolltunga',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440382579/Shuttr/grid-cell-25421-1406399437-11.jpg',
@@ -198,6 +215,14 @@ Photo.create!({
   lat: -17.9244,
   long: 25.8567,
   user_id: 1
+})
+
+Photo.create!({
+  title: 'Alcatraz Island',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384758/Shuttr/alcatraz_island_prison5869.jpg',
+  lat: 37.8267,
+  long: -122.4233,
+  user_id: 6
 })
 
 Photo.create!({
@@ -297,6 +322,14 @@ Photo.create!({
 })
 
 Photo.create!({
+  title: 'App Academy',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384748/Shuttr/appacademy620.jpg',
+  lat: 37.7817,
+  long: -122.4109,
+  user_id: 1
+})
+
+Photo.create!({
   title: 'Waikiki Beach',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440383627/Shuttr/waikiki.jpg',
   lat: 21.2752,
@@ -310,6 +343,14 @@ Photo.create!({
   lat: 27.175,
   long: 78.0419,
   user_id: 1
+})
+
+Photo.create!({
+  title: 'Brenda\'s French Soul Food',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384916/Shuttr/LesMis-04.jpg',
+  lat: 37.7827,
+  long: -122.4191,
+  user_id: 6
 })
 
 Photo.create!({
@@ -425,6 +466,14 @@ Photo.create!({
 })
 
 Photo.create!({
+  title: 'Humphry Slocombe',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384768/Shuttr/4338611707_457e05030f.jpg',
+  lat: 37.7527,
+  long: -122.4119,
+  user_id: 1
+})
+
+Photo.create!({
   title: 'Petronas Towers',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440383986/Shuttr/Petronas_Panorama_II.jpg',
   lat: 3.1578,
@@ -473,6 +522,14 @@ Photo.create!({
 })
 
 Photo.create!({
+  title: 'Mitchell\’s Ice Cream',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384784/Shuttr/mitchells-ice-cream-74924.jpg',
+  lat: 37.7442,
+  long: -122.4224,
+  user_id: 6
+})
+
+Photo.create!({
   title: 'Burj Khalifa',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384069/Shuttr/burj_khalifa01.jpg',
   lat: 25.1971,
@@ -510,6 +567,14 @@ Photo.create!({
   lat: 41.4036,
   long: 2.1744,
   user_id: 3
+})
+
+Photo.create!({
+  title: 'Mission Chinese',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384795/Shuttr/selby-missionchinese-tmagArticle.jpg',
+  lat: 37.7612,
+  long: -122.4193,
+  user_id: 6
 })
 
 Photo.create!({
@@ -625,6 +690,14 @@ Photo.create!({
 })
 
 Photo.create!({
+  title: 'State Bird Provisions',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384835/Shuttr/05-State-Bird-Provisions-Interior.jpg',
+  lat: 37.7835,
+  long: -122.4326,
+  user_id: 6
+})
+
+Photo.create!({
   title: 'Great Blue Hole, Belize',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384392/Shuttr/grid-cell-9067-1406398057-9.jpg',
   lat: 17.3153,
@@ -649,6 +722,14 @@ Photo.create!({
 })
 
 Photo.create!({
+  title: 'House of Prime Rib',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384845/Shuttr/house-of-prime-rib-san-francisco-ca-usa-restaurants-10best-users-recommend-1550855_54_990x660_201406011141.jpg',
+  lat: 37.7931,
+  long: -122.4227,
+  user_id: 6
+})
+
+Photo.create!({
   title: 'Mendenhall Ice Caves',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384430/Shuttr/enhanced-buzz-wide-7577-1383858647-15.jpg',
   lat: 58.4333,
@@ -670,6 +751,14 @@ Photo.create!({
   lat: 51.8634,
   long: 41.8838,
   user_id: 3
+})
+
+Photo.create!({
+  title: 'Nopa',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384871/Shuttr/sf1111.jpg',
+  lat: 37.7746,
+  long: -122.4375,
+  user_id: 6
 })
 
 Photo.create!({
@@ -713,6 +802,14 @@ Photo.create!({
 })
 
 Photo.create!({
+  title: 'The House',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384860/Shuttr/The_20House_04.jpg',
+  lat: 37.7983,
+  long: -122.4071,
+  user_id: 6
+})
+
+Photo.create!({
   title: 'Little Mermaid',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384542/Shuttr/7137100987_c42fbabe1f_o_d.jpg',
   lat: 55.6929,
@@ -742,6 +839,22 @@ Photo.create!({
   lat: 39.9147,
   long: 116.3906,
   user_id: 3
+})
+
+Photo.create!({
+  title: 'San Tung Chinese Restaurant',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384883/Shuttr/img_1894.jpg',
+  lat: 37.7638,
+  long: -122.4685,
+  user_id: 6
+})
+
+Photo.create!({
+  title: 'Burma Superstar',
+  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384893/Shuttr/IMG_2007.jpg',
+  lat: 37.783,
+  long: -122.4622,
+  user_id: 6
 })
 
 Photo.create!({
@@ -825,62 +938,6 @@ Photo.create!({
 })
 
 Photo.create!({
-  title: 'The Painted Ladies',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384727/Shuttr/kr9kIOa.jpg',
-  lat: 37.7764,
-  long: -122.4331,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'The Googleplex',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384736/Shuttr/6c283c62e7710e6de559efd62caf7b08.jpg',
-  lat: 37.4184,
-  long: -122.088,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'App Academy',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384748/Shuttr/appacademy620.jpg',
-  lat: 37.7817,
-  long: -122.4109,
-  user_id: 1
-})
-
-Photo.create!({
-  title: 'Alcatraz Island',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384758/Shuttr/alcatraz_island_prison5869.jpg',
-  lat: 37.8267,
-  long: -122.4233,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'Humphry Slocombe',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384768/Shuttr/4338611707_457e05030f.jpg',
-  lat: 37.7527,
-  long: -122.4119,
-  user_id: 1
-})
-
-Photo.create!({
-  title: 'Mitchell\’s Ice Cream',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384784/Shuttr/mitchells-ice-cream-74924.jpg',
-  lat: 37.7442,
-  long: -122.4224,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'Mission Chinese',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384795/Shuttr/selby-missionchinese-tmagArticle.jpg',
-  lat: 37.7612,
-  long: -122.4193,
-  user_id: 6
-})
-
-Photo.create!({
   title: 'Boudin Bakery',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384807/Shuttr/Boudin_Bakery__Fisherman_s_Wharf_baker_showing_off_crab_1.jpg',
   lat: 37.8085,
@@ -897,66 +954,10 @@ Photo.create!({
 })
 
 Photo.create!({
-  title: 'State Bird Provisions',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384835/Shuttr/05-State-Bird-Provisions-Interior.jpg',
-  lat: 37.7835,
-  long: -122.4326,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'House of Prime Rib',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384845/Shuttr/house-of-prime-rib-san-francisco-ca-usa-restaurants-10best-users-recommend-1550855_54_990x660_201406011141.jpg',
-  lat: 37.7931,
-  long: -122.4227,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'The House',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384860/Shuttr/The_20House_04.jpg',
-  lat: 37.7983,
-  long: -122.4071,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'Nopa',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384871/Shuttr/sf1111.jpg',
-  lat: 37.7746,
-  long: -122.4375,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'San Tung Chinese Restaurant',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384883/Shuttr/img_1894.jpg',
-  lat: 37.7638,
-  long: -122.4685,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'Burma Superstar',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384893/Shuttr/IMG_2007.jpg',
-  lat: 37.783,
-  long: -122.4622,
-  user_id: 6
-})
-
-Photo.create!({
   title: 'Saigon Sandwich',
   url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384906/Shuttr/saigonsandwich.jpg',
   lat: 37.7829,
   long: -122.4174,
-  user_id: 6
-})
-
-Photo.create!({
-  title: 'Brenda\'s French Soul Food',
-  url: 'http://res.cloudinary.com/dydhzgrty/image/upload/v1440384916/Shuttr/LesMis-04.jpg',
-  lat: 37.7827,
-  long: -122.4191,
   user_id: 6
 })
 
@@ -1044,21 +1045,3 @@ Comment.create!({user_id: 2, photo_id: 21, body: "I love love love Disneyland!"}
 
 
 Comment.create!({user_id: 3, photo_id: 20, body: "Spreading my love for waterfalls"})
-
-
-
-# Album.create!({title: "Euro-trip",
-#url: "http://www.greatbuildings.com/gbc/thumbnails/cid_1123539042_05221v.250.jpg",
-#                user_id: "1" })
-#
-# Album.create!({title: "Food",
-#url: "http://ak-static.scoopon.com.au/scpn/deals/main/45000/45813_1.jpg",
-#                user_id: "1" })
-#
-# Album.create!({title: "Around SF",
-#url: "http://en-img.hb-assets.com/r231/assets/common/images/destinations/san_francisco.png",
-#                user_id: "2" })
-#
-# Album.create!({title: "My Pets",
-#url: "http://puppyparadise.com/images/Breeds/eng01.jpg",
-#                user_id: "3" })
