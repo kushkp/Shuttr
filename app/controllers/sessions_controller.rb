@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         redirect_to new_session_url
       else
         login(@user)
-        redirect_to root_url
+        redirect_to "/#feed"
       end
     end
 

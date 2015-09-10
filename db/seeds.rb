@@ -970,19 +970,19 @@ Photo.create!({
 })
 
 Album.create!({
-  title: "SF Sights",
+  title: "Summer '09",
   user_id: 6,
   url: "http://res.cloudinary.com/dydhzgrty/image/upload/c_scale,w_600/v1440479378/san-francisco_b4hsss.jpg"
 })
 
 Album.create!({
-  title: "SF Eats",
+  title: "Places To Visit",
   user_id: 6,
   url: "http://res.cloudinary.com/dydhzgrty/image/upload/c_scale,w_512/v1440471994/Kung_Pao_Pastrami_dwhcwy.jpg"
 })
 
 Album.create!({
-  title: "Trip to France",
+  title: "Cool Pictures",
   user_id: 6,
   url: "http://res.cloudinary.com/dydhzgrty/image/upload/c_scale,w_600/v1440485833/header_zlpynh.jpg"
 })
