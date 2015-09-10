@@ -6,18 +6,18 @@ Shuttr.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "explore",
+    "" : "mapView",
     "albums" : "albumsIndex",
     "albums/new" : "albumNew",
     "albums/:id" : "albumShow",
     "photos" : "photoIndex",
-    "map" : "mapView",
+    "feed" : "feed",
     "search" : "searchListings"
   },
 
-  explore: function() {
+  feed: function() {
     this.photos.fetch();
-    var view = new Shuttr.Views.Explore({ collection: this.photos });
+    var view = new Shuttr.Views.Feed({ collection: this.photos });
     this._swapView(view);
   },
 

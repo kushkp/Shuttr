@@ -43,7 +43,14 @@ Shuttr.Views.PhotoGutter = Backbone.CompositeView.extend ({
     (function($){
         $(window).load(function(){
             $(".gutter-photo-index").mThumbnailScroller({
-              axis:"x", type:"hover-50", live: true
+              axis:"x", type:"hover-50", live: true,
+              markup: {
+                buttonsHTML: {
+                  up:"&uarr;", //HTML up-arrow code
+                  down:"<img src='...' />", //a custom image
+                  left:">", //plain text
+                  right:"&rarr;" //HTML right-arrow code
+                } }
             });
         });
     })(jQuery);

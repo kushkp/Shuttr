@@ -1,5 +1,5 @@
-Shuttr.Views.Explore = Backbone.CompositeView.extend ({
-  template: JST["photo/explore"],
+Shuttr.Views.Feed = Backbone.CompositeView.extend ({
+  template: JST["photo/feed"],
   className: "explore-container",
 
   initialize: function () {
