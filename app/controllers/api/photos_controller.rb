@@ -66,6 +66,7 @@ private
       long_max: filter_data["long"][1]
     }
 
+    # comment logic here(if cond. logic)
     if binds[:long_min].to_f > binds[:long_max].to_f
       Photo.where(<<-SQL, binds)
         photos.long BETWEEN :long_min AND 180

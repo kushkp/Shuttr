@@ -77,6 +77,8 @@ Shuttr.Views.NavShow = Backbone.View.extend({
   //   this.router.searchListings(photos);
   // },
 
+  // faster on the front end for low quantity of data
+  // would switch to backend to scale
   dynamicSearch: function() {
     var keyword = this.$el.find('.search-input').val().toLowerCase();
     var re = new RegExp(keyword);
